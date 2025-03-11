@@ -1,0 +1,2362 @@
+/home/tf2387/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+Using device: cuda
+Setting up data...
+Warning: Custom test directory not found. Creating dummy test loader.
+Classes: ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+Creating medium model...
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 32, 32]           1,728
+       BatchNorm2d-2           [-1, 64, 32, 32]             128
+              Mish-3           [-1, 64, 32, 32]               0
+            Conv2d-4           [-1, 64, 32, 32]          36,864
+       BatchNorm2d-5           [-1, 64, 32, 32]             128
+              Mish-6           [-1, 64, 32, 32]               0
+         Dropout2d-7           [-1, 64, 32, 32]               0
+            Conv2d-8           [-1, 64, 32, 32]          36,864
+       BatchNorm2d-9           [-1, 64, 32, 32]             128
+             Mish-10           [-1, 64, 32, 32]               0
+       BasicBlock-11           [-1, 64, 32, 32]               0
+           Conv2d-12           [-1, 64, 32, 32]          36,864
+      BatchNorm2d-13           [-1, 64, 32, 32]             128
+             Mish-14           [-1, 64, 32, 32]               0
+        Dropout2d-15           [-1, 64, 32, 32]               0
+           Conv2d-16           [-1, 64, 32, 32]          36,864
+      BatchNorm2d-17           [-1, 64, 32, 32]             128
+             Mish-18           [-1, 64, 32, 32]               0
+       BasicBlock-19           [-1, 64, 32, 32]               0
+           Conv2d-20           [-1, 64, 32, 32]          36,864
+      BatchNorm2d-21           [-1, 64, 32, 32]             128
+             Mish-22           [-1, 64, 32, 32]               0
+        Dropout2d-23           [-1, 64, 32, 32]               0
+           Conv2d-24           [-1, 64, 32, 32]          36,864
+      BatchNorm2d-25           [-1, 64, 32, 32]             128
+             Mish-26           [-1, 64, 32, 32]               0
+       BasicBlock-27           [-1, 64, 32, 32]               0
+           Conv2d-28          [-1, 128, 16, 16]          73,728
+      BatchNorm2d-29          [-1, 128, 16, 16]             256
+             Mish-30          [-1, 128, 16, 16]               0
+        Dropout2d-31          [-1, 128, 16, 16]               0
+           Conv2d-32          [-1, 128, 16, 16]         147,456
+      BatchNorm2d-33          [-1, 128, 16, 16]             256
+           Conv2d-34          [-1, 128, 16, 16]           8,192
+      BatchNorm2d-35          [-1, 128, 16, 16]             256
+             Mish-36          [-1, 128, 16, 16]               0
+       BasicBlock-37          [-1, 128, 16, 16]               0
+           Conv2d-38          [-1, 128, 16, 16]         147,456
+      BatchNorm2d-39          [-1, 128, 16, 16]             256
+             Mish-40          [-1, 128, 16, 16]               0
+        Dropout2d-41          [-1, 128, 16, 16]               0
+           Conv2d-42          [-1, 128, 16, 16]         147,456
+      BatchNorm2d-43          [-1, 128, 16, 16]             256
+             Mish-44          [-1, 128, 16, 16]               0
+       BasicBlock-45          [-1, 128, 16, 16]               0
+           Conv2d-46          [-1, 128, 16, 16]         147,456
+      BatchNorm2d-47          [-1, 128, 16, 16]             256
+             Mish-48          [-1, 128, 16, 16]               0
+        Dropout2d-49          [-1, 128, 16, 16]               0
+           Conv2d-50          [-1, 128, 16, 16]         147,456
+      BatchNorm2d-51          [-1, 128, 16, 16]             256
+             Mish-52          [-1, 128, 16, 16]               0
+       BasicBlock-53          [-1, 128, 16, 16]               0
+           Conv2d-54          [-1, 128, 16, 16]         147,456
+      BatchNorm2d-55          [-1, 128, 16, 16]             256
+             Mish-56          [-1, 128, 16, 16]               0
+        Dropout2d-57          [-1, 128, 16, 16]               0
+           Conv2d-58          [-1, 128, 16, 16]         147,456
+      BatchNorm2d-59          [-1, 128, 16, 16]             256
+             Mish-60          [-1, 128, 16, 16]               0
+       BasicBlock-61          [-1, 128, 16, 16]               0
+           Conv2d-62            [-1, 256, 8, 8]         294,912
+      BatchNorm2d-63            [-1, 256, 8, 8]             512
+             Mish-64            [-1, 256, 8, 8]               0
+        Dropout2d-65            [-1, 256, 8, 8]               0
+           Conv2d-66            [-1, 256, 8, 8]         589,824
+      BatchNorm2d-67            [-1, 256, 8, 8]             512
+           Conv2d-68            [-1, 256, 8, 8]          32,768
+      BatchNorm2d-69            [-1, 256, 8, 8]             512
+             Mish-70            [-1, 256, 8, 8]               0
+       BasicBlock-71            [-1, 256, 8, 8]               0
+           Conv2d-72            [-1, 256, 8, 8]         589,824
+      BatchNorm2d-73            [-1, 256, 8, 8]             512
+             Mish-74            [-1, 256, 8, 8]               0
+        Dropout2d-75            [-1, 256, 8, 8]               0
+           Conv2d-76            [-1, 256, 8, 8]         589,824
+      BatchNorm2d-77            [-1, 256, 8, 8]             512
+             Mish-78            [-1, 256, 8, 8]               0
+       BasicBlock-79            [-1, 256, 8, 8]               0
+           Conv2d-80            [-1, 256, 8, 8]         589,824
+      BatchNorm2d-81            [-1, 256, 8, 8]             512
+             Mish-82            [-1, 256, 8, 8]               0
+        Dropout2d-83            [-1, 256, 8, 8]               0
+           Conv2d-84            [-1, 256, 8, 8]         589,824
+      BatchNorm2d-85            [-1, 256, 8, 8]             512
+             Mish-86            [-1, 256, 8, 8]               0
+       BasicBlock-87            [-1, 256, 8, 8]               0
+AdaptiveAvgPool2d-88            [-1, 256, 1, 1]               0
+          Dropout-89                  [-1, 256]               0
+           Linear-90                   [-1, 10]           2,570
+================================================================
+Total params: 4,623,178
+Trainable params: 4,623,178
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 25.25
+Params size (MB): 17.64
+Estimated Total Size (MB): 42.90
+----------------------------------------------------------------
+None
+Starting training for 200 epochs...
+
+Epoch 1/200
+Train Batch: 50/352 | Loss: 2.410 | Acc: 15.86% (1015/6400)
+Train Batch: 100/352 | Loss: 2.251 | Acc: 18.73% (2398/12800)
+Train Batch: 150/352 | Loss: 2.149 | Acc: 21.08% (4047/19200)
+Train Batch: 200/352 | Loss: 2.086 | Acc: 22.64% (5795/25600)
+Train Batch: 250/352 | Loss: 2.035 | Acc: 23.96% (7667/32000)
+Train Batch: 300/352 | Loss: 1.993 | Acc: 25.43% (9764/38400)
+Train Batch: 350/352 | Loss: 1.956 | Acc: 26.66% (11945/44800)
+Train Batch: 352/352 | Loss: 1.955 | Acc: 26.69% (12012/45000)
+Validation | Loss: 1.713 | Acc: 35.80% (1790/5000)
+New best model with accuracy: 0.3580
+
+Epoch 2/200
+Train Batch: 50/352 | Loss: 1.700 | Acc: 35.33% (2261/6400)
+Train Batch: 100/352 | Loss: 1.681 | Acc: 36.33% (4650/12800)
+Train Batch: 150/352 | Loss: 1.664 | Acc: 37.49% (7198/19200)
+Train Batch: 200/352 | Loss: 1.638 | Acc: 38.77% (9924/25600)
+Train Batch: 250/352 | Loss: 1.616 | Acc: 39.77% (12728/32000)
+Train Batch: 300/352 | Loss: 1.596 | Acc: 40.69% (15624/38400)
+Train Batch: 350/352 | Loss: 1.574 | Acc: 41.65% (18657/44800)
+Train Batch: 352/352 | Loss: 1.573 | Acc: 41.70% (18763/45000)
+Validation | Loss: 1.315 | Acc: 52.30% (2615/5000)
+New best model with accuracy: 0.5230
+
+Epoch 3/200
+Train Batch: 50/352 | Loss: 1.406 | Acc: 48.22% (3086/6400)
+Train Batch: 100/352 | Loss: 1.388 | Acc: 49.29% (6309/12800)
+Train Batch: 150/352 | Loss: 1.363 | Acc: 50.38% (9673/19200)
+Train Batch: 200/352 | Loss: 1.338 | Acc: 51.48% (13180/25600)
+Train Batch: 250/352 | Loss: 1.317 | Acc: 52.38% (16762/32000)
+Train Batch: 300/352 | Loss: 1.300 | Acc: 53.07% (20379/38400)
+Train Batch: 350/352 | Loss: 1.285 | Acc: 53.63% (24025/44800)
+Train Batch: 352/352 | Loss: 1.285 | Acc: 53.63% (24135/45000)
+Validation | Loss: 1.094 | Acc: 59.68% (2984/5000)
+New best model with accuracy: 0.5968
+
+Epoch 4/200
+Train Batch: 50/352 | Loss: 1.161 | Acc: 58.48% (3743/6400)
+Train Batch: 100/352 | Loss: 1.160 | Acc: 58.55% (7495/12800)
+Train Batch: 150/352 | Loss: 1.150 | Acc: 58.79% (11288/19200)
+Train Batch: 200/352 | Loss: 1.133 | Acc: 59.52% (15238/25600)
+Train Batch: 250/352 | Loss: 1.118 | Acc: 60.12% (19240/32000)
+Train Batch: 300/352 | Loss: 1.111 | Acc: 60.38% (23187/38400)
+Train Batch: 350/352 | Loss: 1.097 | Acc: 60.79% (27232/44800)
+Train Batch: 352/352 | Loss: 1.096 | Acc: 60.79% (27355/45000)
+Validation | Loss: 1.072 | Acc: 61.46% (3073/5000)
+New best model with accuracy: 0.6146
+
+Epoch 5/200
+Train Batch: 50/352 | Loss: 1.008 | Acc: 64.05% (4099/6400)
+Train Batch: 100/352 | Loss: 1.004 | Acc: 64.45% (8249/12800)
+Train Batch: 150/352 | Loss: 1.000 | Acc: 64.72% (12426/19200)
+Train Batch: 200/352 | Loss: 0.986 | Acc: 65.16% (16682/25600)
+Train Batch: 250/352 | Loss: 0.978 | Acc: 65.38% (20920/32000)
+Train Batch: 300/352 | Loss: 0.970 | Acc: 65.65% (25210/38400)
+Train Batch: 350/352 | Loss: 0.961 | Acc: 65.96% (29551/44800)
+Train Batch: 352/352 | Loss: 0.961 | Acc: 65.97% (29685/45000)
+Validation | Loss: 0.828 | Acc: 70.04% (3502/5000)
+New best model with accuracy: 0.7004
+
+Epoch 6/200
+Train Batch: 50/352 | Loss: 0.889 | Acc: 68.86% (4407/6400)
+Train Batch: 100/352 | Loss: 0.897 | Acc: 68.63% (8785/12800)
+Train Batch: 150/352 | Loss: 0.883 | Acc: 69.01% (13250/19200)
+Train Batch: 200/352 | Loss: 0.885 | Acc: 68.95% (17652/25600)
+Train Batch: 250/352 | Loss: 0.879 | Acc: 69.17% (22136/32000)
+Train Batch: 300/352 | Loss: 0.872 | Acc: 69.45% (26668/38400)
+Train Batch: 350/352 | Loss: 0.869 | Acc: 69.60% (31182/44800)
+Train Batch: 352/352 | Loss: 0.869 | Acc: 69.59% (31314/45000)
+Validation | Loss: 0.760 | Acc: 73.14% (3657/5000)
+New best model with accuracy: 0.7314
+
+Epoch 7/200
+Train Batch: 50/352 | Loss: 0.809 | Acc: 71.33% (4565/6400)
+Train Batch: 100/352 | Loss: 0.811 | Acc: 71.46% (9147/12800)
+Train Batch: 150/352 | Loss: 0.814 | Acc: 71.66% (13759/19200)
+Train Batch: 200/352 | Loss: 0.813 | Acc: 71.66% (18346/25600)
+Train Batch: 250/352 | Loss: 0.810 | Acc: 71.73% (22955/32000)
+Train Batch: 300/352 | Loss: 0.806 | Acc: 71.92% (27618/38400)
+Train Batch: 350/352 | Loss: 0.802 | Acc: 72.16% (32328/44800)
+Train Batch: 352/352 | Loss: 0.801 | Acc: 72.16% (32472/45000)
+Validation | Loss: 0.689 | Acc: 75.46% (3773/5000)
+New best model with accuracy: 0.7546
+
+Epoch 8/200
+Train Batch: 50/352 | Loss: 0.776 | Acc: 73.28% (4690/6400)
+Train Batch: 100/352 | Loss: 0.778 | Acc: 73.12% (9359/12800)
+Train Batch: 150/352 | Loss: 0.771 | Acc: 73.38% (14088/19200)
+Train Batch: 200/352 | Loss: 0.772 | Acc: 73.38% (18785/25600)
+Train Batch: 250/352 | Loss: 0.761 | Acc: 73.78% (23609/32000)
+Train Batch: 300/352 | Loss: 0.757 | Acc: 73.88% (28371/38400)
+Train Batch: 350/352 | Loss: 0.757 | Acc: 73.85% (33087/44800)
+Train Batch: 352/352 | Loss: 0.757 | Acc: 73.86% (33237/45000)
+Validation | Loss: 0.690 | Acc: 75.38% (3769/5000)
+
+Epoch 9/200
+Train Batch: 50/352 | Loss: 0.735 | Acc: 75.11% (4807/6400)
+Train Batch: 100/352 | Loss: 0.740 | Acc: 74.75% (9568/12800)
+Train Batch: 150/352 | Loss: 0.731 | Acc: 75.04% (14408/19200)
+Train Batch: 200/352 | Loss: 0.725 | Acc: 75.21% (19255/25600)
+Train Batch: 250/352 | Loss: 0.724 | Acc: 75.04% (24014/32000)
+Train Batch: 300/352 | Loss: 0.722 | Acc: 75.09% (28834/38400)
+Train Batch: 350/352 | Loss: 0.723 | Acc: 75.07% (33633/44800)
+Train Batch: 352/352 | Loss: 0.723 | Acc: 75.06% (33779/45000)
+Validation | Loss: 0.652 | Acc: 77.20% (3860/5000)
+New best model with accuracy: 0.7720
+
+Epoch 10/200
+Train Batch: 50/352 | Loss: 0.710 | Acc: 75.83% (4853/6400)
+Train Batch: 100/352 | Loss: 0.700 | Acc: 76.18% (9751/12800)
+Train Batch: 150/352 | Loss: 0.696 | Acc: 76.17% (14624/19200)
+Train Batch: 200/352 | Loss: 0.694 | Acc: 76.23% (19516/25600)
+Train Batch: 250/352 | Loss: 0.694 | Acc: 76.14% (24366/32000)
+Train Batch: 300/352 | Loss: 0.694 | Acc: 76.15% (29240/38400)
+Train Batch: 350/352 | Loss: 0.694 | Acc: 76.17% (34125/44800)
+Train Batch: 352/352 | Loss: 0.694 | Acc: 76.17% (34277/45000)
+Validation | Loss: 0.603 | Acc: 78.78% (3939/5000)
+New best model with accuracy: 0.7878
+
+Epoch 11/200
+Train Batch: 50/352 | Loss: 0.666 | Acc: 77.11% (4935/6400)
+Train Batch: 100/352 | Loss: 0.664 | Acc: 77.34% (9900/12800)
+Train Batch: 150/352 | Loss: 0.669 | Acc: 77.13% (14809/19200)
+Train Batch: 200/352 | Loss: 0.680 | Acc: 76.74% (19646/25600)
+Train Batch: 250/352 | Loss: 0.680 | Acc: 76.75% (24560/32000)
+Train Batch: 300/352 | Loss: 0.679 | Acc: 76.68% (29444/38400)
+Train Batch: 350/352 | Loss: 0.678 | Acc: 76.71% (34364/44800)
+Train Batch: 352/352 | Loss: 0.677 | Acc: 76.71% (34520/45000)
+Validation | Loss: 0.602 | Acc: 78.68% (3934/5000)
+
+Epoch 12/200
+Train Batch: 50/352 | Loss: 0.646 | Acc: 77.70% (4973/6400)
+Train Batch: 100/352 | Loss: 0.656 | Acc: 77.52% (9923/12800)
+Train Batch: 150/352 | Loss: 0.655 | Acc: 77.49% (14879/19200)
+Train Batch: 200/352 | Loss: 0.654 | Acc: 77.59% (19864/25600)
+Train Batch: 250/352 | Loss: 0.653 | Acc: 77.63% (24841/32000)
+Train Batch: 300/352 | Loss: 0.654 | Acc: 77.66% (29820/38400)
+Train Batch: 350/352 | Loss: 0.651 | Acc: 77.77% (34839/44800)
+Train Batch: 352/352 | Loss: 0.651 | Acc: 77.77% (34997/45000)
+Validation | Loss: 0.530 | Acc: 81.68% (4084/5000)
+New best model with accuracy: 0.8168
+
+Epoch 13/200
+Train Batch: 50/352 | Loss: 0.631 | Acc: 77.86% (4983/6400)
+Train Batch: 100/352 | Loss: 0.642 | Acc: 77.97% (9980/12800)
+Train Batch: 150/352 | Loss: 0.638 | Acc: 77.98% (14973/19200)
+Train Batch: 200/352 | Loss: 0.642 | Acc: 77.90% (19943/25600)
+Train Batch: 250/352 | Loss: 0.639 | Acc: 78.07% (24981/32000)
+Train Batch: 300/352 | Loss: 0.638 | Acc: 78.10% (29992/38400)
+Train Batch: 350/352 | Loss: 0.644 | Acc: 77.88% (34892/44800)
+Train Batch: 352/352 | Loss: 0.644 | Acc: 77.88% (35045/45000)
+Validation | Loss: 0.603 | Acc: 79.20% (3960/5000)
+
+Epoch 14/200
+Train Batch: 50/352 | Loss: 0.628 | Acc: 78.48% (5023/6400)
+Train Batch: 100/352 | Loss: 0.630 | Acc: 78.27% (10019/12800)
+Train Batch: 150/352 | Loss: 0.629 | Acc: 78.39% (15050/19200)
+Train Batch: 200/352 | Loss: 0.635 | Acc: 78.05% (19981/25600)
+Train Batch: 250/352 | Loss: 0.632 | Acc: 78.26% (25043/32000)
+Train Batch: 300/352 | Loss: 0.634 | Acc: 78.18% (30021/38400)
+Train Batch: 350/352 | Loss: 0.632 | Acc: 78.35% (35101/44800)
+Train Batch: 352/352 | Loss: 0.631 | Acc: 78.36% (35261/45000)
+Validation | Loss: 0.563 | Acc: 81.22% (4061/5000)
+
+Epoch 15/200
+Train Batch: 50/352 | Loss: 0.605 | Acc: 79.39% (5081/6400)
+Train Batch: 100/352 | Loss: 0.613 | Acc: 79.03% (10116/12800)
+Train Batch: 150/352 | Loss: 0.618 | Acc: 78.79% (15128/19200)
+Train Batch: 200/352 | Loss: 0.618 | Acc: 78.83% (20180/25600)
+Train Batch: 250/352 | Loss: 0.616 | Acc: 78.89% (25246/32000)
+Train Batch: 300/352 | Loss: 0.618 | Acc: 78.82% (30266/38400)
+Train Batch: 350/352 | Loss: 0.619 | Acc: 78.83% (35314/44800)
+Train Batch: 352/352 | Loss: 0.620 | Acc: 78.82% (35468/45000)
+Validation | Loss: 0.577 | Acc: 79.46% (3973/5000)
+
+Epoch 16/200
+Train Batch: 50/352 | Loss: 0.616 | Acc: 78.69% (5036/6400)
+Train Batch: 100/352 | Loss: 0.610 | Acc: 79.03% (10116/12800)
+Train Batch: 150/352 | Loss: 0.616 | Acc: 78.76% (15122/19200)
+Train Batch: 200/352 | Loss: 0.610 | Acc: 79.02% (20229/25600)
+Train Batch: 250/352 | Loss: 0.609 | Acc: 79.11% (25316/32000)
+Train Batch: 300/352 | Loss: 0.611 | Acc: 79.11% (30377/38400)
+Train Batch: 350/352 | Loss: 0.612 | Acc: 79.17% (35468/44800)
+Train Batch: 352/352 | Loss: 0.613 | Acc: 79.15% (35619/45000)
+Validation | Loss: 0.538 | Acc: 80.50% (4025/5000)
+
+Epoch 17/200
+Train Batch: 50/352 | Loss: 0.602 | Acc: 78.72% (5038/6400)
+Train Batch: 100/352 | Loss: 0.599 | Acc: 79.06% (10120/12800)
+Train Batch: 150/352 | Loss: 0.595 | Acc: 79.46% (15256/19200)
+Train Batch: 200/352 | Loss: 0.591 | Acc: 79.69% (20401/25600)
+Train Batch: 250/352 | Loss: 0.595 | Acc: 79.54% (25454/32000)
+Train Batch: 300/352 | Loss: 0.597 | Acc: 79.52% (30537/38400)
+Train Batch: 350/352 | Loss: 0.597 | Acc: 79.50% (35618/44800)
+Train Batch: 352/352 | Loss: 0.596 | Acc: 79.52% (35784/45000)
+Validation | Loss: 0.532 | Acc: 81.60% (4080/5000)
+
+Epoch 18/200
+Train Batch: 50/352 | Loss: 0.544 | Acc: 81.70% (5229/6400)
+Train Batch: 100/352 | Loss: 0.564 | Acc: 80.75% (10336/12800)
+Train Batch: 150/352 | Loss: 0.576 | Acc: 80.42% (15441/19200)
+Train Batch: 200/352 | Loss: 0.575 | Acc: 80.47% (20600/25600)
+Train Batch: 250/352 | Loss: 0.580 | Acc: 80.33% (25705/32000)
+Train Batch: 300/352 | Loss: 0.581 | Acc: 80.24% (30813/38400)
+Train Batch: 350/352 | Loss: 0.584 | Acc: 80.18% (35921/44800)
+Train Batch: 352/352 | Loss: 0.584 | Acc: 80.18% (36079/45000)
+Validation | Loss: 0.490 | Acc: 82.54% (4127/5000)
+New best model with accuracy: 0.8254
+
+Epoch 19/200
+Train Batch: 50/352 | Loss: 0.583 | Acc: 80.28% (5138/6400)
+Train Batch: 100/352 | Loss: 0.581 | Acc: 80.26% (10273/12800)
+Train Batch: 150/352 | Loss: 0.581 | Acc: 80.34% (15426/19200)
+Train Batch: 200/352 | Loss: 0.577 | Acc: 80.50% (20607/25600)
+Train Batch: 250/352 | Loss: 0.578 | Acc: 80.44% (25741/32000)
+Train Batch: 300/352 | Loss: 0.579 | Acc: 80.35% (30853/38400)
+Train Batch: 350/352 | Loss: 0.578 | Acc: 80.38% (36011/44800)
+Train Batch: 352/352 | Loss: 0.578 | Acc: 80.39% (36177/45000)
+Validation | Loss: 0.547 | Acc: 81.16% (4058/5000)
+
+Epoch 20/200
+Train Batch: 50/352 | Loss: 0.568 | Acc: 81.22% (5198/6400)
+Train Batch: 100/352 | Loss: 0.563 | Acc: 80.95% (10362/12800)
+Train Batch: 150/352 | Loss: 0.558 | Acc: 81.04% (15559/19200)
+Train Batch: 200/352 | Loss: 0.561 | Acc: 80.89% (20707/25600)
+Train Batch: 250/352 | Loss: 0.560 | Acc: 80.92% (25895/32000)
+Train Batch: 300/352 | Loss: 0.561 | Acc: 80.90% (31065/38400)
+Train Batch: 350/352 | Loss: 0.566 | Acc: 80.68% (36145/44800)
+Train Batch: 352/352 | Loss: 0.566 | Acc: 80.69% (36310/45000)
+Validation | Loss: 0.560 | Acc: 80.48% (4024/5000)
+
+Epoch 21/200
+Train Batch: 50/352 | Loss: 0.552 | Acc: 81.31% (5204/6400)
+Train Batch: 100/352 | Loss: 0.561 | Acc: 80.88% (10352/12800)
+Train Batch: 150/352 | Loss: 0.562 | Acc: 80.83% (15520/19200)
+Train Batch: 200/352 | Loss: 0.561 | Acc: 80.97% (20728/25600)
+Train Batch: 250/352 | Loss: 0.558 | Acc: 81.03% (25930/32000)
+Train Batch: 300/352 | Loss: 0.559 | Acc: 81.03% (31117/38400)
+Train Batch: 350/352 | Loss: 0.560 | Acc: 80.90% (36245/44800)
+Train Batch: 352/352 | Loss: 0.560 | Acc: 80.91% (36411/45000)
+Validation | Loss: 0.522 | Acc: 81.60% (4080/5000)
+
+Epoch 22/200
+Train Batch: 50/352 | Loss: 0.546 | Acc: 81.48% (5215/6400)
+Train Batch: 100/352 | Loss: 0.551 | Acc: 81.28% (10404/12800)
+Train Batch: 150/352 | Loss: 0.557 | Acc: 80.98% (15548/19200)
+Train Batch: 200/352 | Loss: 0.555 | Acc: 80.94% (20721/25600)
+Train Batch: 250/352 | Loss: 0.555 | Acc: 80.96% (25907/32000)
+Train Batch: 300/352 | Loss: 0.558 | Acc: 80.86% (31052/38400)
+Train Batch: 350/352 | Loss: 0.562 | Acc: 80.75% (36175/44800)
+Train Batch: 352/352 | Loss: 0.561 | Acc: 80.76% (36340/45000)
+Validation | Loss: 0.486 | Acc: 83.04% (4152/5000)
+New best model with accuracy: 0.8304
+
+Epoch 23/200
+Train Batch: 50/352 | Loss: 0.518 | Acc: 82.28% (5266/6400)
+Train Batch: 100/352 | Loss: 0.530 | Acc: 81.92% (10486/12800)
+Train Batch: 150/352 | Loss: 0.536 | Acc: 81.54% (15656/19200)
+Train Batch: 200/352 | Loss: 0.543 | Acc: 81.35% (20825/25600)
+Train Batch: 250/352 | Loss: 0.542 | Acc: 81.31% (26019/32000)
+Train Batch: 300/352 | Loss: 0.546 | Acc: 81.27% (31207/38400)
+Train Batch: 350/352 | Loss: 0.548 | Acc: 81.23% (36391/44800)
+Train Batch: 352/352 | Loss: 0.548 | Acc: 81.22% (36549/45000)
+Validation | Loss: 0.501 | Acc: 82.34% (4117/5000)
+
+Epoch 24/200
+Train Batch: 50/352 | Loss: 0.530 | Acc: 81.91% (5242/6400)
+Train Batch: 100/352 | Loss: 0.546 | Acc: 81.70% (10457/12800)
+Train Batch: 150/352 | Loss: 0.542 | Acc: 81.65% (15677/19200)
+Train Batch: 200/352 | Loss: 0.541 | Acc: 81.73% (20922/25600)
+Train Batch: 250/352 | Loss: 0.540 | Acc: 81.82% (26181/32000)
+Train Batch: 300/352 | Loss: 0.542 | Acc: 81.66% (31359/38400)
+Train Batch: 350/352 | Loss: 0.543 | Acc: 81.59% (36552/44800)
+Train Batch: 352/352 | Loss: 0.543 | Acc: 81.61% (36723/45000)
+Validation | Loss: 0.490 | Acc: 82.58% (4129/5000)
+
+Epoch 25/200
+Train Batch: 50/352 | Loss: 0.527 | Acc: 82.14% (5257/6400)
+Train Batch: 100/352 | Loss: 0.545 | Acc: 81.38% (10416/12800)
+Train Batch: 150/352 | Loss: 0.548 | Acc: 81.16% (15582/19200)
+Train Batch: 200/352 | Loss: 0.544 | Acc: 81.30% (20814/25600)
+Train Batch: 250/352 | Loss: 0.544 | Acc: 81.30% (26015/32000)
+Train Batch: 300/352 | Loss: 0.545 | Acc: 81.37% (31247/38400)
+Train Batch: 350/352 | Loss: 0.540 | Acc: 81.51% (36515/44800)
+Train Batch: 352/352 | Loss: 0.540 | Acc: 81.50% (36675/45000)
+Validation | Loss: 0.560 | Acc: 80.70% (4035/5000)
+
+Epoch 26/200
+Train Batch: 50/352 | Loss: 0.505 | Acc: 82.80% (5299/6400)
+Train Batch: 100/352 | Loss: 0.512 | Acc: 82.84% (10604/12800)
+Train Batch: 150/352 | Loss: 0.526 | Acc: 82.17% (15776/19200)
+Train Batch: 200/352 | Loss: 0.525 | Acc: 82.02% (20998/25600)
+Train Batch: 250/352 | Loss: 0.525 | Acc: 82.09% (26269/32000)
+Train Batch: 300/352 | Loss: 0.525 | Acc: 82.10% (31527/38400)
+Train Batch: 350/352 | Loss: 0.528 | Acc: 81.98% (36729/44800)
+Train Batch: 352/352 | Loss: 0.528 | Acc: 81.99% (36895/45000)
+Validation | Loss: 0.471 | Acc: 83.52% (4176/5000)
+New best model with accuracy: 0.8352
+
+Epoch 27/200
+Train Batch: 50/352 | Loss: 0.519 | Acc: 82.28% (5266/6400)
+Train Batch: 100/352 | Loss: 0.512 | Acc: 82.88% (10609/12800)
+Train Batch: 150/352 | Loss: 0.516 | Acc: 82.59% (15858/19200)
+Train Batch: 200/352 | Loss: 0.524 | Acc: 82.29% (21065/25600)
+Train Batch: 250/352 | Loss: 0.524 | Acc: 82.32% (26341/32000)
+Train Batch: 300/352 | Loss: 0.526 | Acc: 82.25% (31584/38400)
+Train Batch: 350/352 | Loss: 0.526 | Acc: 82.26% (36854/44800)
+Train Batch: 352/352 | Loss: 0.526 | Acc: 82.26% (37019/45000)
+Validation | Loss: 0.493 | Acc: 83.32% (4166/5000)
+
+Epoch 28/200
+Train Batch: 50/352 | Loss: 0.489 | Acc: 83.47% (5342/6400)
+Train Batch: 100/352 | Loss: 0.507 | Acc: 82.91% (10612/12800)
+Train Batch: 150/352 | Loss: 0.512 | Acc: 82.54% (15848/19200)
+Train Batch: 200/352 | Loss: 0.517 | Acc: 82.52% (21126/25600)
+Train Batch: 250/352 | Loss: 0.519 | Acc: 82.47% (26392/32000)
+Train Batch: 300/352 | Loss: 0.521 | Acc: 82.38% (31633/38400)
+Train Batch: 350/352 | Loss: 0.525 | Acc: 82.23% (36839/44800)
+Train Batch: 352/352 | Loss: 0.525 | Acc: 82.23% (37002/45000)
+Validation | Loss: 0.480 | Acc: 83.02% (4151/5000)
+
+Epoch 29/200
+Train Batch: 50/352 | Loss: 0.514 | Acc: 82.41% (5274/6400)
+Train Batch: 100/352 | Loss: 0.513 | Acc: 82.72% (10588/12800)
+Train Batch: 150/352 | Loss: 0.512 | Acc: 82.60% (15860/19200)
+Train Batch: 200/352 | Loss: 0.512 | Acc: 82.59% (21143/25600)
+Train Batch: 250/352 | Loss: 0.511 | Acc: 82.55% (26416/32000)
+Train Batch: 300/352 | Loss: 0.514 | Acc: 82.42% (31648/38400)
+Train Batch: 350/352 | Loss: 0.516 | Acc: 82.41% (36920/44800)
+Train Batch: 352/352 | Loss: 0.517 | Acc: 82.42% (37087/45000)
+Validation | Loss: 0.436 | Acc: 84.58% (4229/5000)
+New best model with accuracy: 0.8458
+
+Epoch 30/200
+Train Batch: 50/352 | Loss: 0.501 | Acc: 83.27% (5329/6400)
+Train Batch: 100/352 | Loss: 0.510 | Acc: 82.66% (10581/12800)
+Train Batch: 150/352 | Loss: 0.508 | Acc: 82.59% (15858/19200)
+Train Batch: 200/352 | Loss: 0.508 | Acc: 82.53% (21127/25600)
+Train Batch: 250/352 | Loss: 0.510 | Acc: 82.45% (26384/32000)
+Train Batch: 300/352 | Loss: 0.509 | Acc: 82.48% (31673/38400)
+Train Batch: 350/352 | Loss: 0.513 | Acc: 82.36% (36897/44800)
+Train Batch: 352/352 | Loss: 0.513 | Acc: 82.35% (37056/45000)
+Validation | Loss: 0.485 | Acc: 83.00% (4150/5000)
+
+Epoch 31/200
+Train Batch: 50/352 | Loss: 0.502 | Acc: 82.81% (5300/6400)
+Train Batch: 100/352 | Loss: 0.500 | Acc: 83.25% (10656/12800)
+Train Batch: 150/352 | Loss: 0.504 | Acc: 82.97% (15930/19200)
+Train Batch: 200/352 | Loss: 0.506 | Acc: 82.88% (21217/25600)
+Train Batch: 250/352 | Loss: 0.506 | Acc: 82.89% (26525/32000)
+Train Batch: 300/352 | Loss: 0.507 | Acc: 82.85% (31816/38400)
+Train Batch: 350/352 | Loss: 0.507 | Acc: 82.90% (37140/44800)
+Train Batch: 352/352 | Loss: 0.507 | Acc: 82.89% (37301/45000)
+Validation | Loss: 0.448 | Acc: 84.24% (4212/5000)
+
+Epoch 32/200
+Train Batch: 50/352 | Loss: 0.499 | Acc: 83.58% (5349/6400)
+Train Batch: 100/352 | Loss: 0.499 | Acc: 83.05% (10631/12800)
+Train Batch: 150/352 | Loss: 0.494 | Acc: 83.27% (15988/19200)
+Train Batch: 200/352 | Loss: 0.487 | Acc: 83.56% (21392/25600)
+Train Batch: 250/352 | Loss: 0.494 | Acc: 83.29% (26654/32000)
+Train Batch: 300/352 | Loss: 0.501 | Acc: 83.04% (31886/38400)
+Train Batch: 350/352 | Loss: 0.505 | Acc: 82.92% (37147/44800)
+Train Batch: 352/352 | Loss: 0.506 | Acc: 82.88% (37298/45000)
+Validation | Loss: 0.437 | Acc: 84.80% (4240/5000)
+New best model with accuracy: 0.8480
+
+Epoch 33/200
+Train Batch: 50/352 | Loss: 0.485 | Acc: 83.44% (5340/6400)
+Train Batch: 100/352 | Loss: 0.482 | Acc: 83.48% (10686/12800)
+Train Batch: 150/352 | Loss: 0.498 | Acc: 83.10% (15956/19200)
+Train Batch: 200/352 | Loss: 0.498 | Acc: 83.20% (21298/25600)
+Train Batch: 250/352 | Loss: 0.501 | Acc: 83.07% (26583/32000)
+Train Batch: 300/352 | Loss: 0.499 | Acc: 83.04% (31887/38400)
+Train Batch: 350/352 | Loss: 0.501 | Acc: 82.94% (37156/44800)
+Train Batch: 352/352 | Loss: 0.501 | Acc: 82.94% (37321/45000)
+Validation | Loss: 0.494 | Acc: 82.70% (4135/5000)
+
+Epoch 34/200
+Train Batch: 50/352 | Loss: 0.496 | Acc: 82.91% (5306/6400)
+Train Batch: 100/352 | Loss: 0.490 | Acc: 83.24% (10655/12800)
+Train Batch: 150/352 | Loss: 0.489 | Acc: 83.34% (16002/19200)
+Train Batch: 200/352 | Loss: 0.494 | Acc: 83.20% (21298/25600)
+Train Batch: 250/352 | Loss: 0.493 | Acc: 83.25% (26641/32000)
+Train Batch: 300/352 | Loss: 0.490 | Acc: 83.34% (32003/38400)
+Train Batch: 350/352 | Loss: 0.494 | Acc: 83.28% (37311/44800)
+Train Batch: 352/352 | Loss: 0.494 | Acc: 83.29% (37480/45000)
+Validation | Loss: 0.548 | Acc: 80.74% (4037/5000)
+
+Epoch 35/200
+Train Batch: 50/352 | Loss: 0.510 | Acc: 82.70% (5293/6400)
+Train Batch: 100/352 | Loss: 0.494 | Acc: 83.09% (10635/12800)
+Train Batch: 150/352 | Loss: 0.492 | Acc: 83.12% (15960/19200)
+Train Batch: 200/352 | Loss: 0.494 | Acc: 83.09% (21272/25600)
+Train Batch: 250/352 | Loss: 0.496 | Acc: 83.18% (26617/32000)
+Train Batch: 300/352 | Loss: 0.494 | Acc: 83.24% (31966/38400)
+Train Batch: 350/352 | Loss: 0.497 | Acc: 83.12% (37236/44800)
+Train Batch: 352/352 | Loss: 0.496 | Acc: 83.15% (37418/45000)
+Validation | Loss: 0.402 | Acc: 85.58% (4279/5000)
+New best model with accuracy: 0.8558
+
+Epoch 36/200
+Train Batch: 50/352 | Loss: 0.484 | Acc: 83.66% (5354/6400)
+Train Batch: 100/352 | Loss: 0.482 | Acc: 83.51% (10689/12800)
+Train Batch: 150/352 | Loss: 0.486 | Acc: 83.29% (15991/19200)
+Train Batch: 200/352 | Loss: 0.486 | Acc: 83.46% (21365/25600)
+Train Batch: 250/352 | Loss: 0.488 | Acc: 83.50% (26720/32000)
+Train Batch: 300/352 | Loss: 0.490 | Acc: 83.45% (32046/38400)
+Train Batch: 350/352 | Loss: 0.497 | Acc: 83.17% (37261/44800)
+Train Batch: 352/352 | Loss: 0.497 | Acc: 83.16% (37422/45000)
+Validation | Loss: 0.476 | Acc: 83.82% (4191/5000)
+
+Epoch 37/200
+Train Batch: 50/352 | Loss: 0.489 | Acc: 82.97% (5310/6400)
+Train Batch: 100/352 | Loss: 0.480 | Acc: 83.38% (10672/12800)
+Train Batch: 150/352 | Loss: 0.484 | Acc: 83.32% (15997/19200)
+Train Batch: 200/352 | Loss: 0.482 | Acc: 83.40% (21350/25600)
+Train Batch: 250/352 | Loss: 0.486 | Acc: 83.24% (26638/32000)
+Train Batch: 300/352 | Loss: 0.492 | Acc: 83.09% (31906/38400)
+Train Batch: 350/352 | Loss: 0.491 | Acc: 83.17% (37259/44800)
+Train Batch: 352/352 | Loss: 0.490 | Acc: 83.18% (37433/45000)
+Validation | Loss: 0.468 | Acc: 83.50% (4175/5000)
+
+Epoch 38/200
+Train Batch: 50/352 | Loss: 0.476 | Acc: 83.58% (5349/6400)
+Train Batch: 100/352 | Loss: 0.478 | Acc: 83.72% (10716/12800)
+Train Batch: 150/352 | Loss: 0.482 | Acc: 83.68% (16066/19200)
+Train Batch: 200/352 | Loss: 0.480 | Acc: 83.71% (21431/25600)
+Train Batch: 250/352 | Loss: 0.477 | Acc: 83.86% (26835/32000)
+Train Batch: 300/352 | Loss: 0.480 | Acc: 83.78% (32171/38400)
+Train Batch: 350/352 | Loss: 0.485 | Acc: 83.61% (37459/44800)
+Train Batch: 352/352 | Loss: 0.485 | Acc: 83.63% (37633/45000)
+Validation | Loss: 0.541 | Acc: 81.14% (4057/5000)
+
+Epoch 39/200
+Train Batch: 50/352 | Loss: 0.489 | Acc: 83.28% (5330/6400)
+Train Batch: 100/352 | Loss: 0.488 | Acc: 83.64% (10706/12800)
+Train Batch: 150/352 | Loss: 0.487 | Acc: 83.70% (16071/19200)
+Train Batch: 200/352 | Loss: 0.483 | Acc: 83.80% (21453/25600)
+Train Batch: 250/352 | Loss: 0.485 | Acc: 83.65% (26768/32000)
+Train Batch: 300/352 | Loss: 0.487 | Acc: 83.51% (32067/38400)
+Train Batch: 350/352 | Loss: 0.485 | Acc: 83.48% (37399/44800)
+Train Batch: 352/352 | Loss: 0.484 | Acc: 83.49% (37569/45000)
+Validation | Loss: 0.415 | Acc: 85.28% (4264/5000)
+
+Epoch 40/200
+Train Batch: 50/352 | Loss: 0.470 | Acc: 83.78% (5362/6400)
+Train Batch: 100/352 | Loss: 0.476 | Acc: 83.75% (10720/12800)
+Train Batch: 150/352 | Loss: 0.483 | Acc: 83.52% (16035/19200)
+Train Batch: 200/352 | Loss: 0.483 | Acc: 83.57% (21393/25600)
+Train Batch: 250/352 | Loss: 0.483 | Acc: 83.52% (26726/32000)
+Train Batch: 300/352 | Loss: 0.482 | Acc: 83.53% (32077/38400)
+Train Batch: 350/352 | Loss: 0.482 | Acc: 83.56% (37437/44800)
+Train Batch: 352/352 | Loss: 0.482 | Acc: 83.57% (37606/45000)
+Validation | Loss: 0.450 | Acc: 84.44% (4222/5000)
+
+Epoch 41/200
+Train Batch: 50/352 | Loss: 0.468 | Acc: 84.66% (5418/6400)
+Train Batch: 100/352 | Loss: 0.470 | Acc: 84.27% (10787/12800)
+Train Batch: 150/352 | Loss: 0.474 | Acc: 84.13% (16153/19200)
+Train Batch: 200/352 | Loss: 0.478 | Acc: 84.06% (21520/25600)
+Train Batch: 250/352 | Loss: 0.472 | Acc: 84.23% (26955/32000)
+Train Batch: 300/352 | Loss: 0.471 | Acc: 84.23% (32344/38400)
+Train Batch: 350/352 | Loss: 0.474 | Acc: 84.04% (37652/44800)
+Train Batch: 352/352 | Loss: 0.474 | Acc: 84.04% (37818/45000)
+Validation | Loss: 0.532 | Acc: 82.38% (4119/5000)
+
+Epoch 42/200
+Train Batch: 50/352 | Loss: 0.469 | Acc: 84.36% (5399/6400)
+Train Batch: 100/352 | Loss: 0.465 | Acc: 84.35% (10797/12800)
+Train Batch: 150/352 | Loss: 0.466 | Acc: 84.30% (16186/19200)
+Train Batch: 200/352 | Loss: 0.471 | Acc: 84.10% (21530/25600)
+Train Batch: 250/352 | Loss: 0.471 | Acc: 84.11% (26916/32000)
+Train Batch: 300/352 | Loss: 0.473 | Acc: 84.01% (32259/38400)
+Train Batch: 350/352 | Loss: 0.476 | Acc: 83.91% (37591/44800)
+Train Batch: 352/352 | Loss: 0.475 | Acc: 83.93% (37770/45000)
+Validation | Loss: 0.437 | Acc: 84.56% (4228/5000)
+
+Epoch 43/200
+Train Batch: 50/352 | Loss: 0.458 | Acc: 84.94% (5436/6400)
+Train Batch: 100/352 | Loss: 0.452 | Acc: 85.10% (10893/12800)
+Train Batch: 150/352 | Loss: 0.459 | Acc: 84.67% (16256/19200)
+Train Batch: 200/352 | Loss: 0.465 | Acc: 84.39% (21605/25600)
+Train Batch: 250/352 | Loss: 0.467 | Acc: 84.27% (26965/32000)
+Train Batch: 300/352 | Loss: 0.468 | Acc: 84.27% (32359/38400)
+Train Batch: 350/352 | Loss: 0.471 | Acc: 84.20% (37720/44800)
+Train Batch: 352/352 | Loss: 0.471 | Acc: 84.18% (37880/45000)
+Validation | Loss: 0.489 | Acc: 82.82% (4141/5000)
+
+Epoch 44/200
+Train Batch: 50/352 | Loss: 0.465 | Acc: 84.28% (5394/6400)
+Train Batch: 100/352 | Loss: 0.460 | Acc: 84.26% (10785/12800)
+Train Batch: 150/352 | Loss: 0.464 | Acc: 84.16% (16159/19200)
+Train Batch: 200/352 | Loss: 0.463 | Acc: 84.12% (21534/25600)
+Train Batch: 250/352 | Loss: 0.463 | Acc: 84.17% (26936/32000)
+Train Batch: 300/352 | Loss: 0.464 | Acc: 84.16% (32317/38400)
+Train Batch: 350/352 | Loss: 0.467 | Acc: 84.03% (37646/44800)
+Train Batch: 352/352 | Loss: 0.467 | Acc: 84.02% (37811/45000)
+Validation | Loss: 0.401 | Acc: 85.72% (4286/5000)
+New best model with accuracy: 0.8572
+
+Epoch 45/200
+Train Batch: 50/352 | Loss: 0.443 | Acc: 85.06% (5444/6400)
+Train Batch: 100/352 | Loss: 0.455 | Acc: 84.68% (10839/12800)
+Train Batch: 150/352 | Loss: 0.458 | Acc: 84.56% (16235/19200)
+Train Batch: 200/352 | Loss: 0.463 | Acc: 84.44% (21616/25600)
+Train Batch: 250/352 | Loss: 0.464 | Acc: 84.36% (26995/32000)
+Train Batch: 300/352 | Loss: 0.467 | Acc: 84.27% (32360/38400)
+Train Batch: 350/352 | Loss: 0.468 | Acc: 84.32% (37776/44800)
+Train Batch: 352/352 | Loss: 0.468 | Acc: 84.32% (37946/45000)
+Validation | Loss: 0.500 | Acc: 83.26% (4163/5000)
+
+Epoch 46/200
+Train Batch: 50/352 | Loss: 0.436 | Acc: 85.81% (5492/6400)
+Train Batch: 100/352 | Loss: 0.449 | Acc: 85.09% (10892/12800)
+Train Batch: 150/352 | Loss: 0.455 | Acc: 84.85% (16291/19200)
+Train Batch: 200/352 | Loss: 0.459 | Acc: 84.54% (21642/25600)
+Train Batch: 250/352 | Loss: 0.460 | Acc: 84.44% (27020/32000)
+Train Batch: 300/352 | Loss: 0.461 | Acc: 84.26% (32357/38400)
+Train Batch: 350/352 | Loss: 0.465 | Acc: 84.15% (37698/44800)
+Train Batch: 352/352 | Loss: 0.465 | Acc: 84.15% (37869/45000)
+Validation | Loss: 0.504 | Acc: 83.46% (4173/5000)
+
+Epoch 47/200
+Train Batch: 50/352 | Loss: 0.450 | Acc: 85.12% (5448/6400)
+Train Batch: 100/352 | Loss: 0.456 | Acc: 84.69% (10840/12800)
+Train Batch: 150/352 | Loss: 0.461 | Acc: 84.51% (16226/19200)
+Train Batch: 200/352 | Loss: 0.462 | Acc: 84.39% (21605/25600)
+Train Batch: 250/352 | Loss: 0.463 | Acc: 84.31% (26978/32000)
+Train Batch: 300/352 | Loss: 0.466 | Acc: 84.23% (32346/38400)
+Train Batch: 350/352 | Loss: 0.464 | Acc: 84.31% (37772/44800)
+Train Batch: 352/352 | Loss: 0.464 | Acc: 84.31% (37941/45000)
+Validation | Loss: 0.407 | Acc: 85.24% (4262/5000)
+
+Epoch 48/200
+Train Batch: 50/352 | Loss: 0.435 | Acc: 85.75% (5488/6400)
+Train Batch: 100/352 | Loss: 0.434 | Acc: 85.65% (10963/12800)
+Train Batch: 150/352 | Loss: 0.447 | Acc: 84.97% (16314/19200)
+Train Batch: 200/352 | Loss: 0.449 | Acc: 84.93% (21741/25600)
+Train Batch: 250/352 | Loss: 0.453 | Acc: 84.85% (27151/32000)
+Train Batch: 300/352 | Loss: 0.456 | Acc: 84.72% (32534/38400)
+Train Batch: 350/352 | Loss: 0.461 | Acc: 84.54% (37873/44800)
+Train Batch: 352/352 | Loss: 0.460 | Acc: 84.55% (38046/45000)
+Validation | Loss: 0.423 | Acc: 85.26% (4263/5000)
+
+Epoch 49/200
+Train Batch: 50/352 | Loss: 0.447 | Acc: 85.36% (5463/6400)
+Train Batch: 100/352 | Loss: 0.450 | Acc: 84.81% (10856/12800)
+Train Batch: 150/352 | Loss: 0.448 | Acc: 84.84% (16289/19200)
+Train Batch: 200/352 | Loss: 0.449 | Acc: 84.73% (21690/25600)
+Train Batch: 250/352 | Loss: 0.455 | Acc: 84.58% (27065/32000)
+Train Batch: 300/352 | Loss: 0.454 | Acc: 84.66% (32511/38400)
+Train Batch: 350/352 | Loss: 0.458 | Acc: 84.47% (37841/44800)
+Train Batch: 352/352 | Loss: 0.458 | Acc: 84.47% (38013/45000)
+Validation | Loss: 0.428 | Acc: 85.78% (4289/5000)
+New best model with accuracy: 0.8578
+
+Epoch 50/200
+Train Batch: 50/352 | Loss: 0.449 | Acc: 84.92% (5435/6400)
+Train Batch: 100/352 | Loss: 0.443 | Acc: 85.13% (10897/12800)
+Train Batch: 150/352 | Loss: 0.447 | Acc: 84.96% (16312/19200)
+Train Batch: 200/352 | Loss: 0.450 | Acc: 84.82% (21713/25600)
+Train Batch: 250/352 | Loss: 0.454 | Acc: 84.74% (27116/32000)
+Train Batch: 300/352 | Loss: 0.458 | Acc: 84.65% (32506/38400)
+Train Batch: 350/352 | Loss: 0.460 | Acc: 84.57% (37887/44800)
+Train Batch: 352/352 | Loss: 0.459 | Acc: 84.58% (38060/45000)
+Validation | Loss: 0.447 | Acc: 84.54% (4227/5000)
+
+Epoch 51/200
+Train Batch: 50/352 | Loss: 0.449 | Acc: 84.83% (5429/6400)
+Train Batch: 100/352 | Loss: 0.444 | Acc: 85.08% (10890/12800)
+Train Batch: 150/352 | Loss: 0.455 | Acc: 84.69% (16260/19200)
+Train Batch: 200/352 | Loss: 0.459 | Acc: 84.62% (21663/25600)
+Train Batch: 250/352 | Loss: 0.459 | Acc: 84.53% (27049/32000)
+Train Batch: 300/352 | Loss: 0.459 | Acc: 84.56% (32470/38400)
+Train Batch: 350/352 | Loss: 0.456 | Acc: 84.63% (37914/44800)
+Train Batch: 352/352 | Loss: 0.456 | Acc: 84.63% (38085/45000)
+Validation | Loss: 0.488 | Acc: 83.66% (4183/5000)
+
+Epoch 52/200
+Train Batch: 50/352 | Loss: 0.453 | Acc: 84.44% (5404/6400)
+Train Batch: 100/352 | Loss: 0.443 | Acc: 84.96% (10875/12800)
+Train Batch: 150/352 | Loss: 0.452 | Acc: 84.61% (16246/19200)
+Train Batch: 200/352 | Loss: 0.458 | Acc: 84.34% (21590/25600)
+Train Batch: 250/352 | Loss: 0.457 | Acc: 84.51% (27042/32000)
+Train Batch: 300/352 | Loss: 0.461 | Acc: 84.29% (32366/38400)
+Train Batch: 350/352 | Loss: 0.458 | Acc: 84.38% (37803/44800)
+Train Batch: 352/352 | Loss: 0.458 | Acc: 84.39% (37974/45000)
+Validation | Loss: 0.385 | Acc: 86.02% (4301/5000)
+New best model with accuracy: 0.8602
+
+Epoch 53/200
+Train Batch: 50/352 | Loss: 0.437 | Acc: 85.19% (5452/6400)
+Train Batch: 100/352 | Loss: 0.435 | Acc: 85.35% (10925/12800)
+Train Batch: 150/352 | Loss: 0.430 | Acc: 85.43% (16403/19200)
+Train Batch: 200/352 | Loss: 0.432 | Acc: 85.39% (21861/25600)
+Train Batch: 250/352 | Loss: 0.439 | Acc: 85.09% (27229/32000)
+Train Batch: 300/352 | Loss: 0.443 | Acc: 84.95% (32619/38400)
+Train Batch: 350/352 | Loss: 0.448 | Acc: 84.85% (38011/44800)
+Train Batch: 352/352 | Loss: 0.447 | Acc: 84.86% (38189/45000)
+Validation | Loss: 0.401 | Acc: 85.72% (4286/5000)
+
+Epoch 54/200
+Train Batch: 50/352 | Loss: 0.427 | Acc: 85.31% (5460/6400)
+Train Batch: 100/352 | Loss: 0.433 | Acc: 85.22% (10908/12800)
+Train Batch: 150/352 | Loss: 0.434 | Acc: 85.15% (16348/19200)
+Train Batch: 200/352 | Loss: 0.439 | Acc: 85.08% (21780/25600)
+Train Batch: 250/352 | Loss: 0.446 | Acc: 84.84% (27150/32000)
+Train Batch: 300/352 | Loss: 0.446 | Acc: 84.82% (32569/38400)
+Train Batch: 350/352 | Loss: 0.446 | Acc: 84.79% (37984/44800)
+Train Batch: 352/352 | Loss: 0.447 | Acc: 84.77% (38145/45000)
+Validation | Loss: 0.415 | Acc: 85.20% (4260/5000)
+
+Epoch 55/200
+Train Batch: 50/352 | Loss: 0.434 | Acc: 85.17% (5451/6400)
+Train Batch: 100/352 | Loss: 0.441 | Acc: 85.15% (10899/12800)
+Train Batch: 150/352 | Loss: 0.447 | Acc: 85.01% (16322/19200)
+Train Batch: 200/352 | Loss: 0.446 | Acc: 85.02% (21766/25600)
+Train Batch: 250/352 | Loss: 0.442 | Acc: 85.10% (27232/32000)
+Train Batch: 300/352 | Loss: 0.443 | Acc: 85.15% (32698/38400)
+Train Batch: 350/352 | Loss: 0.445 | Acc: 85.06% (38105/44800)
+Train Batch: 352/352 | Loss: 0.445 | Acc: 85.04% (38268/45000)
+Validation | Loss: 0.375 | Acc: 87.02% (4351/5000)
+New best model with accuracy: 0.8702
+
+Epoch 56/200
+Train Batch: 50/352 | Loss: 0.418 | Acc: 85.58% (5477/6400)
+Train Batch: 100/352 | Loss: 0.424 | Acc: 85.39% (10930/12800)
+Train Batch: 150/352 | Loss: 0.433 | Acc: 85.03% (16325/19200)
+Train Batch: 200/352 | Loss: 0.435 | Acc: 85.09% (21784/25600)
+Train Batch: 250/352 | Loss: 0.434 | Acc: 85.11% (27234/32000)
+Train Batch: 300/352 | Loss: 0.439 | Acc: 85.01% (32642/38400)
+Train Batch: 350/352 | Loss: 0.443 | Acc: 84.91% (38040/44800)
+Train Batch: 352/352 | Loss: 0.443 | Acc: 84.91% (38211/45000)
+Validation | Loss: 0.371 | Acc: 87.18% (4359/5000)
+New best model with accuracy: 0.8718
+
+Epoch 57/200
+Train Batch: 50/352 | Loss: 0.408 | Acc: 86.66% (5546/6400)
+Train Batch: 100/352 | Loss: 0.412 | Acc: 85.95% (11002/12800)
+Train Batch: 150/352 | Loss: 0.423 | Acc: 85.62% (16440/19200)
+Train Batch: 200/352 | Loss: 0.425 | Acc: 85.45% (21875/25600)
+Train Batch: 250/352 | Loss: 0.430 | Acc: 85.28% (27290/32000)
+Train Batch: 300/352 | Loss: 0.436 | Acc: 85.04% (32656/38400)
+Train Batch: 350/352 | Loss: 0.438 | Acc: 84.99% (38076/44800)
+Train Batch: 352/352 | Loss: 0.438 | Acc: 85.01% (38254/45000)
+Validation | Loss: 0.402 | Acc: 85.98% (4299/5000)
+
+Epoch 58/200
+Train Batch: 50/352 | Loss: 0.408 | Acc: 85.77% (5489/6400)
+Train Batch: 100/352 | Loss: 0.425 | Acc: 85.64% (10962/12800)
+Train Batch: 150/352 | Loss: 0.438 | Acc: 85.24% (16366/19200)
+Train Batch: 200/352 | Loss: 0.433 | Acc: 85.35% (21850/25600)
+Train Batch: 250/352 | Loss: 0.437 | Acc: 85.20% (27265/32000)
+Train Batch: 300/352 | Loss: 0.439 | Acc: 85.10% (32680/38400)
+Train Batch: 350/352 | Loss: 0.438 | Acc: 85.09% (38119/44800)
+Train Batch: 352/352 | Loss: 0.439 | Acc: 85.09% (38290/45000)
+Validation | Loss: 0.498 | Acc: 83.30% (4165/5000)
+
+Epoch 59/200
+Train Batch: 50/352 | Loss: 0.397 | Acc: 86.44% (5532/6400)
+Train Batch: 100/352 | Loss: 0.412 | Acc: 86.07% (11017/12800)
+Train Batch: 150/352 | Loss: 0.425 | Acc: 85.63% (16441/19200)
+Train Batch: 200/352 | Loss: 0.423 | Acc: 85.66% (21930/25600)
+Train Batch: 250/352 | Loss: 0.426 | Acc: 85.57% (27383/32000)
+Train Batch: 300/352 | Loss: 0.430 | Acc: 85.36% (32779/38400)
+Train Batch: 350/352 | Loss: 0.433 | Acc: 85.32% (38224/44800)
+Train Batch: 352/352 | Loss: 0.434 | Acc: 85.32% (38393/45000)
+Validation | Loss: 0.441 | Acc: 85.56% (4278/5000)
+
+Epoch 60/200
+Train Batch: 50/352 | Loss: 0.417 | Acc: 86.09% (5510/6400)
+Train Batch: 100/352 | Loss: 0.422 | Acc: 86.05% (11015/12800)
+Train Batch: 150/352 | Loss: 0.429 | Acc: 85.77% (16467/19200)
+Train Batch: 200/352 | Loss: 0.431 | Acc: 85.70% (21938/25600)
+Train Batch: 250/352 | Loss: 0.432 | Acc: 85.61% (27395/32000)
+Train Batch: 300/352 | Loss: 0.432 | Acc: 85.52% (32840/38400)
+Train Batch: 350/352 | Loss: 0.435 | Acc: 85.39% (38255/44800)
+Train Batch: 352/352 | Loss: 0.435 | Acc: 85.37% (38418/45000)
+Validation | Loss: 0.393 | Acc: 86.66% (4333/5000)
+
+Epoch 61/200
+Train Batch: 50/352 | Loss: 0.429 | Acc: 85.30% (5459/6400)
+Train Batch: 100/352 | Loss: 0.425 | Acc: 85.46% (10939/12800)
+Train Batch: 150/352 | Loss: 0.428 | Acc: 85.58% (16432/19200)
+Train Batch: 200/352 | Loss: 0.431 | Acc: 85.44% (21872/25600)
+Train Batch: 250/352 | Loss: 0.430 | Acc: 85.42% (27334/32000)
+Train Batch: 300/352 | Loss: 0.429 | Acc: 85.46% (32817/38400)
+Train Batch: 350/352 | Loss: 0.432 | Acc: 85.40% (38258/44800)
+Train Batch: 352/352 | Loss: 0.432 | Acc: 85.38% (38421/45000)
+Validation | Loss: 0.414 | Acc: 84.90% (4245/5000)
+
+Epoch 62/200
+Train Batch: 50/352 | Loss: 0.432 | Acc: 85.30% (5459/6400)
+Train Batch: 100/352 | Loss: 0.431 | Acc: 85.29% (10917/12800)
+Train Batch: 150/352 | Loss: 0.423 | Acc: 85.55% (16425/19200)
+Train Batch: 200/352 | Loss: 0.422 | Acc: 85.72% (21944/25600)
+Train Batch: 250/352 | Loss: 0.428 | Acc: 85.55% (27377/32000)
+Train Batch: 300/352 | Loss: 0.431 | Acc: 85.44% (32809/38400)
+Train Batch: 350/352 | Loss: 0.433 | Acc: 85.38% (38251/44800)
+Train Batch: 352/352 | Loss: 0.433 | Acc: 85.36% (38414/45000)
+Validation | Loss: 0.447 | Acc: 84.02% (4201/5000)
+
+Epoch 63/200
+Train Batch: 50/352 | Loss: 0.419 | Acc: 85.80% (5491/6400)
+Train Batch: 100/352 | Loss: 0.423 | Acc: 85.48% (10942/12800)
+Train Batch: 150/352 | Loss: 0.420 | Acc: 85.55% (16426/19200)
+Train Batch: 200/352 | Loss: 0.423 | Acc: 85.46% (21878/25600)
+Train Batch: 250/352 | Loss: 0.425 | Acc: 85.55% (27375/32000)
+Train Batch: 300/352 | Loss: 0.421 | Acc: 85.65% (32889/38400)
+Train Batch: 350/352 | Loss: 0.422 | Acc: 85.62% (38359/44800)
+Train Batch: 352/352 | Loss: 0.422 | Acc: 85.61% (38524/45000)
+Validation | Loss: 0.419 | Acc: 85.78% (4289/5000)
+
+Epoch 64/200
+Train Batch: 50/352 | Loss: 0.403 | Acc: 86.11% (5511/6400)
+Train Batch: 100/352 | Loss: 0.413 | Acc: 85.93% (10999/12800)
+Train Batch: 150/352 | Loss: 0.420 | Acc: 85.72% (16458/19200)
+Train Batch: 200/352 | Loss: 0.421 | Acc: 85.58% (21909/25600)
+Train Batch: 250/352 | Loss: 0.422 | Acc: 85.52% (27366/32000)
+Train Batch: 300/352 | Loss: 0.425 | Acc: 85.47% (32820/38400)
+Train Batch: 350/352 | Loss: 0.429 | Acc: 85.42% (38268/44800)
+Train Batch: 352/352 | Loss: 0.429 | Acc: 85.43% (38442/45000)
+Validation | Loss: 0.477 | Acc: 84.20% (4210/5000)
+
+Epoch 65/200
+Train Batch: 50/352 | Loss: 0.409 | Acc: 86.09% (5510/6400)
+Train Batch: 100/352 | Loss: 0.399 | Acc: 86.45% (11065/12800)
+Train Batch: 150/352 | Loss: 0.410 | Acc: 86.04% (16520/19200)
+Train Batch: 200/352 | Loss: 0.416 | Acc: 85.95% (22003/25600)
+Train Batch: 250/352 | Loss: 0.421 | Acc: 85.78% (27450/32000)
+Train Batch: 300/352 | Loss: 0.423 | Acc: 85.79% (32945/38400)
+Train Batch: 350/352 | Loss: 0.424 | Acc: 85.73% (38408/44800)
+Train Batch: 352/352 | Loss: 0.423 | Acc: 85.75% (38589/45000)
+Validation | Loss: 0.396 | Acc: 85.82% (4291/5000)
+
+Epoch 66/200
+Train Batch: 50/352 | Loss: 0.413 | Acc: 85.97% (5502/6400)
+Train Batch: 100/352 | Loss: 0.401 | Acc: 86.27% (11042/12800)
+Train Batch: 150/352 | Loss: 0.403 | Acc: 86.20% (16551/19200)
+Train Batch: 200/352 | Loss: 0.416 | Acc: 85.77% (21958/25600)
+Train Batch: 250/352 | Loss: 0.412 | Acc: 85.91% (27491/32000)
+Train Batch: 300/352 | Loss: 0.413 | Acc: 85.91% (32991/38400)
+Train Batch: 350/352 | Loss: 0.416 | Acc: 85.91% (38489/44800)
+Train Batch: 352/352 | Loss: 0.416 | Acc: 85.91% (38661/45000)
+Validation | Loss: 0.395 | Acc: 86.66% (4333/5000)
+
+Epoch 67/200
+Train Batch: 50/352 | Loss: 0.405 | Acc: 86.33% (5525/6400)
+Train Batch: 100/352 | Loss: 0.415 | Acc: 86.01% (11009/12800)
+Train Batch: 150/352 | Loss: 0.416 | Acc: 86.03% (16517/19200)
+Train Batch: 200/352 | Loss: 0.418 | Acc: 85.84% (21975/25600)
+Train Batch: 250/352 | Loss: 0.421 | Acc: 85.74% (27438/32000)
+Train Batch: 300/352 | Loss: 0.423 | Acc: 85.75% (32928/38400)
+Train Batch: 350/352 | Loss: 0.425 | Acc: 85.69% (38387/44800)
+Train Batch: 352/352 | Loss: 0.425 | Acc: 85.68% (38558/45000)
+Validation | Loss: 0.407 | Acc: 85.86% (4293/5000)
+
+Epoch 68/200
+Train Batch: 50/352 | Loss: 0.409 | Acc: 86.30% (5523/6400)
+Train Batch: 100/352 | Loss: 0.409 | Acc: 86.26% (11041/12800)
+Train Batch: 150/352 | Loss: 0.411 | Acc: 86.25% (16560/19200)
+Train Batch: 200/352 | Loss: 0.409 | Acc: 86.28% (22087/25600)
+Train Batch: 250/352 | Loss: 0.414 | Acc: 86.10% (27553/32000)
+Train Batch: 300/352 | Loss: 0.416 | Acc: 86.06% (33047/38400)
+Train Batch: 350/352 | Loss: 0.417 | Acc: 86.05% (38550/44800)
+Train Batch: 352/352 | Loss: 0.417 | Acc: 86.04% (38719/45000)
+Validation | Loss: 0.370 | Acc: 86.96% (4348/5000)
+
+Epoch 69/200
+Train Batch: 50/352 | Loss: 0.387 | Acc: 86.42% (5531/6400)
+Train Batch: 100/352 | Loss: 0.398 | Acc: 86.60% (11085/12800)
+Train Batch: 150/352 | Loss: 0.402 | Acc: 86.43% (16595/19200)
+Train Batch: 200/352 | Loss: 0.411 | Acc: 86.28% (22087/25600)
+Train Batch: 250/352 | Loss: 0.414 | Acc: 86.04% (27532/32000)
+Train Batch: 300/352 | Loss: 0.415 | Acc: 85.95% (33004/38400)
+Train Batch: 350/352 | Loss: 0.417 | Acc: 85.90% (38482/44800)
+Train Batch: 352/352 | Loss: 0.417 | Acc: 85.92% (38663/45000)
+Validation | Loss: 0.391 | Acc: 85.90% (4295/5000)
+
+Epoch 70/200
+Train Batch: 50/352 | Loss: 0.398 | Acc: 86.22% (5518/6400)
+Train Batch: 100/352 | Loss: 0.396 | Acc: 86.50% (11072/12800)
+Train Batch: 150/352 | Loss: 0.404 | Acc: 86.32% (16573/19200)
+Train Batch: 200/352 | Loss: 0.405 | Acc: 86.15% (22054/25600)
+Train Batch: 250/352 | Loss: 0.410 | Acc: 85.98% (27515/32000)
+Train Batch: 300/352 | Loss: 0.412 | Acc: 86.00% (33023/38400)
+Train Batch: 350/352 | Loss: 0.413 | Acc: 85.98% (38518/44800)
+Train Batch: 352/352 | Loss: 0.413 | Acc: 85.98% (38690/45000)
+Validation | Loss: 0.367 | Acc: 87.10% (4355/5000)
+
+Epoch 71/200
+Train Batch: 50/352 | Loss: 0.384 | Acc: 86.75% (5552/6400)
+Train Batch: 100/352 | Loss: 0.396 | Acc: 86.55% (11079/12800)
+Train Batch: 150/352 | Loss: 0.401 | Acc: 86.48% (16605/19200)
+Train Batch: 200/352 | Loss: 0.404 | Acc: 86.27% (22085/25600)
+Train Batch: 250/352 | Loss: 0.407 | Acc: 86.12% (27557/32000)
+Train Batch: 300/352 | Loss: 0.409 | Acc: 86.03% (33034/38400)
+Train Batch: 350/352 | Loss: 0.410 | Acc: 86.05% (38550/44800)
+Train Batch: 352/352 | Loss: 0.409 | Acc: 86.06% (38727/45000)
+Validation | Loss: 0.370 | Acc: 86.72% (4336/5000)
+
+Epoch 72/200
+Train Batch: 50/352 | Loss: 0.386 | Acc: 86.73% (5551/6400)
+Train Batch: 100/352 | Loss: 0.398 | Acc: 86.46% (11067/12800)
+Train Batch: 150/352 | Loss: 0.408 | Acc: 86.18% (16547/19200)
+Train Batch: 200/352 | Loss: 0.409 | Acc: 86.09% (22039/25600)
+Train Batch: 250/352 | Loss: 0.410 | Acc: 86.07% (27541/32000)
+Train Batch: 300/352 | Loss: 0.409 | Acc: 86.10% (33062/38400)
+Train Batch: 350/352 | Loss: 0.408 | Acc: 86.09% (38567/44800)
+Train Batch: 352/352 | Loss: 0.408 | Acc: 86.09% (38740/45000)
+Validation | Loss: 0.357 | Acc: 87.40% (4370/5000)
+New best model with accuracy: 0.8740
+
+Epoch 73/200
+Train Batch: 50/352 | Loss: 0.382 | Acc: 86.94% (5564/6400)
+Train Batch: 100/352 | Loss: 0.397 | Acc: 86.59% (11084/12800)
+Train Batch: 150/352 | Loss: 0.395 | Acc: 86.72% (16651/19200)
+Train Batch: 200/352 | Loss: 0.398 | Acc: 86.55% (22158/25600)
+Train Batch: 250/352 | Loss: 0.405 | Acc: 86.30% (27616/32000)
+Train Batch: 300/352 | Loss: 0.410 | Acc: 86.14% (33078/38400)
+Train Batch: 350/352 | Loss: 0.409 | Acc: 86.19% (38611/44800)
+Train Batch: 352/352 | Loss: 0.409 | Acc: 86.20% (38789/45000)
+Validation | Loss: 0.435 | Acc: 84.88% (4244/5000)
+
+Epoch 74/200
+Train Batch: 50/352 | Loss: 0.385 | Acc: 86.91% (5562/6400)
+Train Batch: 100/352 | Loss: 0.393 | Acc: 86.45% (11065/12800)
+Train Batch: 150/352 | Loss: 0.397 | Acc: 86.40% (16588/19200)
+Train Batch: 200/352 | Loss: 0.394 | Acc: 86.52% (22150/25600)
+Train Batch: 250/352 | Loss: 0.397 | Acc: 86.46% (27666/32000)
+Train Batch: 300/352 | Loss: 0.399 | Acc: 86.37% (33167/38400)
+Train Batch: 350/352 | Loss: 0.401 | Acc: 86.31% (38669/44800)
+Train Batch: 352/352 | Loss: 0.401 | Acc: 86.31% (38839/45000)
+Validation | Loss: 0.394 | Acc: 86.30% (4315/5000)
+
+Epoch 75/200
+Train Batch: 50/352 | Loss: 0.401 | Acc: 86.52% (5537/6400)
+Train Batch: 100/352 | Loss: 0.411 | Acc: 86.34% (11051/12800)
+Train Batch: 150/352 | Loss: 0.402 | Acc: 86.51% (16610/19200)
+Train Batch: 200/352 | Loss: 0.398 | Acc: 86.54% (22154/25600)
+Train Batch: 250/352 | Loss: 0.396 | Acc: 86.55% (27695/32000)
+Train Batch: 300/352 | Loss: 0.399 | Acc: 86.34% (33154/38400)
+Train Batch: 350/352 | Loss: 0.398 | Acc: 86.40% (38705/44800)
+Train Batch: 352/352 | Loss: 0.398 | Acc: 86.39% (38875/45000)
+Validation | Loss: 0.335 | Acc: 87.94% (4397/5000)
+New best model with accuracy: 0.8794
+
+Epoch 76/200
+Train Batch: 50/352 | Loss: 0.388 | Acc: 86.94% (5564/6400)
+Train Batch: 100/352 | Loss: 0.392 | Acc: 86.95% (11129/12800)
+Train Batch: 150/352 | Loss: 0.398 | Acc: 86.74% (16655/19200)
+Train Batch: 200/352 | Loss: 0.401 | Acc: 86.53% (22152/25600)
+Train Batch: 250/352 | Loss: 0.401 | Acc: 86.55% (27697/32000)
+Train Batch: 300/352 | Loss: 0.402 | Acc: 86.52% (33222/38400)
+Train Batch: 350/352 | Loss: 0.402 | Acc: 86.53% (38767/44800)
+Train Batch: 352/352 | Loss: 0.403 | Acc: 86.54% (38941/45000)
+Validation | Loss: 0.414 | Acc: 85.22% (4261/5000)
+
+Epoch 77/200
+Train Batch: 50/352 | Loss: 0.390 | Acc: 86.67% (5547/6400)
+Train Batch: 100/352 | Loss: 0.392 | Acc: 86.61% (11086/12800)
+Train Batch: 150/352 | Loss: 0.389 | Acc: 86.77% (16660/19200)
+Train Batch: 200/352 | Loss: 0.389 | Acc: 86.75% (22207/25600)
+Train Batch: 250/352 | Loss: 0.391 | Acc: 86.75% (27760/32000)
+Train Batch: 300/352 | Loss: 0.392 | Acc: 86.67% (33282/38400)
+Train Batch: 350/352 | Loss: 0.396 | Acc: 86.54% (38771/44800)
+Train Batch: 352/352 | Loss: 0.396 | Acc: 86.53% (38938/45000)
+Validation | Loss: 0.337 | Acc: 88.12% (4406/5000)
+New best model with accuracy: 0.8812
+
+Epoch 78/200
+Train Batch: 50/352 | Loss: 0.378 | Acc: 87.23% (5583/6400)
+Train Batch: 100/352 | Loss: 0.371 | Acc: 87.59% (11212/12800)
+Train Batch: 150/352 | Loss: 0.374 | Acc: 87.39% (16779/19200)
+Train Batch: 200/352 | Loss: 0.380 | Acc: 87.14% (22308/25600)
+Train Batch: 250/352 | Loss: 0.386 | Acc: 86.95% (27823/32000)
+Train Batch: 300/352 | Loss: 0.388 | Acc: 86.89% (33364/38400)
+Train Batch: 350/352 | Loss: 0.394 | Acc: 86.76% (38870/44800)
+Train Batch: 352/352 | Loss: 0.394 | Acc: 86.75% (39038/45000)
+Validation | Loss: 0.396 | Acc: 86.30% (4315/5000)
+
+Epoch 79/200
+Train Batch: 50/352 | Loss: 0.376 | Acc: 87.16% (5578/6400)
+Train Batch: 100/352 | Loss: 0.376 | Acc: 87.42% (11190/12800)
+Train Batch: 150/352 | Loss: 0.375 | Acc: 87.47% (16795/19200)
+Train Batch: 200/352 | Loss: 0.377 | Acc: 87.40% (22374/25600)
+Train Batch: 250/352 | Loss: 0.386 | Acc: 87.08% (27866/32000)
+Train Batch: 300/352 | Loss: 0.388 | Acc: 86.97% (33396/38400)
+Train Batch: 350/352 | Loss: 0.387 | Acc: 86.97% (38962/44800)
+Train Batch: 352/352 | Loss: 0.387 | Acc: 86.98% (39141/45000)
+Validation | Loss: 0.406 | Acc: 85.98% (4299/5000)
+
+Epoch 80/200
+Train Batch: 50/352 | Loss: 0.365 | Acc: 87.53% (5602/6400)
+Train Batch: 100/352 | Loss: 0.371 | Acc: 87.38% (11185/12800)
+Train Batch: 150/352 | Loss: 0.374 | Acc: 87.43% (16786/19200)
+Train Batch: 200/352 | Loss: 0.379 | Acc: 87.12% (22302/25600)
+Train Batch: 250/352 | Loss: 0.387 | Acc: 86.83% (27784/32000)
+Train Batch: 300/352 | Loss: 0.388 | Acc: 86.88% (33361/38400)
+Train Batch: 350/352 | Loss: 0.389 | Acc: 86.79% (38884/44800)
+Train Batch: 352/352 | Loss: 0.389 | Acc: 86.78% (39051/45000)
+Validation | Loss: 0.385 | Acc: 87.28% (4364/5000)
+
+Epoch 81/200
+Train Batch: 50/352 | Loss: 0.375 | Acc: 87.30% (5587/6400)
+Train Batch: 100/352 | Loss: 0.369 | Acc: 87.62% (11215/12800)
+Train Batch: 150/352 | Loss: 0.382 | Acc: 87.05% (16714/19200)
+Train Batch: 200/352 | Loss: 0.386 | Acc: 86.90% (22246/25600)
+Train Batch: 250/352 | Loss: 0.388 | Acc: 86.80% (27777/32000)
+Train Batch: 300/352 | Loss: 0.392 | Acc: 86.65% (33272/38400)
+Train Batch: 350/352 | Loss: 0.391 | Acc: 86.63% (38812/44800)
+Train Batch: 352/352 | Loss: 0.391 | Acc: 86.62% (38978/45000)
+Validation | Loss: 0.380 | Acc: 86.78% (4339/5000)
+
+Epoch 82/200
+Train Batch: 50/352 | Loss: 0.351 | Acc: 88.12% (5640/6400)
+Train Batch: 100/352 | Loss: 0.366 | Acc: 87.55% (11206/12800)
+Train Batch: 150/352 | Loss: 0.379 | Acc: 87.24% (16750/19200)
+Train Batch: 200/352 | Loss: 0.384 | Acc: 86.97% (22264/25600)
+Train Batch: 250/352 | Loss: 0.387 | Acc: 86.96% (27828/32000)
+Train Batch: 300/352 | Loss: 0.386 | Acc: 86.94% (33386/38400)
+Train Batch: 350/352 | Loss: 0.387 | Acc: 86.96% (38958/44800)
+Train Batch: 352/352 | Loss: 0.387 | Acc: 86.96% (39133/45000)
+Validation | Loss: 0.363 | Acc: 87.38% (4369/5000)
+
+Epoch 83/200
+Train Batch: 50/352 | Loss: 0.380 | Acc: 87.39% (5593/6400)
+Train Batch: 100/352 | Loss: 0.376 | Acc: 87.20% (11161/12800)
+Train Batch: 150/352 | Loss: 0.375 | Acc: 87.30% (16762/19200)
+Train Batch: 200/352 | Loss: 0.371 | Acc: 87.42% (22380/25600)
+Train Batch: 250/352 | Loss: 0.375 | Acc: 87.25% (27920/32000)
+Train Batch: 300/352 | Loss: 0.378 | Acc: 87.16% (33470/38400)
+Train Batch: 350/352 | Loss: 0.380 | Acc: 87.16% (39049/44800)
+Train Batch: 352/352 | Loss: 0.380 | Acc: 87.16% (39220/45000)
+Validation | Loss: 0.383 | Acc: 86.72% (4336/5000)
+
+Epoch 84/200
+Train Batch: 50/352 | Loss: 0.374 | Acc: 87.30% (5587/6400)
+Train Batch: 100/352 | Loss: 0.372 | Acc: 87.56% (11208/12800)
+Train Batch: 150/352 | Loss: 0.380 | Acc: 87.18% (16739/19200)
+Train Batch: 200/352 | Loss: 0.389 | Acc: 86.91% (22249/25600)
+Train Batch: 250/352 | Loss: 0.389 | Acc: 87.01% (27843/32000)
+Train Batch: 300/352 | Loss: 0.388 | Acc: 87.03% (33418/38400)
+Train Batch: 350/352 | Loss: 0.386 | Acc: 87.07% (39008/44800)
+Train Batch: 352/352 | Loss: 0.387 | Acc: 87.07% (39180/45000)
+Validation | Loss: 0.374 | Acc: 87.20% (4360/5000)
+
+Epoch 85/200
+Train Batch: 50/352 | Loss: 0.349 | Acc: 88.31% (5652/6400)
+Train Batch: 100/352 | Loss: 0.362 | Acc: 87.72% (11228/12800)
+Train Batch: 150/352 | Loss: 0.368 | Acc: 87.47% (16795/19200)
+Train Batch: 200/352 | Loss: 0.373 | Acc: 87.42% (22379/25600)
+Train Batch: 250/352 | Loss: 0.372 | Acc: 87.38% (27960/32000)
+Train Batch: 300/352 | Loss: 0.377 | Acc: 87.20% (33483/38400)
+Train Batch: 350/352 | Loss: 0.378 | Acc: 87.15% (39044/44800)
+Train Batch: 352/352 | Loss: 0.379 | Acc: 87.13% (39208/45000)
+Validation | Loss: 0.447 | Acc: 85.38% (4269/5000)
+
+Epoch 86/200
+Train Batch: 50/352 | Loss: 0.355 | Acc: 87.89% (5625/6400)
+Train Batch: 100/352 | Loss: 0.363 | Acc: 87.53% (11204/12800)
+Train Batch: 150/352 | Loss: 0.367 | Acc: 87.40% (16781/19200)
+Train Batch: 200/352 | Loss: 0.369 | Acc: 87.32% (22355/25600)
+Train Batch: 250/352 | Loss: 0.372 | Acc: 87.26% (27923/32000)
+Train Batch: 300/352 | Loss: 0.373 | Acc: 87.28% (33514/38400)
+Train Batch: 350/352 | Loss: 0.376 | Acc: 87.17% (39050/44800)
+Train Batch: 352/352 | Loss: 0.376 | Acc: 87.16% (39220/45000)
+Validation | Loss: 0.364 | Acc: 87.54% (4377/5000)
+
+Epoch 87/200
+Train Batch: 50/352 | Loss: 0.371 | Acc: 87.61% (5607/6400)
+Train Batch: 100/352 | Loss: 0.371 | Acc: 87.57% (11209/12800)
+Train Batch: 150/352 | Loss: 0.368 | Acc: 87.63% (16825/19200)
+Train Batch: 200/352 | Loss: 0.375 | Acc: 87.37% (22366/25600)
+Train Batch: 250/352 | Loss: 0.376 | Acc: 87.42% (27976/32000)
+Train Batch: 300/352 | Loss: 0.377 | Acc: 87.34% (33539/38400)
+Train Batch: 350/352 | Loss: 0.376 | Acc: 87.30% (39111/44800)
+Train Batch: 352/352 | Loss: 0.376 | Acc: 87.30% (39287/45000)
+Validation | Loss: 0.364 | Acc: 87.82% (4391/5000)
+
+Epoch 88/200
+Train Batch: 50/352 | Loss: 0.371 | Acc: 87.69% (5612/6400)
+Train Batch: 100/352 | Loss: 0.365 | Acc: 87.76% (11233/12800)
+Train Batch: 150/352 | Loss: 0.365 | Acc: 87.58% (16816/19200)
+Train Batch: 200/352 | Loss: 0.368 | Acc: 87.41% (22376/25600)
+Train Batch: 250/352 | Loss: 0.368 | Acc: 87.40% (27968/32000)
+Train Batch: 300/352 | Loss: 0.367 | Acc: 87.46% (33586/38400)
+Train Batch: 350/352 | Loss: 0.369 | Acc: 87.39% (39149/44800)
+Train Batch: 352/352 | Loss: 0.370 | Acc: 87.37% (39316/45000)
+Validation | Loss: 0.364 | Acc: 87.52% (4376/5000)
+
+Epoch 89/200
+Train Batch: 50/352 | Loss: 0.354 | Acc: 88.69% (5676/6400)
+Train Batch: 100/352 | Loss: 0.350 | Acc: 88.50% (11328/12800)
+Train Batch: 150/352 | Loss: 0.359 | Acc: 87.98% (16893/19200)
+Train Batch: 200/352 | Loss: 0.364 | Acc: 87.79% (22475/25600)
+Train Batch: 250/352 | Loss: 0.365 | Acc: 87.73% (28073/32000)
+Train Batch: 300/352 | Loss: 0.365 | Acc: 87.79% (33710/38400)
+Train Batch: 350/352 | Loss: 0.366 | Acc: 87.70% (39290/44800)
+Train Batch: 352/352 | Loss: 0.365 | Acc: 87.70% (39467/45000)
+Validation | Loss: 0.347 | Acc: 88.12% (4406/5000)
+
+Epoch 90/200
+Train Batch: 50/352 | Loss: 0.346 | Acc: 88.02% (5633/6400)
+Train Batch: 100/352 | Loss: 0.346 | Acc: 88.17% (11286/12800)
+Train Batch: 150/352 | Loss: 0.354 | Acc: 87.96% (16888/19200)
+Train Batch: 200/352 | Loss: 0.356 | Acc: 87.75% (22464/25600)
+Train Batch: 250/352 | Loss: 0.360 | Acc: 87.72% (28071/32000)
+Train Batch: 300/352 | Loss: 0.365 | Acc: 87.54% (33614/38400)
+Train Batch: 350/352 | Loss: 0.368 | Acc: 87.47% (39188/44800)
+Train Batch: 352/352 | Loss: 0.367 | Acc: 87.48% (39368/45000)
+Validation | Loss: 0.370 | Acc: 86.92% (4346/5000)
+
+Epoch 91/200
+Train Batch: 50/352 | Loss: 0.337 | Acc: 88.31% (5652/6400)
+Train Batch: 100/352 | Loss: 0.342 | Acc: 88.16% (11284/12800)
+Train Batch: 150/352 | Loss: 0.359 | Acc: 87.75% (16848/19200)
+Train Batch: 200/352 | Loss: 0.360 | Acc: 87.82% (22483/25600)
+Train Batch: 250/352 | Loss: 0.361 | Acc: 87.86% (28114/32000)
+Train Batch: 300/352 | Loss: 0.363 | Acc: 87.75% (33697/38400)
+Train Batch: 350/352 | Loss: 0.364 | Acc: 87.72% (39299/44800)
+Train Batch: 352/352 | Loss: 0.365 | Acc: 87.71% (39471/45000)
+Validation | Loss: 0.449 | Acc: 84.42% (4221/5000)
+
+Epoch 92/200
+Train Batch: 50/352 | Loss: 0.371 | Acc: 87.23% (5583/6400)
+Train Batch: 100/352 | Loss: 0.357 | Acc: 87.82% (11241/12800)
+Train Batch: 150/352 | Loss: 0.357 | Acc: 87.73% (16845/19200)
+Train Batch: 200/352 | Loss: 0.361 | Acc: 87.68% (22447/25600)
+Train Batch: 250/352 | Loss: 0.360 | Acc: 87.71% (28066/32000)
+Train Batch: 300/352 | Loss: 0.363 | Acc: 87.57% (33627/38400)
+Train Batch: 350/352 | Loss: 0.365 | Acc: 87.54% (39216/44800)
+Train Batch: 352/352 | Loss: 0.365 | Acc: 87.55% (39396/45000)
+Validation | Loss: 0.354 | Acc: 87.78% (4389/5000)
+
+Epoch 93/200
+Train Batch: 50/352 | Loss: 0.336 | Acc: 88.30% (5651/6400)
+Train Batch: 100/352 | Loss: 0.348 | Acc: 87.84% (11243/12800)
+Train Batch: 150/352 | Loss: 0.349 | Acc: 87.88% (16872/19200)
+Train Batch: 200/352 | Loss: 0.352 | Acc: 87.80% (22477/25600)
+Train Batch: 250/352 | Loss: 0.355 | Acc: 87.74% (28077/32000)
+Train Batch: 300/352 | Loss: 0.360 | Acc: 87.61% (33644/38400)
+Train Batch: 350/352 | Loss: 0.362 | Acc: 87.63% (39258/44800)
+Train Batch: 352/352 | Loss: 0.363 | Acc: 87.62% (39430/45000)
+Validation | Loss: 0.376 | Acc: 86.80% (4340/5000)
+
+Epoch 94/200
+Train Batch: 50/352 | Loss: 0.347 | Acc: 88.08% (5637/6400)
+Train Batch: 100/352 | Loss: 0.339 | Acc: 88.45% (11322/12800)
+Train Batch: 150/352 | Loss: 0.349 | Acc: 88.12% (16919/19200)
+Train Batch: 200/352 | Loss: 0.349 | Acc: 88.14% (22564/25600)
+Train Batch: 250/352 | Loss: 0.351 | Acc: 88.06% (28179/32000)
+Train Batch: 300/352 | Loss: 0.353 | Acc: 87.99% (33787/38400)
+Train Batch: 350/352 | Loss: 0.354 | Acc: 88.01% (39428/44800)
+Train Batch: 352/352 | Loss: 0.354 | Acc: 88.02% (39607/45000)
+Validation | Loss: 0.353 | Acc: 87.84% (4392/5000)
+
+Epoch 95/200
+Train Batch: 50/352 | Loss: 0.363 | Acc: 87.20% (5581/6400)
+Train Batch: 100/352 | Loss: 0.358 | Acc: 87.42% (11190/12800)
+Train Batch: 150/352 | Loss: 0.352 | Acc: 87.84% (16866/19200)
+Train Batch: 200/352 | Loss: 0.354 | Acc: 87.90% (22503/25600)
+Train Batch: 250/352 | Loss: 0.352 | Acc: 88.09% (28190/32000)
+Train Batch: 300/352 | Loss: 0.357 | Acc: 87.89% (33749/38400)
+Train Batch: 350/352 | Loss: 0.357 | Acc: 87.84% (39354/44800)
+Train Batch: 352/352 | Loss: 0.357 | Acc: 87.85% (39534/45000)
+Validation | Loss: 0.322 | Acc: 88.84% (4442/5000)
+New best model with accuracy: 0.8884
+
+Epoch 96/200
+Train Batch: 50/352 | Loss: 0.336 | Acc: 88.52% (5665/6400)
+Train Batch: 100/352 | Loss: 0.334 | Acc: 88.54% (11333/12800)
+Train Batch: 150/352 | Loss: 0.337 | Acc: 88.38% (16968/19200)
+Train Batch: 200/352 | Loss: 0.341 | Acc: 88.30% (22606/25600)
+Train Batch: 250/352 | Loss: 0.346 | Acc: 88.13% (28201/32000)
+Train Batch: 300/352 | Loss: 0.349 | Acc: 88.09% (33825/38400)
+Train Batch: 350/352 | Loss: 0.349 | Acc: 88.10% (39470/44800)
+Train Batch: 352/352 | Loss: 0.350 | Acc: 88.09% (39640/45000)
+Validation | Loss: 0.350 | Acc: 88.22% (4411/5000)
+
+Epoch 97/200
+Train Batch: 50/352 | Loss: 0.327 | Acc: 89.09% (5702/6400)
+Train Batch: 100/352 | Loss: 0.340 | Acc: 88.34% (11307/12800)
+Train Batch: 150/352 | Loss: 0.339 | Acc: 88.50% (16992/19200)
+Train Batch: 200/352 | Loss: 0.342 | Acc: 88.36% (22621/25600)
+Train Batch: 250/352 | Loss: 0.346 | Acc: 88.24% (28236/32000)
+Train Batch: 300/352 | Loss: 0.348 | Acc: 88.21% (33872/38400)
+Train Batch: 350/352 | Loss: 0.353 | Acc: 88.04% (39441/44800)
+Train Batch: 352/352 | Loss: 0.353 | Acc: 88.04% (39619/45000)
+Validation | Loss: 0.372 | Acc: 87.56% (4378/5000)
+
+Epoch 98/200
+Train Batch: 50/352 | Loss: 0.341 | Acc: 88.31% (5652/6400)
+Train Batch: 100/352 | Loss: 0.336 | Acc: 88.50% (11328/12800)
+Train Batch: 150/352 | Loss: 0.341 | Acc: 88.31% (16956/19200)
+Train Batch: 200/352 | Loss: 0.344 | Acc: 88.28% (22600/25600)
+Train Batch: 250/352 | Loss: 0.350 | Acc: 88.03% (28168/32000)
+Train Batch: 300/352 | Loss: 0.347 | Acc: 88.07% (33818/38400)
+Train Batch: 350/352 | Loss: 0.348 | Acc: 88.03% (39437/44800)
+Train Batch: 352/352 | Loss: 0.349 | Acc: 88.02% (39611/45000)
+Validation | Loss: 0.316 | Acc: 88.44% (4422/5000)
+
+Epoch 99/200
+Train Batch: 50/352 | Loss: 0.317 | Acc: 89.09% (5702/6400)
+Train Batch: 100/352 | Loss: 0.325 | Acc: 88.99% (11391/12800)
+Train Batch: 150/352 | Loss: 0.332 | Acc: 88.82% (17053/19200)
+Train Batch: 200/352 | Loss: 0.330 | Acc: 88.94% (22769/25600)
+Train Batch: 250/352 | Loss: 0.340 | Acc: 88.53% (28330/32000)
+Train Batch: 300/352 | Loss: 0.344 | Acc: 88.46% (33968/38400)
+Train Batch: 350/352 | Loss: 0.344 | Acc: 88.45% (39625/44800)
+Train Batch: 352/352 | Loss: 0.344 | Acc: 88.45% (39802/45000)
+Validation | Loss: 0.329 | Acc: 88.72% (4436/5000)
+
+Epoch 100/200
+Train Batch: 50/352 | Loss: 0.324 | Acc: 88.88% (5688/6400)
+Train Batch: 100/352 | Loss: 0.334 | Acc: 88.66% (11348/12800)
+Train Batch: 150/352 | Loss: 0.336 | Acc: 88.53% (16998/19200)
+Train Batch: 200/352 | Loss: 0.335 | Acc: 88.60% (22681/25600)
+Train Batch: 250/352 | Loss: 0.337 | Acc: 88.62% (28357/32000)
+Train Batch: 300/352 | Loss: 0.340 | Acc: 88.47% (33973/38400)
+Train Batch: 350/352 | Loss: 0.341 | Acc: 88.44% (39621/44800)
+Train Batch: 352/352 | Loss: 0.341 | Acc: 88.43% (39795/45000)
+Validation | Loss: 0.307 | Acc: 89.60% (4480/5000)
+New best model with accuracy: 0.8960
+
+Epoch 101/200
+Train Batch: 50/352 | Loss: 0.311 | Acc: 89.41% (5722/6400)
+Train Batch: 100/352 | Loss: 0.316 | Acc: 89.26% (11425/12800)
+Train Batch: 150/352 | Loss: 0.320 | Acc: 89.07% (17102/19200)
+Train Batch: 200/352 | Loss: 0.327 | Acc: 88.81% (22735/25600)
+Train Batch: 250/352 | Loss: 0.332 | Acc: 88.70% (28384/32000)
+Train Batch: 300/352 | Loss: 0.337 | Acc: 88.53% (33994/38400)
+Train Batch: 350/352 | Loss: 0.338 | Acc: 88.52% (39658/44800)
+Train Batch: 352/352 | Loss: 0.338 | Acc: 88.52% (39834/45000)
+Validation | Loss: 0.303 | Acc: 89.00% (4450/5000)
+
+Epoch 102/200
+Train Batch: 50/352 | Loss: 0.327 | Acc: 88.92% (5691/6400)
+Train Batch: 100/352 | Loss: 0.321 | Acc: 89.20% (11417/12800)
+Train Batch: 150/352 | Loss: 0.335 | Acc: 88.70% (17031/19200)
+Train Batch: 200/352 | Loss: 0.333 | Acc: 88.75% (22721/25600)
+Train Batch: 250/352 | Loss: 0.333 | Acc: 88.80% (28415/32000)
+Train Batch: 300/352 | Loss: 0.335 | Acc: 88.69% (34056/38400)
+Train Batch: 350/352 | Loss: 0.335 | Acc: 88.64% (39712/44800)
+Train Batch: 352/352 | Loss: 0.336 | Acc: 88.63% (39885/45000)
+Validation | Loss: 0.331 | Acc: 88.78% (4439/5000)
+
+Epoch 103/200
+Train Batch: 50/352 | Loss: 0.327 | Acc: 89.05% (5699/6400)
+Train Batch: 100/352 | Loss: 0.329 | Acc: 89.02% (11395/12800)
+Train Batch: 150/352 | Loss: 0.328 | Acc: 88.95% (17079/19200)
+Train Batch: 200/352 | Loss: 0.333 | Acc: 88.75% (22720/25600)
+Train Batch: 250/352 | Loss: 0.333 | Acc: 88.70% (28384/32000)
+Train Batch: 300/352 | Loss: 0.335 | Acc: 88.59% (34018/38400)
+Train Batch: 350/352 | Loss: 0.334 | Acc: 88.67% (39724/44800)
+Train Batch: 352/352 | Loss: 0.334 | Acc: 88.66% (39899/45000)
+Validation | Loss: 0.326 | Acc: 89.00% (4450/5000)
+
+Epoch 104/200
+Train Batch: 50/352 | Loss: 0.323 | Acc: 89.19% (5708/6400)
+Train Batch: 100/352 | Loss: 0.319 | Acc: 89.20% (11418/12800)
+Train Batch: 150/352 | Loss: 0.321 | Acc: 89.33% (17152/19200)
+Train Batch: 200/352 | Loss: 0.327 | Acc: 89.09% (22806/25600)
+Train Batch: 250/352 | Loss: 0.332 | Acc: 88.85% (28433/32000)
+Train Batch: 300/352 | Loss: 0.334 | Acc: 88.73% (34071/38400)
+Train Batch: 350/352 | Loss: 0.331 | Acc: 88.86% (39811/44800)
+Train Batch: 352/352 | Loss: 0.332 | Acc: 88.86% (39987/45000)
+Validation | Loss: 0.316 | Acc: 88.64% (4432/5000)
+
+Epoch 105/200
+Train Batch: 50/352 | Loss: 0.308 | Acc: 89.50% (5728/6400)
+Train Batch: 100/352 | Loss: 0.311 | Acc: 89.56% (11464/12800)
+Train Batch: 150/352 | Loss: 0.317 | Acc: 89.40% (17164/19200)
+Train Batch: 200/352 | Loss: 0.322 | Acc: 89.24% (22846/25600)
+Train Batch: 250/352 | Loss: 0.324 | Acc: 89.13% (28523/32000)
+Train Batch: 300/352 | Loss: 0.325 | Acc: 89.14% (34231/38400)
+Train Batch: 350/352 | Loss: 0.329 | Acc: 88.97% (39858/44800)
+Train Batch: 352/352 | Loss: 0.329 | Acc: 88.97% (40038/45000)
+Validation | Loss: 0.317 | Acc: 89.04% (4452/5000)
+
+Epoch 106/200
+Train Batch: 50/352 | Loss: 0.319 | Acc: 89.19% (5708/6400)
+Train Batch: 100/352 | Loss: 0.316 | Acc: 89.20% (11417/12800)
+Train Batch: 150/352 | Loss: 0.317 | Acc: 89.16% (17119/19200)
+Train Batch: 200/352 | Loss: 0.318 | Acc: 89.15% (22822/25600)
+Train Batch: 250/352 | Loss: 0.317 | Acc: 89.25% (28559/32000)
+Train Batch: 300/352 | Loss: 0.321 | Acc: 89.15% (34233/38400)
+Train Batch: 350/352 | Loss: 0.324 | Acc: 89.07% (39903/44800)
+Train Batch: 352/352 | Loss: 0.324 | Acc: 89.06% (40077/45000)
+Validation | Loss: 0.361 | Acc: 87.46% (4373/5000)
+
+Epoch 107/200
+Train Batch: 50/352 | Loss: 0.317 | Acc: 89.12% (5704/6400)
+Train Batch: 100/352 | Loss: 0.327 | Acc: 88.88% (11376/12800)
+Train Batch: 150/352 | Loss: 0.326 | Acc: 88.95% (17078/19200)
+Train Batch: 200/352 | Loss: 0.325 | Acc: 88.95% (22772/25600)
+Train Batch: 250/352 | Loss: 0.323 | Acc: 89.01% (28482/32000)
+Train Batch: 300/352 | Loss: 0.321 | Acc: 89.04% (34192/38400)
+Train Batch: 350/352 | Loss: 0.318 | Acc: 89.15% (39939/44800)
+Train Batch: 352/352 | Loss: 0.319 | Acc: 89.14% (40113/45000)
+Validation | Loss: 0.303 | Acc: 89.08% (4454/5000)
+
+Epoch 108/200
+Train Batch: 50/352 | Loss: 0.289 | Acc: 90.16% (5770/6400)
+Train Batch: 100/352 | Loss: 0.305 | Acc: 89.52% (11458/12800)
+Train Batch: 150/352 | Loss: 0.314 | Acc: 89.21% (17128/19200)
+Train Batch: 200/352 | Loss: 0.315 | Acc: 89.29% (22858/25600)
+Train Batch: 250/352 | Loss: 0.319 | Acc: 89.19% (28540/32000)
+Train Batch: 300/352 | Loss: 0.319 | Acc: 89.19% (34250/38400)
+Train Batch: 350/352 | Loss: 0.320 | Acc: 89.17% (39950/44800)
+Train Batch: 352/352 | Loss: 0.320 | Acc: 89.18% (40129/45000)
+Validation | Loss: 0.361 | Acc: 87.92% (4396/5000)
+
+Epoch 109/200
+Train Batch: 50/352 | Loss: 0.306 | Acc: 89.70% (5741/6400)
+Train Batch: 100/352 | Loss: 0.306 | Acc: 89.70% (11481/12800)
+Train Batch: 150/352 | Loss: 0.309 | Acc: 89.58% (17200/19200)
+Train Batch: 200/352 | Loss: 0.306 | Acc: 89.68% (22959/25600)
+Train Batch: 250/352 | Loss: 0.314 | Acc: 89.36% (28596/32000)
+Train Batch: 300/352 | Loss: 0.315 | Acc: 89.27% (34278/38400)
+Train Batch: 350/352 | Loss: 0.316 | Acc: 89.26% (39990/44800)
+Train Batch: 352/352 | Loss: 0.315 | Acc: 89.27% (40172/45000)
+Validation | Loss: 0.319 | Acc: 89.24% (4462/5000)
+
+Epoch 110/200
+Train Batch: 50/352 | Loss: 0.310 | Acc: 89.47% (5726/6400)
+Train Batch: 100/352 | Loss: 0.322 | Acc: 89.12% (11408/12800)
+Train Batch: 150/352 | Loss: 0.318 | Acc: 89.32% (17149/19200)
+Train Batch: 200/352 | Loss: 0.322 | Acc: 89.03% (22791/25600)
+Train Batch: 250/352 | Loss: 0.319 | Acc: 89.13% (28522/32000)
+Train Batch: 300/352 | Loss: 0.315 | Acc: 89.25% (34273/38400)
+Train Batch: 350/352 | Loss: 0.318 | Acc: 89.19% (39959/44800)
+Train Batch: 352/352 | Loss: 0.318 | Acc: 89.18% (40131/45000)
+Validation | Loss: 0.287 | Acc: 90.02% (4501/5000)
+New best model with accuracy: 0.9002
+
+Epoch 111/200
+Train Batch: 50/352 | Loss: 0.279 | Acc: 90.67% (5803/6400)
+Train Batch: 100/352 | Loss: 0.289 | Acc: 90.20% (11545/12800)
+Train Batch: 150/352 | Loss: 0.295 | Acc: 89.91% (17263/19200)
+Train Batch: 200/352 | Loss: 0.298 | Acc: 89.77% (22980/25600)
+Train Batch: 250/352 | Loss: 0.302 | Acc: 89.63% (28683/32000)
+Train Batch: 300/352 | Loss: 0.307 | Acc: 89.45% (34348/38400)
+Train Batch: 350/352 | Loss: 0.309 | Acc: 89.38% (40043/44800)
+Train Batch: 352/352 | Loss: 0.309 | Acc: 89.39% (40225/45000)
+Validation | Loss: 0.380 | Acc: 86.94% (4347/5000)
+
+Epoch 112/200
+Train Batch: 50/352 | Loss: 0.318 | Acc: 88.94% (5692/6400)
+Train Batch: 100/352 | Loss: 0.306 | Acc: 89.35% (11437/12800)
+Train Batch: 150/352 | Loss: 0.303 | Acc: 89.58% (17199/19200)
+Train Batch: 200/352 | Loss: 0.304 | Acc: 89.51% (22915/25600)
+Train Batch: 250/352 | Loss: 0.305 | Acc: 89.53% (28650/32000)
+Train Batch: 300/352 | Loss: 0.307 | Acc: 89.46% (34353/38400)
+Train Batch: 350/352 | Loss: 0.311 | Acc: 89.37% (40038/44800)
+Train Batch: 352/352 | Loss: 0.311 | Acc: 89.37% (40217/45000)
+Validation | Loss: 0.330 | Acc: 88.56% (4428/5000)
+
+Epoch 113/200
+Train Batch: 50/352 | Loss: 0.282 | Acc: 90.58% (5797/6400)
+Train Batch: 100/352 | Loss: 0.287 | Acc: 90.36% (11566/12800)
+Train Batch: 150/352 | Loss: 0.289 | Acc: 90.32% (17341/19200)
+Train Batch: 200/352 | Loss: 0.296 | Acc: 90.01% (23043/25600)
+Train Batch: 250/352 | Loss: 0.304 | Acc: 89.69% (28700/32000)
+Train Batch: 300/352 | Loss: 0.306 | Acc: 89.58% (34397/38400)
+Train Batch: 350/352 | Loss: 0.307 | Acc: 89.54% (40113/44800)
+Train Batch: 352/352 | Loss: 0.307 | Acc: 89.53% (40288/45000)
+Validation | Loss: 0.303 | Acc: 89.62% (4481/5000)
+
+Epoch 114/200
+Train Batch: 50/352 | Loss: 0.286 | Acc: 90.58% (5797/6400)
+Train Batch: 100/352 | Loss: 0.289 | Acc: 90.41% (11573/12800)
+Train Batch: 150/352 | Loss: 0.289 | Acc: 90.36% (17349/19200)
+Train Batch: 200/352 | Loss: 0.294 | Acc: 90.04% (23050/25600)
+Train Batch: 250/352 | Loss: 0.298 | Acc: 89.88% (28762/32000)
+Train Batch: 300/352 | Loss: 0.300 | Acc: 89.82% (34492/38400)
+Train Batch: 350/352 | Loss: 0.300 | Acc: 89.81% (40233/44800)
+Train Batch: 352/352 | Loss: 0.301 | Acc: 89.78% (40401/45000)
+Validation | Loss: 0.289 | Acc: 89.38% (4469/5000)
+
+Epoch 115/200
+Train Batch: 50/352 | Loss: 0.295 | Acc: 89.78% (5746/6400)
+Train Batch: 100/352 | Loss: 0.293 | Acc: 90.05% (11527/12800)
+Train Batch: 150/352 | Loss: 0.290 | Acc: 90.15% (17308/19200)
+Train Batch: 200/352 | Loss: 0.290 | Acc: 90.15% (23078/25600)
+Train Batch: 250/352 | Loss: 0.292 | Acc: 90.10% (28833/32000)
+Train Batch: 300/352 | Loss: 0.293 | Acc: 90.08% (34589/38400)
+Train Batch: 350/352 | Loss: 0.296 | Acc: 89.98% (40309/44800)
+Train Batch: 352/352 | Loss: 0.297 | Acc: 89.95% (40479/45000)
+Validation | Loss: 0.331 | Acc: 88.46% (4423/5000)
+
+Epoch 116/200
+Train Batch: 50/352 | Loss: 0.304 | Acc: 89.88% (5752/6400)
+Train Batch: 100/352 | Loss: 0.295 | Acc: 90.12% (11535/12800)
+Train Batch: 150/352 | Loss: 0.299 | Acc: 89.92% (17265/19200)
+Train Batch: 200/352 | Loss: 0.298 | Acc: 89.85% (23001/25600)
+Train Batch: 250/352 | Loss: 0.301 | Acc: 89.75% (28721/32000)
+Train Batch: 300/352 | Loss: 0.300 | Acc: 89.76% (34466/38400)
+Train Batch: 350/352 | Loss: 0.299 | Acc: 89.86% (40257/44800)
+Train Batch: 352/352 | Loss: 0.299 | Acc: 89.86% (40436/45000)
+Validation | Loss: 0.309 | Acc: 89.78% (4489/5000)
+
+Epoch 117/200
+Train Batch: 50/352 | Loss: 0.270 | Acc: 90.45% (5789/6400)
+Train Batch: 100/352 | Loss: 0.276 | Acc: 90.41% (11573/12800)
+Train Batch: 150/352 | Loss: 0.287 | Acc: 90.20% (17319/19200)
+Train Batch: 200/352 | Loss: 0.288 | Acc: 90.23% (23099/25600)
+Train Batch: 250/352 | Loss: 0.288 | Acc: 90.19% (28861/32000)
+Train Batch: 300/352 | Loss: 0.289 | Acc: 90.20% (34637/38400)
+Train Batch: 350/352 | Loss: 0.293 | Acc: 90.06% (40347/44800)
+Train Batch: 352/352 | Loss: 0.294 | Acc: 90.05% (40523/45000)
+Validation | Loss: 0.292 | Acc: 90.04% (4502/5000)
+New best model with accuracy: 0.9004
+
+Epoch 118/200
+Train Batch: 50/352 | Loss: 0.278 | Acc: 90.44% (5788/6400)
+Train Batch: 100/352 | Loss: 0.282 | Acc: 90.35% (11565/12800)
+Train Batch: 150/352 | Loss: 0.280 | Acc: 90.47% (17371/19200)
+Train Batch: 200/352 | Loss: 0.281 | Acc: 90.57% (23187/25600)
+Train Batch: 250/352 | Loss: 0.281 | Acc: 90.54% (28972/32000)
+Train Batch: 300/352 | Loss: 0.282 | Acc: 90.48% (34743/38400)
+Train Batch: 350/352 | Loss: 0.283 | Acc: 90.40% (40497/44800)
+Train Batch: 352/352 | Loss: 0.283 | Acc: 90.36% (40663/45000)
+Validation | Loss: 0.322 | Acc: 88.72% (4436/5000)
+
+Epoch 119/200
+Train Batch: 50/352 | Loss: 0.277 | Acc: 90.83% (5813/6400)
+Train Batch: 100/352 | Loss: 0.279 | Acc: 90.52% (11587/12800)
+Train Batch: 150/352 | Loss: 0.279 | Acc: 90.54% (17383/19200)
+Train Batch: 200/352 | Loss: 0.286 | Acc: 90.35% (23130/25600)
+Train Batch: 250/352 | Loss: 0.291 | Acc: 90.26% (28883/32000)
+Train Batch: 300/352 | Loss: 0.287 | Acc: 90.36% (34697/38400)
+Train Batch: 350/352 | Loss: 0.289 | Acc: 90.28% (40447/44800)
+Train Batch: 352/352 | Loss: 0.289 | Acc: 90.29% (40630/45000)
+Validation | Loss: 0.311 | Acc: 89.06% (4453/5000)
+
+Epoch 120/200
+Train Batch: 50/352 | Loss: 0.280 | Acc: 90.48% (5791/6400)
+Train Batch: 100/352 | Loss: 0.281 | Acc: 90.72% (11612/12800)
+Train Batch: 150/352 | Loss: 0.277 | Acc: 90.78% (17429/19200)
+Train Batch: 200/352 | Loss: 0.275 | Acc: 90.84% (23256/25600)
+Train Batch: 250/352 | Loss: 0.276 | Acc: 90.84% (29069/32000)
+Train Batch: 300/352 | Loss: 0.279 | Acc: 90.66% (34813/38400)
+Train Batch: 350/352 | Loss: 0.281 | Acc: 90.56% (40571/44800)
+Train Batch: 352/352 | Loss: 0.281 | Acc: 90.57% (40755/45000)
+Validation | Loss: 0.306 | Acc: 89.46% (4473/5000)
+
+Epoch 121/200
+Train Batch: 50/352 | Loss: 0.262 | Acc: 91.08% (5829/6400)
+Train Batch: 100/352 | Loss: 0.276 | Acc: 90.55% (11591/12800)
+Train Batch: 150/352 | Loss: 0.272 | Acc: 90.70% (17414/19200)
+Train Batch: 200/352 | Loss: 0.275 | Acc: 90.59% (23190/25600)
+Train Batch: 250/352 | Loss: 0.277 | Acc: 90.55% (28976/32000)
+Train Batch: 300/352 | Loss: 0.280 | Acc: 90.44% (34730/38400)
+Train Batch: 350/352 | Loss: 0.282 | Acc: 90.34% (40471/44800)
+Train Batch: 352/352 | Loss: 0.283 | Acc: 90.32% (40642/45000)
+Validation | Loss: 0.273 | Acc: 90.72% (4536/5000)
+New best model with accuracy: 0.9072
+
+Epoch 122/200
+Train Batch: 50/352 | Loss: 0.257 | Acc: 91.45% (5853/6400)
+Train Batch: 100/352 | Loss: 0.262 | Acc: 91.13% (11665/12800)
+Train Batch: 150/352 | Loss: 0.269 | Acc: 90.97% (17466/19200)
+Train Batch: 200/352 | Loss: 0.272 | Acc: 90.78% (23240/25600)
+Train Batch: 250/352 | Loss: 0.275 | Acc: 90.69% (29020/32000)
+Train Batch: 300/352 | Loss: 0.277 | Acc: 90.65% (34809/38400)
+Train Batch: 350/352 | Loss: 0.278 | Acc: 90.63% (40601/44800)
+Train Batch: 352/352 | Loss: 0.277 | Acc: 90.63% (40785/45000)
+Validation | Loss: 0.309 | Acc: 89.10% (4455/5000)
+
+Epoch 123/200
+Train Batch: 50/352 | Loss: 0.255 | Acc: 91.61% (5863/6400)
+Train Batch: 100/352 | Loss: 0.256 | Acc: 91.30% (11686/12800)
+Train Batch: 150/352 | Loss: 0.261 | Acc: 91.11% (17494/19200)
+Train Batch: 200/352 | Loss: 0.260 | Acc: 91.22% (23353/25600)
+Train Batch: 250/352 | Loss: 0.269 | Acc: 90.92% (29094/32000)
+Train Batch: 300/352 | Loss: 0.272 | Acc: 90.84% (34882/38400)
+Train Batch: 350/352 | Loss: 0.275 | Acc: 90.70% (40633/44800)
+Train Batch: 352/352 | Loss: 0.275 | Acc: 90.70% (40814/45000)
+Validation | Loss: 0.277 | Acc: 90.52% (4526/5000)
+
+Epoch 124/200
+Train Batch: 50/352 | Loss: 0.252 | Acc: 91.91% (5882/6400)
+Train Batch: 100/352 | Loss: 0.257 | Acc: 91.54% (11717/12800)
+Train Batch: 150/352 | Loss: 0.261 | Acc: 91.32% (17534/19200)
+Train Batch: 200/352 | Loss: 0.266 | Acc: 91.09% (23319/25600)
+Train Batch: 250/352 | Loss: 0.266 | Acc: 91.06% (29139/32000)
+Train Batch: 300/352 | Loss: 0.266 | Acc: 90.98% (34936/38400)
+Train Batch: 350/352 | Loss: 0.268 | Acc: 90.90% (40723/44800)
+Train Batch: 352/352 | Loss: 0.268 | Acc: 90.90% (40903/45000)
+Validation | Loss: 0.274 | Acc: 90.60% (4530/5000)
+
+Epoch 125/200
+Train Batch: 50/352 | Loss: 0.253 | Acc: 91.45% (5853/6400)
+Train Batch: 100/352 | Loss: 0.261 | Acc: 91.15% (11667/12800)
+Train Batch: 150/352 | Loss: 0.259 | Acc: 91.20% (17511/19200)
+Train Batch: 200/352 | Loss: 0.260 | Acc: 91.21% (23350/25600)
+Train Batch: 250/352 | Loss: 0.262 | Acc: 91.10% (29153/32000)
+Train Batch: 300/352 | Loss: 0.264 | Acc: 91.03% (34954/38400)
+Train Batch: 350/352 | Loss: 0.265 | Acc: 91.00% (40767/44800)
+Train Batch: 352/352 | Loss: 0.265 | Acc: 91.00% (40951/45000)
+Validation | Loss: 0.306 | Acc: 89.26% (4463/5000)
+
+Epoch 126/200
+Train Batch: 50/352 | Loss: 0.249 | Acc: 91.58% (5861/6400)
+Train Batch: 100/352 | Loss: 0.255 | Acc: 91.44% (11704/12800)
+Train Batch: 150/352 | Loss: 0.254 | Acc: 91.41% (17550/19200)
+Train Batch: 200/352 | Loss: 0.261 | Acc: 91.22% (23353/25600)
+Train Batch: 250/352 | Loss: 0.263 | Acc: 91.12% (29158/32000)
+Train Batch: 300/352 | Loss: 0.262 | Acc: 91.12% (34989/38400)
+Train Batch: 350/352 | Loss: 0.262 | Acc: 91.13% (40825/44800)
+Train Batch: 352/352 | Loss: 0.262 | Acc: 91.13% (41009/45000)
+Validation | Loss: 0.277 | Acc: 90.54% (4527/5000)
+
+Epoch 127/200
+Train Batch: 50/352 | Loss: 0.270 | Acc: 90.83% (5813/6400)
+Train Batch: 100/352 | Loss: 0.262 | Acc: 91.21% (11675/12800)
+Train Batch: 150/352 | Loss: 0.254 | Acc: 91.59% (17586/19200)
+Train Batch: 200/352 | Loss: 0.255 | Acc: 91.59% (23447/25600)
+Train Batch: 250/352 | Loss: 0.255 | Acc: 91.57% (29301/32000)
+Train Batch: 300/352 | Loss: 0.257 | Acc: 91.41% (35103/38400)
+Train Batch: 350/352 | Loss: 0.257 | Acc: 91.38% (40937/44800)
+Train Batch: 352/352 | Loss: 0.257 | Acc: 91.37% (41118/45000)
+Validation | Loss: 0.282 | Acc: 90.44% (4522/5000)
+
+Epoch 128/200
+Train Batch: 50/352 | Loss: 0.246 | Acc: 91.55% (5859/6400)
+Train Batch: 100/352 | Loss: 0.249 | Acc: 91.48% (11710/12800)
+Train Batch: 150/352 | Loss: 0.255 | Acc: 91.40% (17548/19200)
+Train Batch: 200/352 | Loss: 0.255 | Acc: 91.28% (23367/25600)
+Train Batch: 250/352 | Loss: 0.256 | Acc: 91.25% (29199/32000)
+Train Batch: 300/352 | Loss: 0.258 | Acc: 91.18% (35012/38400)
+Train Batch: 350/352 | Loss: 0.261 | Acc: 91.05% (40789/44800)
+Train Batch: 352/352 | Loss: 0.261 | Acc: 91.04% (40967/45000)
+Validation | Loss: 0.296 | Acc: 89.74% (4487/5000)
+
+Epoch 129/200
+Train Batch: 50/352 | Loss: 0.252 | Acc: 91.30% (5843/6400)
+Train Batch: 100/352 | Loss: 0.246 | Acc: 91.55% (11719/12800)
+Train Batch: 150/352 | Loss: 0.249 | Acc: 91.46% (17561/19200)
+Train Batch: 200/352 | Loss: 0.247 | Acc: 91.45% (23411/25600)
+Train Batch: 250/352 | Loss: 0.250 | Acc: 91.46% (29268/32000)
+Train Batch: 300/352 | Loss: 0.253 | Acc: 91.33% (35071/38400)
+Train Batch: 350/352 | Loss: 0.253 | Acc: 91.30% (40904/44800)
+Train Batch: 352/352 | Loss: 0.253 | Acc: 91.31% (41089/45000)
+Validation | Loss: 0.302 | Acc: 89.42% (4471/5000)
+
+Epoch 130/200
+Train Batch: 50/352 | Loss: 0.231 | Acc: 92.00% (5888/6400)
+Train Batch: 100/352 | Loss: 0.236 | Acc: 91.84% (11755/12800)
+Train Batch: 150/352 | Loss: 0.240 | Acc: 91.77% (17620/19200)
+Train Batch: 200/352 | Loss: 0.244 | Acc: 91.73% (23484/25600)
+Train Batch: 250/352 | Loss: 0.247 | Acc: 91.61% (29316/32000)
+Train Batch: 300/352 | Loss: 0.254 | Acc: 91.37% (35087/38400)
+Train Batch: 350/352 | Loss: 0.255 | Acc: 91.35% (40923/44800)
+Train Batch: 352/352 | Loss: 0.255 | Acc: 91.34% (41101/45000)
+Validation | Loss: 0.296 | Acc: 89.74% (4487/5000)
+
+Epoch 131/200
+Train Batch: 50/352 | Loss: 0.252 | Acc: 91.55% (5859/6400)
+Train Batch: 100/352 | Loss: 0.241 | Acc: 91.91% (11764/12800)
+Train Batch: 150/352 | Loss: 0.241 | Acc: 91.93% (17651/19200)
+Train Batch: 200/352 | Loss: 0.247 | Acc: 91.66% (23464/25600)
+Train Batch: 250/352 | Loss: 0.248 | Acc: 91.60% (29313/32000)
+Train Batch: 300/352 | Loss: 0.249 | Acc: 91.51% (35141/38400)
+Train Batch: 350/352 | Loss: 0.249 | Acc: 91.47% (40980/44800)
+Train Batch: 352/352 | Loss: 0.249 | Acc: 91.48% (41166/45000)
+Validation | Loss: 0.271 | Acc: 90.52% (4526/5000)
+
+Epoch 132/200
+Train Batch: 50/352 | Loss: 0.221 | Acc: 92.61% (5927/6400)
+Train Batch: 100/352 | Loss: 0.228 | Acc: 92.38% (11825/12800)
+Train Batch: 150/352 | Loss: 0.227 | Acc: 92.32% (17726/19200)
+Train Batch: 200/352 | Loss: 0.231 | Acc: 92.07% (23571/25600)
+Train Batch: 250/352 | Loss: 0.233 | Acc: 92.01% (29442/32000)
+Train Batch: 300/352 | Loss: 0.236 | Acc: 91.88% (35283/38400)
+Train Batch: 350/352 | Loss: 0.240 | Acc: 91.73% (41093/44800)
+Train Batch: 352/352 | Loss: 0.241 | Acc: 91.72% (41274/45000)
+Validation | Loss: 0.289 | Acc: 90.28% (4514/5000)
+
+Epoch 133/200
+Train Batch: 50/352 | Loss: 0.230 | Acc: 92.34% (5910/6400)
+Train Batch: 100/352 | Loss: 0.233 | Acc: 92.38% (11824/12800)
+Train Batch: 150/352 | Loss: 0.234 | Acc: 92.28% (17717/19200)
+Train Batch: 200/352 | Loss: 0.234 | Acc: 92.23% (23612/25600)
+Train Batch: 250/352 | Loss: 0.235 | Acc: 92.17% (29495/32000)
+Train Batch: 300/352 | Loss: 0.238 | Acc: 92.01% (35331/38400)
+Train Batch: 350/352 | Loss: 0.239 | Acc: 91.90% (41171/44800)
+Train Batch: 352/352 | Loss: 0.240 | Acc: 91.89% (41351/45000)
+Validation | Loss: 0.262 | Acc: 90.80% (4540/5000)
+New best model with accuracy: 0.9080
+
+Epoch 134/200
+Train Batch: 50/352 | Loss: 0.222 | Acc: 92.72% (5934/6400)
+Train Batch: 100/352 | Loss: 0.220 | Acc: 92.77% (11874/12800)
+Train Batch: 150/352 | Loss: 0.226 | Acc: 92.48% (17757/19200)
+Train Batch: 200/352 | Loss: 0.229 | Acc: 92.35% (23642/25600)
+Train Batch: 250/352 | Loss: 0.231 | Acc: 92.17% (29496/32000)
+Train Batch: 300/352 | Loss: 0.233 | Acc: 92.09% (35364/38400)
+Train Batch: 350/352 | Loss: 0.236 | Acc: 91.96% (41196/44800)
+Train Batch: 352/352 | Loss: 0.236 | Acc: 91.95% (41377/45000)
+Validation | Loss: 0.326 | Acc: 89.04% (4452/5000)
+
+Epoch 135/200
+Train Batch: 50/352 | Loss: 0.220 | Acc: 92.55% (5923/6400)
+Train Batch: 100/352 | Loss: 0.223 | Acc: 92.60% (11853/12800)
+Train Batch: 150/352 | Loss: 0.225 | Acc: 92.49% (17758/19200)
+Train Batch: 200/352 | Loss: 0.228 | Acc: 92.32% (23635/25600)
+Train Batch: 250/352 | Loss: 0.230 | Acc: 92.20% (29505/32000)
+Train Batch: 300/352 | Loss: 0.233 | Acc: 92.12% (35376/38400)
+Train Batch: 350/352 | Loss: 0.234 | Acc: 92.08% (41254/44800)
+Train Batch: 352/352 | Loss: 0.234 | Acc: 92.09% (41441/45000)
+Validation | Loss: 0.259 | Acc: 91.14% (4557/5000)
+New best model with accuracy: 0.9114
+
+Epoch 136/200
+Train Batch: 50/352 | Loss: 0.228 | Acc: 92.61% (5927/6400)
+Train Batch: 100/352 | Loss: 0.222 | Acc: 92.73% (11870/12800)
+Train Batch: 150/352 | Loss: 0.222 | Acc: 92.50% (17760/19200)
+Train Batch: 200/352 | Loss: 0.228 | Acc: 92.35% (23642/25600)
+Train Batch: 250/352 | Loss: 0.230 | Acc: 92.26% (29524/32000)
+Train Batch: 300/352 | Loss: 0.230 | Acc: 92.27% (35432/38400)
+Train Batch: 350/352 | Loss: 0.230 | Acc: 92.24% (41324/44800)
+Train Batch: 352/352 | Loss: 0.231 | Acc: 92.24% (41506/45000)
+Validation | Loss: 0.262 | Acc: 91.46% (4573/5000)
+New best model with accuracy: 0.9146
+
+Epoch 137/200
+Train Batch: 50/352 | Loss: 0.212 | Acc: 92.91% (5946/6400)
+Train Batch: 100/352 | Loss: 0.218 | Acc: 92.66% (11860/12800)
+Train Batch: 150/352 | Loss: 0.222 | Acc: 92.54% (17768/19200)
+Train Batch: 200/352 | Loss: 0.225 | Acc: 92.35% (23641/25600)
+Train Batch: 250/352 | Loss: 0.225 | Acc: 92.36% (29556/32000)
+Train Batch: 300/352 | Loss: 0.225 | Acc: 92.41% (35487/38400)
+Train Batch: 350/352 | Loss: 0.225 | Acc: 92.40% (41394/44800)
+Train Batch: 352/352 | Loss: 0.224 | Acc: 92.41% (41584/45000)
+Validation | Loss: 0.262 | Acc: 90.94% (4547/5000)
+
+Epoch 138/200
+Train Batch: 50/352 | Loss: 0.210 | Acc: 92.80% (5939/6400)
+Train Batch: 100/352 | Loss: 0.209 | Acc: 92.77% (11874/12800)
+Train Batch: 150/352 | Loss: 0.209 | Acc: 92.82% (17821/19200)
+Train Batch: 200/352 | Loss: 0.213 | Acc: 92.66% (23720/25600)
+Train Batch: 250/352 | Loss: 0.218 | Acc: 92.51% (29604/32000)
+Train Batch: 300/352 | Loss: 0.218 | Acc: 92.47% (35508/38400)
+Train Batch: 350/352 | Loss: 0.221 | Acc: 92.42% (41405/44800)
+Train Batch: 352/352 | Loss: 0.220 | Acc: 92.43% (41592/45000)
+Validation | Loss: 0.256 | Acc: 91.82% (4591/5000)
+New best model with accuracy: 0.9182
+
+Epoch 139/200
+Train Batch: 50/352 | Loss: 0.202 | Acc: 93.09% (5958/6400)
+Train Batch: 100/352 | Loss: 0.203 | Acc: 93.00% (11904/12800)
+Train Batch: 150/352 | Loss: 0.204 | Acc: 92.99% (17855/19200)
+Train Batch: 200/352 | Loss: 0.207 | Acc: 92.95% (23795/25600)
+Train Batch: 250/352 | Loss: 0.211 | Acc: 92.75% (29680/32000)
+Train Batch: 300/352 | Loss: 0.213 | Acc: 92.73% (35610/38400)
+Train Batch: 350/352 | Loss: 0.217 | Acc: 92.63% (41499/44800)
+Train Batch: 352/352 | Loss: 0.218 | Acc: 92.62% (41678/45000)
+Validation | Loss: 0.273 | Acc: 90.88% (4544/5000)
+
+Epoch 140/200
+Train Batch: 50/352 | Loss: 0.217 | Acc: 92.70% (5933/6400)
+Train Batch: 100/352 | Loss: 0.212 | Acc: 92.86% (11886/12800)
+Train Batch: 150/352 | Loss: 0.207 | Acc: 93.08% (17871/19200)
+Train Batch: 200/352 | Loss: 0.211 | Acc: 92.95% (23794/25600)
+Train Batch: 250/352 | Loss: 0.214 | Acc: 92.78% (29690/32000)
+Train Batch: 300/352 | Loss: 0.214 | Acc: 92.81% (35640/38400)
+Train Batch: 350/352 | Loss: 0.216 | Acc: 92.72% (41538/44800)
+Train Batch: 352/352 | Loss: 0.216 | Acc: 92.72% (41724/45000)
+Validation | Loss: 0.305 | Acc: 90.16% (4508/5000)
+
+Epoch 141/200
+Train Batch: 50/352 | Loss: 0.203 | Acc: 93.38% (5976/6400)
+Train Batch: 100/352 | Loss: 0.203 | Acc: 93.30% (11942/12800)
+Train Batch: 150/352 | Loss: 0.207 | Acc: 93.13% (17881/19200)
+Train Batch: 200/352 | Loss: 0.209 | Acc: 93.03% (23816/25600)
+Train Batch: 250/352 | Loss: 0.211 | Acc: 92.96% (29746/32000)
+Train Batch: 300/352 | Loss: 0.211 | Acc: 92.97% (35700/38400)
+Train Batch: 350/352 | Loss: 0.211 | Acc: 92.92% (41627/44800)
+Train Batch: 352/352 | Loss: 0.211 | Acc: 92.91% (41808/45000)
+Validation | Loss: 0.265 | Acc: 90.96% (4548/5000)
+
+Epoch 142/200
+Train Batch: 50/352 | Loss: 0.218 | Acc: 92.89% (5945/6400)
+Train Batch: 100/352 | Loss: 0.216 | Acc: 92.82% (11881/12800)
+Train Batch: 150/352 | Loss: 0.209 | Acc: 92.96% (17849/19200)
+Train Batch: 200/352 | Loss: 0.208 | Acc: 93.08% (23828/25600)
+Train Batch: 250/352 | Loss: 0.208 | Acc: 93.01% (29764/32000)
+Train Batch: 300/352 | Loss: 0.207 | Acc: 93.04% (35729/38400)
+Train Batch: 350/352 | Loss: 0.209 | Acc: 92.97% (41649/44800)
+Train Batch: 352/352 | Loss: 0.209 | Acc: 92.97% (41835/45000)
+Validation | Loss: 0.251 | Acc: 91.44% (4572/5000)
+
+Epoch 143/200
+Train Batch: 50/352 | Loss: 0.195 | Acc: 93.39% (5977/6400)
+Train Batch: 100/352 | Loss: 0.192 | Acc: 93.47% (11964/12800)
+Train Batch: 150/352 | Loss: 0.197 | Acc: 93.32% (17917/19200)
+Train Batch: 200/352 | Loss: 0.199 | Acc: 93.23% (23867/25600)
+Train Batch: 250/352 | Loss: 0.200 | Acc: 93.15% (29809/32000)
+Train Batch: 300/352 | Loss: 0.204 | Acc: 93.04% (35726/38400)
+Train Batch: 350/352 | Loss: 0.205 | Acc: 92.97% (41649/44800)
+Train Batch: 352/352 | Loss: 0.205 | Acc: 92.97% (41837/45000)
+Validation | Loss: 0.289 | Acc: 90.24% (4512/5000)
+
+Epoch 144/200
+Train Batch: 50/352 | Loss: 0.192 | Acc: 93.83% (6005/6400)
+Train Batch: 100/352 | Loss: 0.198 | Acc: 93.52% (11971/12800)
+Train Batch: 150/352 | Loss: 0.195 | Acc: 93.58% (17968/19200)
+Train Batch: 200/352 | Loss: 0.200 | Acc: 93.31% (23887/25600)
+Train Batch: 250/352 | Loss: 0.196 | Acc: 93.44% (29901/32000)
+Train Batch: 300/352 | Loss: 0.195 | Acc: 93.44% (35881/38400)
+Train Batch: 350/352 | Loss: 0.195 | Acc: 93.44% (41863/44800)
+Train Batch: 352/352 | Loss: 0.195 | Acc: 93.44% (42046/45000)
+Validation | Loss: 0.302 | Acc: 90.52% (4526/5000)
+
+Epoch 145/200
+Train Batch: 50/352 | Loss: 0.183 | Acc: 93.67% (5995/6400)
+Train Batch: 100/352 | Loss: 0.191 | Acc: 93.39% (11954/12800)
+Train Batch: 150/352 | Loss: 0.190 | Acc: 93.51% (17954/19200)
+Train Batch: 200/352 | Loss: 0.191 | Acc: 93.43% (23918/25600)
+Train Batch: 250/352 | Loss: 0.191 | Acc: 93.38% (29882/32000)
+Train Batch: 300/352 | Loss: 0.192 | Acc: 93.40% (35867/38400)
+Train Batch: 350/352 | Loss: 0.190 | Acc: 93.44% (41862/44800)
+Train Batch: 352/352 | Loss: 0.190 | Acc: 93.44% (42048/45000)
+Validation | Loss: 0.237 | Acc: 92.26% (4613/5000)
+New best model with accuracy: 0.9226
+
+Epoch 146/200
+Train Batch: 50/352 | Loss: 0.170 | Acc: 94.52% (6049/6400)
+Train Batch: 100/352 | Loss: 0.179 | Acc: 94.08% (12042/12800)
+Train Batch: 150/352 | Loss: 0.184 | Acc: 93.89% (18027/19200)
+Train Batch: 200/352 | Loss: 0.185 | Acc: 93.80% (24012/25600)
+Train Batch: 250/352 | Loss: 0.187 | Acc: 93.70% (29983/32000)
+Train Batch: 300/352 | Loss: 0.188 | Acc: 93.56% (35926/38400)
+Train Batch: 350/352 | Loss: 0.192 | Acc: 93.42% (41850/44800)
+Train Batch: 352/352 | Loss: 0.192 | Acc: 93.39% (42025/45000)
+Validation | Loss: 0.268 | Acc: 91.10% (4555/5000)
+
+Epoch 147/200
+Train Batch: 50/352 | Loss: 0.181 | Acc: 93.81% (6004/6400)
+Train Batch: 100/352 | Loss: 0.183 | Acc: 93.78% (12004/12800)
+Train Batch: 150/352 | Loss: 0.184 | Acc: 93.72% (17994/19200)
+Train Batch: 200/352 | Loss: 0.189 | Acc: 93.51% (23938/25600)
+Train Batch: 250/352 | Loss: 0.190 | Acc: 93.50% (29920/32000)
+Train Batch: 300/352 | Loss: 0.191 | Acc: 93.44% (35880/38400)
+Train Batch: 350/352 | Loss: 0.192 | Acc: 93.42% (41850/44800)
+Train Batch: 352/352 | Loss: 0.192 | Acc: 93.41% (42035/45000)
+Validation | Loss: 0.255 | Acc: 91.48% (4574/5000)
+
+Epoch 148/200
+Train Batch: 50/352 | Loss: 0.179 | Acc: 93.81% (6004/6400)
+Train Batch: 100/352 | Loss: 0.180 | Acc: 93.80% (12007/12800)
+Train Batch: 150/352 | Loss: 0.181 | Acc: 93.93% (18035/19200)
+Train Batch: 200/352 | Loss: 0.182 | Acc: 93.82% (24019/25600)
+Train Batch: 250/352 | Loss: 0.183 | Acc: 93.78% (30010/32000)
+Train Batch: 300/352 | Loss: 0.184 | Acc: 93.71% (35986/38400)
+Train Batch: 350/352 | Loss: 0.185 | Acc: 93.67% (41962/44800)
+Train Batch: 352/352 | Loss: 0.186 | Acc: 93.65% (42142/45000)
+Validation | Loss: 0.273 | Acc: 91.08% (4554/5000)
+
+Epoch 149/200
+Train Batch: 50/352 | Loss: 0.190 | Acc: 93.47% (5982/6400)
+Train Batch: 100/352 | Loss: 0.182 | Acc: 93.92% (12022/12800)
+Train Batch: 150/352 | Loss: 0.183 | Acc: 93.72% (17994/19200)
+Train Batch: 200/352 | Loss: 0.182 | Acc: 93.65% (23974/25600)
+Train Batch: 250/352 | Loss: 0.185 | Acc: 93.58% (29945/32000)
+Train Batch: 300/352 | Loss: 0.184 | Acc: 93.61% (35945/38400)
+Train Batch: 350/352 | Loss: 0.183 | Acc: 93.69% (41974/44800)
+Train Batch: 352/352 | Loss: 0.183 | Acc: 93.69% (42160/45000)
+Validation | Loss: 0.253 | Acc: 91.62% (4581/5000)
+
+Epoch 150/200
+Train Batch: 50/352 | Loss: 0.160 | Acc: 94.47% (6046/6400)
+Train Batch: 100/352 | Loss: 0.158 | Acc: 94.60% (12109/12800)
+Train Batch: 150/352 | Loss: 0.163 | Acc: 94.41% (18127/19200)
+Train Batch: 200/352 | Loss: 0.166 | Acc: 94.29% (24137/25600)
+Train Batch: 250/352 | Loss: 0.170 | Acc: 94.20% (30145/32000)
+Train Batch: 300/352 | Loss: 0.173 | Acc: 94.13% (36145/38400)
+Train Batch: 350/352 | Loss: 0.175 | Acc: 94.05% (42133/44800)
+Train Batch: 352/352 | Loss: 0.175 | Acc: 94.05% (42321/45000)
+Validation | Loss: 0.238 | Acc: 91.78% (4589/5000)
+
+Epoch 151/200
+Train Batch: 50/352 | Loss: 0.175 | Acc: 94.06% (6020/6400)
+Train Batch: 100/352 | Loss: 0.168 | Acc: 94.28% (12068/12800)
+Train Batch: 150/352 | Loss: 0.166 | Acc: 94.34% (18114/19200)
+Train Batch: 200/352 | Loss: 0.172 | Acc: 94.22% (24120/25600)
+Train Batch: 250/352 | Loss: 0.174 | Acc: 94.16% (30132/32000)
+Train Batch: 300/352 | Loss: 0.172 | Acc: 94.24% (36188/38400)
+Train Batch: 350/352 | Loss: 0.173 | Acc: 94.14% (42176/44800)
+Train Batch: 352/352 | Loss: 0.173 | Acc: 94.15% (42366/45000)
+Validation | Loss: 0.240 | Acc: 92.06% (4603/5000)
+
+Epoch 152/200
+Train Batch: 50/352 | Loss: 0.163 | Acc: 94.45% (6045/6400)
+Train Batch: 100/352 | Loss: 0.158 | Acc: 94.84% (12140/12800)
+Train Batch: 150/352 | Loss: 0.164 | Acc: 94.57% (18158/19200)
+Train Batch: 200/352 | Loss: 0.163 | Acc: 94.59% (24215/25600)
+Train Batch: 250/352 | Loss: 0.162 | Acc: 94.64% (30285/32000)
+Train Batch: 300/352 | Loss: 0.163 | Acc: 94.56% (36311/38400)
+Train Batch: 350/352 | Loss: 0.167 | Acc: 94.47% (42322/44800)
+Train Batch: 352/352 | Loss: 0.167 | Acc: 94.48% (42514/45000)
+Validation | Loss: 0.231 | Acc: 92.10% (4605/5000)
+
+Epoch 153/200
+Train Batch: 50/352 | Loss: 0.158 | Acc: 94.41% (6042/6400)
+Train Batch: 100/352 | Loss: 0.156 | Acc: 94.72% (12124/12800)
+Train Batch: 150/352 | Loss: 0.160 | Acc: 94.60% (18164/19200)
+Train Batch: 200/352 | Loss: 0.159 | Acc: 94.61% (24221/25600)
+Train Batch: 250/352 | Loss: 0.160 | Acc: 94.55% (30256/32000)
+Train Batch: 300/352 | Loss: 0.161 | Acc: 94.53% (36298/38400)
+Train Batch: 350/352 | Loss: 0.161 | Acc: 94.48% (42325/44800)
+Train Batch: 352/352 | Loss: 0.161 | Acc: 94.48% (42514/45000)
+Validation | Loss: 0.238 | Acc: 92.40% (4620/5000)
+New best model with accuracy: 0.9240
+
+Epoch 154/200
+Train Batch: 50/352 | Loss: 0.156 | Acc: 94.95% (6077/6400)
+Train Batch: 100/352 | Loss: 0.157 | Acc: 94.89% (12146/12800)
+Train Batch: 150/352 | Loss: 0.156 | Acc: 94.78% (18198/19200)
+Train Batch: 200/352 | Loss: 0.156 | Acc: 94.69% (24240/25600)
+Train Batch: 250/352 | Loss: 0.157 | Acc: 94.73% (30313/32000)
+Train Batch: 300/352 | Loss: 0.158 | Acc: 94.69% (36361/38400)
+Train Batch: 350/352 | Loss: 0.159 | Acc: 94.63% (42393/44800)
+Train Batch: 352/352 | Loss: 0.159 | Acc: 94.64% (42586/45000)
+Validation | Loss: 0.244 | Acc: 92.08% (4604/5000)
+
+Epoch 155/200
+Train Batch: 50/352 | Loss: 0.148 | Acc: 95.03% (6082/6400)
+Train Batch: 100/352 | Loss: 0.152 | Acc: 94.94% (12152/12800)
+Train Batch: 150/352 | Loss: 0.151 | Acc: 94.92% (18224/19200)
+Train Batch: 200/352 | Loss: 0.154 | Acc: 94.85% (24282/25600)
+Train Batch: 250/352 | Loss: 0.154 | Acc: 94.78% (30331/32000)
+Train Batch: 300/352 | Loss: 0.156 | Acc: 94.68% (36358/38400)
+Train Batch: 350/352 | Loss: 0.157 | Acc: 94.68% (42418/44800)
+Train Batch: 352/352 | Loss: 0.157 | Acc: 94.68% (42605/45000)
+Validation | Loss: 0.220 | Acc: 92.66% (4633/5000)
+New best model with accuracy: 0.9266
+
+Epoch 156/200
+Train Batch: 50/352 | Loss: 0.136 | Acc: 95.48% (6111/6400)
+Train Batch: 100/352 | Loss: 0.142 | Acc: 95.23% (12190/12800)
+Train Batch: 150/352 | Loss: 0.140 | Acc: 95.22% (18283/19200)
+Train Batch: 200/352 | Loss: 0.140 | Acc: 95.27% (24389/25600)
+Train Batch: 250/352 | Loss: 0.144 | Acc: 95.15% (30448/32000)
+Train Batch: 300/352 | Loss: 0.147 | Acc: 95.03% (36490/38400)
+Train Batch: 350/352 | Loss: 0.149 | Acc: 94.98% (42551/44800)
+Train Batch: 352/352 | Loss: 0.149 | Acc: 94.98% (42739/45000)
+Validation | Loss: 0.222 | Acc: 92.72% (4636/5000)
+New best model with accuracy: 0.9272
+
+Epoch 157/200
+Train Batch: 50/352 | Loss: 0.145 | Acc: 95.12% (6088/6400)
+Train Batch: 100/352 | Loss: 0.142 | Acc: 95.33% (12202/12800)
+Train Batch: 150/352 | Loss: 0.141 | Acc: 95.35% (18308/19200)
+Train Batch: 200/352 | Loss: 0.144 | Acc: 95.27% (24388/25600)
+Train Batch: 250/352 | Loss: 0.145 | Acc: 95.26% (30483/32000)
+Train Batch: 300/352 | Loss: 0.144 | Acc: 95.24% (36572/38400)
+Train Batch: 350/352 | Loss: 0.146 | Acc: 95.12% (42614/44800)
+Train Batch: 352/352 | Loss: 0.146 | Acc: 95.13% (42808/45000)
+Validation | Loss: 0.225 | Acc: 92.70% (4635/5000)
+
+Epoch 158/200
+Train Batch: 50/352 | Loss: 0.135 | Acc: 95.20% (6093/6400)
+Train Batch: 100/352 | Loss: 0.137 | Acc: 95.30% (12198/12800)
+Train Batch: 150/352 | Loss: 0.140 | Acc: 95.29% (18295/19200)
+Train Batch: 200/352 | Loss: 0.139 | Acc: 95.33% (24405/25600)
+Train Batch: 250/352 | Loss: 0.142 | Acc: 95.23% (30473/32000)
+Train Batch: 300/352 | Loss: 0.142 | Acc: 95.21% (36560/38400)
+Train Batch: 350/352 | Loss: 0.142 | Acc: 95.20% (42650/44800)
+Train Batch: 352/352 | Loss: 0.142 | Acc: 95.20% (42841/45000)
+Validation | Loss: 0.211 | Acc: 93.34% (4667/5000)
+New best model with accuracy: 0.9334
+
+Epoch 159/200
+Train Batch: 50/352 | Loss: 0.129 | Acc: 95.55% (6115/6400)
+Train Batch: 100/352 | Loss: 0.129 | Acc: 95.60% (12237/12800)
+Train Batch: 150/352 | Loss: 0.131 | Acc: 95.55% (18345/19200)
+Train Batch: 200/352 | Loss: 0.135 | Acc: 95.36% (24413/25600)
+Train Batch: 250/352 | Loss: 0.137 | Acc: 95.27% (30486/32000)
+Train Batch: 300/352 | Loss: 0.136 | Acc: 95.32% (36604/38400)
+Train Batch: 350/352 | Loss: 0.137 | Acc: 95.28% (42687/44800)
+Train Batch: 352/352 | Loss: 0.137 | Acc: 95.29% (42879/45000)
+Validation | Loss: 0.218 | Acc: 92.94% (4647/5000)
+
+Epoch 160/200
+Train Batch: 50/352 | Loss: 0.123 | Acc: 95.84% (6134/6400)
+Train Batch: 100/352 | Loss: 0.122 | Acc: 95.83% (12266/12800)
+Train Batch: 150/352 | Loss: 0.122 | Acc: 95.82% (18397/19200)
+Train Batch: 200/352 | Loss: 0.128 | Acc: 95.62% (24480/25600)
+Train Batch: 250/352 | Loss: 0.129 | Acc: 95.54% (30573/32000)
+Train Batch: 300/352 | Loss: 0.131 | Acc: 95.52% (36679/38400)
+Train Batch: 350/352 | Loss: 0.132 | Acc: 95.47% (42772/44800)
+Train Batch: 352/352 | Loss: 0.132 | Acc: 95.48% (42965/45000)
+Validation | Loss: 0.212 | Acc: 93.22% (4661/5000)
+
+Epoch 161/200
+Train Batch: 50/352 | Loss: 0.129 | Acc: 95.83% (6133/6400)
+Train Batch: 100/352 | Loss: 0.121 | Acc: 96.02% (12290/12800)
+Train Batch: 150/352 | Loss: 0.125 | Acc: 95.79% (18391/19200)
+Train Batch: 200/352 | Loss: 0.125 | Acc: 95.77% (24516/25600)
+Train Batch: 250/352 | Loss: 0.127 | Acc: 95.73% (30634/32000)
+Train Batch: 300/352 | Loss: 0.130 | Acc: 95.65% (36730/38400)
+Train Batch: 350/352 | Loss: 0.131 | Acc: 95.65% (42850/44800)
+Train Batch: 352/352 | Loss: 0.131 | Acc: 95.65% (43042/45000)
+Validation | Loss: 0.218 | Acc: 93.46% (4673/5000)
+New best model with accuracy: 0.9346
+
+Epoch 162/200
+Train Batch: 50/352 | Loss: 0.127 | Acc: 95.98% (6143/6400)
+Train Batch: 100/352 | Loss: 0.121 | Acc: 96.08% (12298/12800)
+Train Batch: 150/352 | Loss: 0.124 | Acc: 95.96% (18425/19200)
+Train Batch: 200/352 | Loss: 0.125 | Acc: 95.92% (24555/25600)
+Train Batch: 250/352 | Loss: 0.126 | Acc: 95.85% (30672/32000)
+Train Batch: 300/352 | Loss: 0.127 | Acc: 95.81% (36790/38400)
+Train Batch: 350/352 | Loss: 0.127 | Acc: 95.82% (42927/44800)
+Train Batch: 352/352 | Loss: 0.127 | Acc: 95.82% (43117/45000)
+Validation | Loss: 0.213 | Acc: 93.20% (4660/5000)
+
+Epoch 163/200
+Train Batch: 50/352 | Loss: 0.116 | Acc: 96.28% (6162/6400)
+Train Batch: 100/352 | Loss: 0.112 | Acc: 96.36% (12334/12800)
+Train Batch: 150/352 | Loss: 0.117 | Acc: 96.14% (18458/19200)
+Train Batch: 200/352 | Loss: 0.119 | Acc: 95.90% (24551/25600)
+Train Batch: 250/352 | Loss: 0.122 | Acc: 95.84% (30668/32000)
+Train Batch: 300/352 | Loss: 0.125 | Acc: 95.71% (36753/38400)
+Train Batch: 350/352 | Loss: 0.124 | Acc: 95.73% (42887/44800)
+Train Batch: 352/352 | Loss: 0.124 | Acc: 95.74% (43081/45000)
+Validation | Loss: 0.218 | Acc: 93.28% (4664/5000)
+
+Epoch 164/200
+Train Batch: 50/352 | Loss: 0.123 | Acc: 96.16% (6154/6400)
+Train Batch: 100/352 | Loss: 0.114 | Acc: 96.30% (12327/12800)
+Train Batch: 150/352 | Loss: 0.114 | Acc: 96.28% (18485/19200)
+Train Batch: 200/352 | Loss: 0.115 | Acc: 96.24% (24638/25600)
+Train Batch: 250/352 | Loss: 0.116 | Acc: 96.19% (30780/32000)
+Train Batch: 300/352 | Loss: 0.119 | Acc: 96.05% (36882/38400)
+Train Batch: 350/352 | Loss: 0.120 | Acc: 96.00% (43007/44800)
+Train Batch: 352/352 | Loss: 0.120 | Acc: 96.00% (43201/45000)
+Validation | Loss: 0.229 | Acc: 92.64% (4632/5000)
+
+Epoch 165/200
+Train Batch: 50/352 | Loss: 0.122 | Acc: 95.77% (6129/6400)
+Train Batch: 100/352 | Loss: 0.119 | Acc: 95.90% (12275/12800)
+Train Batch: 150/352 | Loss: 0.118 | Acc: 96.01% (18434/19200)
+Train Batch: 200/352 | Loss: 0.118 | Acc: 96.04% (24585/25600)
+Train Batch: 250/352 | Loss: 0.117 | Acc: 96.12% (30757/32000)
+Train Batch: 300/352 | Loss: 0.115 | Acc: 96.12% (36912/38400)
+Train Batch: 350/352 | Loss: 0.116 | Acc: 96.06% (43034/44800)
+Train Batch: 352/352 | Loss: 0.116 | Acc: 96.05% (43222/45000)
+Validation | Loss: 0.224 | Acc: 92.78% (4639/5000)
+
+Epoch 166/200
+Train Batch: 50/352 | Loss: 0.110 | Acc: 96.17% (6155/6400)
+Train Batch: 100/352 | Loss: 0.112 | Acc: 96.32% (12329/12800)
+Train Batch: 150/352 | Loss: 0.110 | Acc: 96.40% (18508/19200)
+Train Batch: 200/352 | Loss: 0.110 | Acc: 96.35% (24665/25600)
+Train Batch: 250/352 | Loss: 0.110 | Acc: 96.32% (30821/32000)
+Train Batch: 300/352 | Loss: 0.110 | Acc: 96.26% (36965/38400)
+Train Batch: 350/352 | Loss: 0.111 | Acc: 96.24% (43114/44800)
+Train Batch: 352/352 | Loss: 0.111 | Acc: 96.24% (43308/45000)
+Validation | Loss: 0.211 | Acc: 93.30% (4665/5000)
+
+Epoch 167/200
+Train Batch: 50/352 | Loss: 0.101 | Acc: 96.83% (6197/6400)
+Train Batch: 100/352 | Loss: 0.100 | Acc: 96.79% (12389/12800)
+Train Batch: 150/352 | Loss: 0.098 | Acc: 96.82% (18590/19200)
+Train Batch: 200/352 | Loss: 0.099 | Acc: 96.78% (24775/25600)
+Train Batch: 250/352 | Loss: 0.104 | Acc: 96.59% (30909/32000)
+Train Batch: 300/352 | Loss: 0.104 | Acc: 96.60% (37094/38400)
+Train Batch: 350/352 | Loss: 0.105 | Acc: 96.55% (43254/44800)
+Train Batch: 352/352 | Loss: 0.105 | Acc: 96.54% (43442/45000)
+Validation | Loss: 0.214 | Acc: 93.40% (4670/5000)
+
+Epoch 168/200
+Train Batch: 50/352 | Loss: 0.104 | Acc: 96.58% (6181/6400)
+Train Batch: 100/352 | Loss: 0.100 | Acc: 96.54% (12357/12800)
+Train Batch: 150/352 | Loss: 0.102 | Acc: 96.54% (18535/19200)
+Train Batch: 200/352 | Loss: 0.103 | Acc: 96.52% (24708/25600)
+Train Batch: 250/352 | Loss: 0.103 | Acc: 96.52% (30887/32000)
+Train Batch: 300/352 | Loss: 0.104 | Acc: 96.50% (37056/38400)
+Train Batch: 350/352 | Loss: 0.104 | Acc: 96.47% (43218/44800)
+Train Batch: 352/352 | Loss: 0.104 | Acc: 96.46% (43409/45000)
+Validation | Loss: 0.220 | Acc: 93.36% (4668/5000)
+
+Epoch 169/200
+Train Batch: 50/352 | Loss: 0.094 | Acc: 96.95% (6205/6400)
+Train Batch: 100/352 | Loss: 0.092 | Acc: 97.02% (12418/12800)
+Train Batch: 150/352 | Loss: 0.093 | Acc: 96.90% (18604/19200)
+Train Batch: 200/352 | Loss: 0.096 | Acc: 96.82% (24787/25600)
+Train Batch: 250/352 | Loss: 0.097 | Acc: 96.80% (30976/32000)
+Train Batch: 300/352 | Loss: 0.099 | Acc: 96.71% (37136/38400)
+Train Batch: 350/352 | Loss: 0.099 | Acc: 96.67% (43306/44800)
+Train Batch: 352/352 | Loss: 0.099 | Acc: 96.66% (43498/45000)
+Validation | Loss: 0.212 | Acc: 93.60% (4680/5000)
+New best model with accuracy: 0.9360
+
+Epoch 170/200
+Train Batch: 50/352 | Loss: 0.091 | Acc: 97.02% (6209/6400)
+Train Batch: 100/352 | Loss: 0.092 | Acc: 96.91% (12404/12800)
+Train Batch: 150/352 | Loss: 0.091 | Acc: 96.97% (18619/19200)
+Train Batch: 200/352 | Loss: 0.092 | Acc: 96.89% (24805/25600)
+Train Batch: 250/352 | Loss: 0.093 | Acc: 96.89% (31005/32000)
+Train Batch: 300/352 | Loss: 0.092 | Acc: 96.93% (37222/38400)
+Train Batch: 350/352 | Loss: 0.093 | Acc: 96.94% (43430/44800)
+Train Batch: 352/352 | Loss: 0.093 | Acc: 96.94% (43623/45000)
+Validation | Loss: 0.204 | Acc: 93.48% (4674/5000)
+
+Epoch 171/200
+Train Batch: 50/352 | Loss: 0.090 | Acc: 97.02% (6209/6400)
+Train Batch: 100/352 | Loss: 0.087 | Acc: 97.17% (12438/12800)
+Train Batch: 150/352 | Loss: 0.086 | Acc: 97.28% (18677/19200)
+Train Batch: 200/352 | Loss: 0.087 | Acc: 97.33% (24917/25600)
+Train Batch: 250/352 | Loss: 0.087 | Acc: 97.27% (31126/32000)
+Train Batch: 300/352 | Loss: 0.086 | Acc: 97.28% (37355/38400)
+Train Batch: 350/352 | Loss: 0.088 | Acc: 97.21% (43549/44800)
+Train Batch: 352/352 | Loss: 0.088 | Acc: 97.21% (43746/45000)
+Validation | Loss: 0.219 | Acc: 93.52% (4676/5000)
+
+Epoch 172/200
+Train Batch: 50/352 | Loss: 0.087 | Acc: 97.19% (6220/6400)
+Train Batch: 100/352 | Loss: 0.084 | Acc: 97.30% (12455/12800)
+Train Batch: 150/352 | Loss: 0.082 | Acc: 97.39% (18698/19200)
+Train Batch: 200/352 | Loss: 0.081 | Acc: 97.45% (24947/25600)
+Train Batch: 250/352 | Loss: 0.082 | Acc: 97.37% (31159/32000)
+Train Batch: 300/352 | Loss: 0.083 | Acc: 97.33% (37376/38400)
+Train Batch: 350/352 | Loss: 0.084 | Acc: 97.31% (43593/44800)
+Train Batch: 352/352 | Loss: 0.084 | Acc: 97.30% (43786/45000)
+Validation | Loss: 0.205 | Acc: 93.88% (4694/5000)
+New best model with accuracy: 0.9388
+
+Epoch 173/200
+Train Batch: 50/352 | Loss: 0.084 | Acc: 97.30% (6227/6400)
+Train Batch: 100/352 | Loss: 0.086 | Acc: 97.23% (12446/12800)
+Train Batch: 150/352 | Loss: 0.083 | Acc: 97.32% (18685/19200)
+Train Batch: 200/352 | Loss: 0.083 | Acc: 97.34% (24918/25600)
+Train Batch: 250/352 | Loss: 0.086 | Acc: 97.25% (31120/32000)
+Train Batch: 300/352 | Loss: 0.086 | Acc: 97.21% (37329/38400)
+Train Batch: 350/352 | Loss: 0.086 | Acc: 97.24% (43564/44800)
+Train Batch: 352/352 | Loss: 0.086 | Acc: 97.24% (43760/45000)
+Validation | Loss: 0.203 | Acc: 93.70% (4685/5000)
+
+Epoch 174/200
+Train Batch: 50/352 | Loss: 0.073 | Acc: 97.73% (6255/6400)
+Train Batch: 100/352 | Loss: 0.071 | Acc: 97.72% (12508/12800)
+Train Batch: 150/352 | Loss: 0.073 | Acc: 97.67% (18752/19200)
+Train Batch: 200/352 | Loss: 0.074 | Acc: 97.64% (24997/25600)
+Train Batch: 250/352 | Loss: 0.075 | Acc: 97.60% (31233/32000)
+Train Batch: 300/352 | Loss: 0.076 | Acc: 97.53% (37453/38400)
+Train Batch: 350/352 | Loss: 0.077 | Acc: 97.47% (43665/44800)
+Train Batch: 352/352 | Loss: 0.077 | Acc: 97.46% (43859/45000)
+Validation | Loss: 0.207 | Acc: 93.52% (4676/5000)
+
+Epoch 175/200
+Train Batch: 50/352 | Loss: 0.072 | Acc: 97.78% (6258/6400)
+Train Batch: 100/352 | Loss: 0.076 | Acc: 97.55% (12487/12800)
+Train Batch: 150/352 | Loss: 0.073 | Acc: 97.72% (18762/19200)
+Train Batch: 200/352 | Loss: 0.075 | Acc: 97.71% (25013/25600)
+Train Batch: 250/352 | Loss: 0.075 | Acc: 97.70% (31265/32000)
+Train Batch: 300/352 | Loss: 0.076 | Acc: 97.64% (37494/38400)
+Train Batch: 350/352 | Loss: 0.075 | Acc: 97.69% (43764/44800)
+Train Batch: 352/352 | Loss: 0.076 | Acc: 97.68% (43957/45000)
+Validation | Loss: 0.206 | Acc: 93.82% (4691/5000)
+
+Epoch 176/200
+Train Batch: 50/352 | Loss: 0.069 | Acc: 97.89% (6265/6400)
+Train Batch: 100/352 | Loss: 0.072 | Acc: 97.66% (12501/12800)
+Train Batch: 150/352 | Loss: 0.071 | Acc: 97.64% (18747/19200)
+Train Batch: 200/352 | Loss: 0.071 | Acc: 97.73% (25019/25600)
+Train Batch: 250/352 | Loss: 0.070 | Acc: 97.72% (31271/32000)
+Train Batch: 300/352 | Loss: 0.071 | Acc: 97.73% (37527/38400)
+Train Batch: 350/352 | Loss: 0.072 | Acc: 97.70% (43769/44800)
+Train Batch: 352/352 | Loss: 0.072 | Acc: 97.69% (43960/45000)
+Validation | Loss: 0.205 | Acc: 93.86% (4693/5000)
+
+Epoch 177/200
+Train Batch: 50/352 | Loss: 0.063 | Acc: 98.14% (6281/6400)
+Train Batch: 100/352 | Loss: 0.064 | Acc: 98.05% (12551/12800)
+Train Batch: 150/352 | Loss: 0.065 | Acc: 97.98% (18813/19200)
+Train Batch: 200/352 | Loss: 0.065 | Acc: 98.02% (25092/25600)
+Train Batch: 250/352 | Loss: 0.066 | Acc: 97.95% (31344/32000)
+Train Batch: 300/352 | Loss: 0.067 | Acc: 97.90% (37593/38400)
+Train Batch: 350/352 | Loss: 0.067 | Acc: 97.93% (43871/44800)
+Train Batch: 352/352 | Loss: 0.067 | Acc: 97.92% (44065/45000)
+Validation | Loss: 0.202 | Acc: 93.74% (4687/5000)
+
+Epoch 178/200
+Train Batch: 50/352 | Loss: 0.068 | Acc: 97.75% (6256/6400)
+Train Batch: 100/352 | Loss: 0.069 | Acc: 97.76% (12513/12800)
+Train Batch: 150/352 | Loss: 0.067 | Acc: 97.89% (18794/19200)
+Train Batch: 200/352 | Loss: 0.068 | Acc: 97.84% (25048/25600)
+Train Batch: 250/352 | Loss: 0.069 | Acc: 97.80% (31297/32000)
+Train Batch: 300/352 | Loss: 0.070 | Acc: 97.74% (37533/38400)
+Train Batch: 350/352 | Loss: 0.069 | Acc: 97.74% (43788/44800)
+Train Batch: 352/352 | Loss: 0.069 | Acc: 97.74% (43983/45000)
+Validation | Loss: 0.200 | Acc: 94.10% (4705/5000)
+New best model with accuracy: 0.9410
+
+Epoch 179/200
+Train Batch: 50/352 | Loss: 0.064 | Acc: 97.89% (6265/6400)
+Train Batch: 100/352 | Loss: 0.065 | Acc: 97.90% (12531/12800)
+Train Batch: 150/352 | Loss: 0.064 | Acc: 98.03% (18821/19200)
+Train Batch: 200/352 | Loss: 0.065 | Acc: 97.95% (25076/25600)
+Train Batch: 250/352 | Loss: 0.064 | Acc: 98.02% (31365/32000)
+Train Batch: 300/352 | Loss: 0.063 | Acc: 98.06% (37654/38400)
+Train Batch: 350/352 | Loss: 0.064 | Acc: 98.00% (43904/44800)
+Train Batch: 352/352 | Loss: 0.064 | Acc: 98.00% (44101/45000)
+Validation | Loss: 0.200 | Acc: 94.00% (4700/5000)
+
+Epoch 180/200
+Train Batch: 50/352 | Loss: 0.062 | Acc: 97.88% (6264/6400)
+Train Batch: 100/352 | Loss: 0.060 | Acc: 98.02% (12546/12800)
+Train Batch: 150/352 | Loss: 0.060 | Acc: 98.02% (18819/19200)
+Train Batch: 200/352 | Loss: 0.061 | Acc: 98.05% (25100/25600)
+Train Batch: 250/352 | Loss: 0.062 | Acc: 98.06% (31378/32000)
+Train Batch: 300/352 | Loss: 0.062 | Acc: 98.04% (37648/38400)
+Train Batch: 350/352 | Loss: 0.061 | Acc: 98.10% (43949/44800)
+Train Batch: 352/352 | Loss: 0.061 | Acc: 98.10% (44143/45000)
+Validation | Loss: 0.198 | Acc: 94.34% (4717/5000)
+New best model with accuracy: 0.9434
+
+Epoch 181/200
+Train Batch: 50/352 | Loss: 0.057 | Acc: 98.33% (6293/6400)
+Train Batch: 100/352 | Loss: 0.054 | Acc: 98.45% (12602/12800)
+Train Batch: 150/352 | Loss: 0.056 | Acc: 98.32% (18878/19200)
+Train Batch: 200/352 | Loss: 0.057 | Acc: 98.26% (25155/25600)
+Train Batch: 250/352 | Loss: 0.057 | Acc: 98.26% (31442/32000)
+Train Batch: 300/352 | Loss: 0.058 | Acc: 98.24% (37725/38400)
+Train Batch: 350/352 | Loss: 0.058 | Acc: 98.24% (44012/44800)
+Train Batch: 352/352 | Loss: 0.058 | Acc: 98.24% (44206/45000)
+Validation | Loss: 0.204 | Acc: 93.90% (4695/5000)
+
+Epoch 182/200
+Train Batch: 50/352 | Loss: 0.056 | Acc: 98.30% (6291/6400)
+Train Batch: 100/352 | Loss: 0.055 | Acc: 98.40% (12595/12800)
+Train Batch: 150/352 | Loss: 0.057 | Acc: 98.28% (18870/19200)
+Train Batch: 200/352 | Loss: 0.056 | Acc: 98.28% (25159/25600)
+Train Batch: 250/352 | Loss: 0.056 | Acc: 98.28% (31448/32000)
+Train Batch: 300/352 | Loss: 0.057 | Acc: 98.25% (37727/38400)
+Train Batch: 350/352 | Loss: 0.057 | Acc: 98.26% (44021/44800)
+Train Batch: 352/352 | Loss: 0.057 | Acc: 98.26% (44217/45000)
+Validation | Loss: 0.192 | Acc: 94.24% (4712/5000)
+
+Epoch 183/200
+Train Batch: 50/352 | Loss: 0.052 | Acc: 98.52% (6305/6400)
+Train Batch: 100/352 | Loss: 0.056 | Acc: 98.40% (12595/12800)
+Train Batch: 150/352 | Loss: 0.054 | Acc: 98.42% (18896/19200)
+Train Batch: 200/352 | Loss: 0.054 | Acc: 98.39% (25188/25600)
+Train Batch: 250/352 | Loss: 0.054 | Acc: 98.38% (31481/32000)
+Train Batch: 300/352 | Loss: 0.054 | Acc: 98.35% (37766/38400)
+Train Batch: 350/352 | Loss: 0.054 | Acc: 98.36% (44065/44800)
+Train Batch: 352/352 | Loss: 0.054 | Acc: 98.36% (44262/45000)
+Validation | Loss: 0.191 | Acc: 94.20% (4710/5000)
+
+Epoch 184/200
+Train Batch: 50/352 | Loss: 0.049 | Acc: 98.55% (6307/6400)
+Train Batch: 100/352 | Loss: 0.050 | Acc: 98.52% (12610/12800)
+Train Batch: 150/352 | Loss: 0.052 | Acc: 98.49% (18911/19200)
+Train Batch: 200/352 | Loss: 0.052 | Acc: 98.49% (25214/25600)
+Train Batch: 250/352 | Loss: 0.051 | Acc: 98.51% (31523/32000)
+Train Batch: 300/352 | Loss: 0.052 | Acc: 98.46% (37807/38400)
+Train Batch: 350/352 | Loss: 0.052 | Acc: 98.45% (44107/44800)
+Train Batch: 352/352 | Loss: 0.052 | Acc: 98.45% (44304/45000)
+Validation | Loss: 0.197 | Acc: 94.30% (4715/5000)
+
+Epoch 185/200
+Train Batch: 50/352 | Loss: 0.053 | Acc: 98.56% (6308/6400)
+Train Batch: 100/352 | Loss: 0.052 | Acc: 98.49% (12607/12800)
+Train Batch: 150/352 | Loss: 0.051 | Acc: 98.52% (18915/19200)
+Train Batch: 200/352 | Loss: 0.051 | Acc: 98.52% (25222/25600)
+Train Batch: 250/352 | Loss: 0.051 | Acc: 98.53% (31530/32000)
+Train Batch: 300/352 | Loss: 0.051 | Acc: 98.50% (37823/38400)
+Train Batch: 350/352 | Loss: 0.052 | Acc: 98.48% (44120/44800)
+Train Batch: 352/352 | Loss: 0.052 | Acc: 98.48% (44317/45000)
+Validation | Loss: 0.195 | Acc: 94.36% (4718/5000)
+New best model with accuracy: 0.9436
+
+Epoch 186/200
+Train Batch: 50/352 | Loss: 0.046 | Acc: 98.69% (6316/6400)
+Train Batch: 100/352 | Loss: 0.050 | Acc: 98.52% (12611/12800)
+Train Batch: 150/352 | Loss: 0.050 | Acc: 98.48% (18908/19200)
+Train Batch: 200/352 | Loss: 0.050 | Acc: 98.50% (25215/25600)
+Train Batch: 250/352 | Loss: 0.051 | Acc: 98.45% (31504/32000)
+Train Batch: 300/352 | Loss: 0.052 | Acc: 98.43% (37799/38400)
+Train Batch: 350/352 | Loss: 0.051 | Acc: 98.48% (44117/44800)
+Train Batch: 352/352 | Loss: 0.051 | Acc: 98.46% (44309/45000)
+Validation | Loss: 0.197 | Acc: 94.46% (4723/5000)
+New best model with accuracy: 0.9446
+
+Epoch 187/200
+Train Batch: 50/352 | Loss: 0.046 | Acc: 98.58% (6309/6400)
+Train Batch: 100/352 | Loss: 0.045 | Acc: 98.77% (12642/12800)
+Train Batch: 150/352 | Loss: 0.047 | Acc: 98.67% (18945/19200)
+Train Batch: 200/352 | Loss: 0.048 | Acc: 98.61% (25243/25600)
+Train Batch: 250/352 | Loss: 0.048 | Acc: 98.62% (31557/32000)
+Train Batch: 300/352 | Loss: 0.048 | Acc: 98.64% (37877/38400)
+Train Batch: 350/352 | Loss: 0.048 | Acc: 98.62% (44182/44800)
+Train Batch: 352/352 | Loss: 0.048 | Acc: 98.62% (44380/45000)
+Validation | Loss: 0.194 | Acc: 94.36% (4718/5000)
+
+Epoch 188/200
+Train Batch: 50/352 | Loss: 0.045 | Acc: 98.81% (6324/6400)
+Train Batch: 100/352 | Loss: 0.046 | Acc: 98.63% (12625/12800)
+Train Batch: 150/352 | Loss: 0.047 | Acc: 98.62% (18935/19200)
+Train Batch: 200/352 | Loss: 0.047 | Acc: 98.58% (25236/25600)
+Train Batch: 250/352 | Loss: 0.046 | Acc: 98.61% (31555/32000)
+Train Batch: 300/352 | Loss: 0.046 | Acc: 98.62% (37869/38400)
+Train Batch: 350/352 | Loss: 0.046 | Acc: 98.61% (44176/44800)
+Train Batch: 352/352 | Loss: 0.046 | Acc: 98.60% (44372/45000)
+Validation | Loss: 0.195 | Acc: 94.42% (4721/5000)
+
+Epoch 189/200
+Train Batch: 50/352 | Loss: 0.048 | Acc: 98.70% (6317/6400)
+Train Batch: 100/352 | Loss: 0.047 | Acc: 98.70% (12634/12800)
+Train Batch: 150/352 | Loss: 0.046 | Acc: 98.65% (18941/19200)
+Train Batch: 200/352 | Loss: 0.046 | Acc: 98.62% (25248/25600)
+Train Batch: 250/352 | Loss: 0.046 | Acc: 98.66% (31571/32000)
+Train Batch: 300/352 | Loss: 0.046 | Acc: 98.68% (37892/38400)
+Train Batch: 350/352 | Loss: 0.047 | Acc: 98.65% (44195/44800)
+Train Batch: 352/352 | Loss: 0.047 | Acc: 98.65% (44393/45000)
+Validation | Loss: 0.192 | Acc: 94.40% (4720/5000)
+
+Epoch 190/200
+Train Batch: 50/352 | Loss: 0.041 | Acc: 98.86% (6327/6400)
+Train Batch: 100/352 | Loss: 0.041 | Acc: 98.88% (12656/12800)
+Train Batch: 150/352 | Loss: 0.042 | Acc: 98.86% (18981/19200)
+Train Batch: 200/352 | Loss: 0.042 | Acc: 98.85% (25306/25600)
+Train Batch: 250/352 | Loss: 0.043 | Acc: 98.80% (31617/32000)
+Train Batch: 300/352 | Loss: 0.044 | Acc: 98.78% (37931/38400)
+Train Batch: 350/352 | Loss: 0.043 | Acc: 98.78% (44254/44800)
+Train Batch: 352/352 | Loss: 0.044 | Acc: 98.78% (44449/45000)
+Validation | Loss: 0.195 | Acc: 94.38% (4719/5000)
+
+Epoch 191/200
+Train Batch: 50/352 | Loss: 0.046 | Acc: 98.64% (6313/6400)
+Train Batch: 100/352 | Loss: 0.044 | Acc: 98.71% (12635/12800)
+Train Batch: 150/352 | Loss: 0.046 | Acc: 98.66% (18943/19200)
+Train Batch: 200/352 | Loss: 0.045 | Acc: 98.67% (25259/25600)
+Train Batch: 250/352 | Loss: 0.044 | Acc: 98.69% (31581/32000)
+Train Batch: 300/352 | Loss: 0.044 | Acc: 98.71% (37904/38400)
+Train Batch: 350/352 | Loss: 0.044 | Acc: 98.72% (44227/44800)
+Train Batch: 352/352 | Loss: 0.044 | Acc: 98.72% (44424/45000)
+Validation | Loss: 0.194 | Acc: 94.44% (4722/5000)
+
+Epoch 192/200
+Train Batch: 50/352 | Loss: 0.045 | Acc: 98.58% (6309/6400)
+Train Batch: 100/352 | Loss: 0.044 | Acc: 98.72% (12636/12800)
+Train Batch: 150/352 | Loss: 0.044 | Acc: 98.71% (18953/19200)
+Train Batch: 200/352 | Loss: 0.044 | Acc: 98.76% (25283/25600)
+Train Batch: 250/352 | Loss: 0.043 | Acc: 98.77% (31605/32000)
+Train Batch: 300/352 | Loss: 0.043 | Acc: 98.79% (37936/38400)
+Train Batch: 350/352 | Loss: 0.043 | Acc: 98.81% (44269/44800)
+Train Batch: 352/352 | Loss: 0.043 | Acc: 98.82% (44467/45000)
+Validation | Loss: 0.195 | Acc: 94.28% (4714/5000)
+
+Epoch 193/200
+Train Batch: 50/352 | Loss: 0.037 | Acc: 99.03% (6338/6400)
+Train Batch: 100/352 | Loss: 0.038 | Acc: 98.95% (12666/12800)
+Train Batch: 150/352 | Loss: 0.038 | Acc: 99.01% (19009/19200)
+Train Batch: 200/352 | Loss: 0.038 | Acc: 99.00% (25344/25600)
+Train Batch: 250/352 | Loss: 0.039 | Acc: 98.92% (31654/32000)
+Train Batch: 300/352 | Loss: 0.040 | Acc: 98.90% (37978/38400)
+Train Batch: 350/352 | Loss: 0.041 | Acc: 98.88% (44296/44800)
+Train Batch: 352/352 | Loss: 0.041 | Acc: 98.88% (44494/45000)
+Validation | Loss: 0.194 | Acc: 94.42% (4721/5000)
+
+Epoch 194/200
+Train Batch: 50/352 | Loss: 0.041 | Acc: 98.89% (6329/6400)
+Train Batch: 100/352 | Loss: 0.042 | Acc: 98.78% (12644/12800)
+Train Batch: 150/352 | Loss: 0.042 | Acc: 98.73% (18957/19200)
+Train Batch: 200/352 | Loss: 0.042 | Acc: 98.74% (25277/25600)
+Train Batch: 250/352 | Loss: 0.042 | Acc: 98.78% (31610/32000)
+Train Batch: 300/352 | Loss: 0.042 | Acc: 98.77% (37927/38400)
+Train Batch: 350/352 | Loss: 0.042 | Acc: 98.77% (44249/44800)
+Train Batch: 352/352 | Loss: 0.042 | Acc: 98.76% (44444/45000)
+Validation | Loss: 0.194 | Acc: 94.40% (4720/5000)
+
+Epoch 195/200
+Train Batch: 50/352 | Loss: 0.038 | Acc: 98.84% (6326/6400)
+Train Batch: 100/352 | Loss: 0.040 | Acc: 98.86% (12654/12800)
+Train Batch: 150/352 | Loss: 0.040 | Acc: 98.88% (18984/19200)
+Train Batch: 200/352 | Loss: 0.040 | Acc: 98.86% (25309/25600)
+Train Batch: 250/352 | Loss: 0.040 | Acc: 98.86% (31635/32000)
+Train Batch: 300/352 | Loss: 0.040 | Acc: 98.85% (37958/38400)
+Train Batch: 350/352 | Loss: 0.041 | Acc: 98.84% (44281/44800)
+Train Batch: 352/352 | Loss: 0.041 | Acc: 98.84% (44479/45000)
+Validation | Loss: 0.193 | Acc: 94.40% (4720/5000)
+
+Epoch 196/200
+Train Batch: 50/352 | Loss: 0.048 | Acc: 98.45% (6301/6400)
+Train Batch: 100/352 | Loss: 0.043 | Acc: 98.71% (12635/12800)
+Train Batch: 150/352 | Loss: 0.043 | Acc: 98.73% (18957/19200)
+Train Batch: 200/352 | Loss: 0.043 | Acc: 98.76% (25282/25600)
+Train Batch: 250/352 | Loss: 0.043 | Acc: 98.77% (31605/32000)
+Train Batch: 300/352 | Loss: 0.042 | Acc: 98.79% (37937/38400)
+Train Batch: 350/352 | Loss: 0.042 | Acc: 98.79% (44257/44800)
+Train Batch: 352/352 | Loss: 0.042 | Acc: 98.79% (44454/45000)
+Validation | Loss: 0.194 | Acc: 94.46% (4723/5000)
+
+Epoch 197/200
+Train Batch: 50/352 | Loss: 0.039 | Acc: 99.12% (6344/6400)
+Train Batch: 100/352 | Loss: 0.039 | Acc: 98.94% (12664/12800)
+Train Batch: 150/352 | Loss: 0.039 | Acc: 98.94% (18996/19200)
+Train Batch: 200/352 | Loss: 0.039 | Acc: 98.97% (25337/25600)
+Train Batch: 250/352 | Loss: 0.039 | Acc: 98.97% (31670/32000)
+Train Batch: 300/352 | Loss: 0.039 | Acc: 98.95% (37998/38400)
+Train Batch: 350/352 | Loss: 0.040 | Acc: 98.93% (44320/44800)
+Train Batch: 352/352 | Loss: 0.040 | Acc: 98.92% (44515/45000)
+Validation | Loss: 0.194 | Acc: 94.46% (4723/5000)
+
+Epoch 198/200
+Train Batch: 50/352 | Loss: 0.042 | Acc: 98.83% (6325/6400)
+Train Batch: 100/352 | Loss: 0.041 | Acc: 98.83% (12650/12800)
+Train Batch: 150/352 | Loss: 0.040 | Acc: 98.91% (18990/19200)
+Train Batch: 200/352 | Loss: 0.040 | Acc: 98.90% (25319/25600)
+Train Batch: 250/352 | Loss: 0.040 | Acc: 98.92% (31655/32000)
+Train Batch: 300/352 | Loss: 0.040 | Acc: 98.90% (37977/38400)
+Train Batch: 350/352 | Loss: 0.040 | Acc: 98.90% (44309/44800)
+Train Batch: 352/352 | Loss: 0.040 | Acc: 98.91% (44508/45000)
+Validation | Loss: 0.193 | Acc: 94.46% (4723/5000)
+
+Epoch 199/200
+Train Batch: 50/352 | Loss: 0.035 | Acc: 99.06% (6340/6400)
+Train Batch: 100/352 | Loss: 0.036 | Acc: 99.08% (12682/12800)
+Train Batch: 150/352 | Loss: 0.038 | Acc: 99.05% (19017/19200)
+Train Batch: 200/352 | Loss: 0.038 | Acc: 99.02% (25348/25600)
+Train Batch: 250/352 | Loss: 0.038 | Acc: 99.03% (31688/32000)
+Train Batch: 300/352 | Loss: 0.038 | Acc: 99.01% (38020/38400)
+Train Batch: 350/352 | Loss: 0.038 | Acc: 98.99% (44348/44800)
+Train Batch: 352/352 | Loss: 0.038 | Acc: 98.99% (44547/45000)
+Validation | Loss: 0.192 | Acc: 94.52% (4726/5000)
+New best model with accuracy: 0.9452
+
+Epoch 200/200
+Train Batch: 50/352 | Loss: 0.043 | Acc: 98.73% (6319/6400)
+Train Batch: 100/352 | Loss: 0.041 | Acc: 98.88% (12657/12800)
+Train Batch: 150/352 | Loss: 0.040 | Acc: 98.88% (18984/19200)
+Train Batch: 200/352 | Loss: 0.042 | Acc: 98.85% (25306/25600)
+Train Batch: 250/352 | Loss: 0.041 | Acc: 98.84% (31630/32000)
+Train Batch: 300/352 | Loss: 0.042 | Acc: 98.83% (37952/38400)
+Train Batch: 350/352 | Loss: 0.041 | Acc: 98.86% (44289/44800)
+Train Batch: 352/352 | Loss: 0.041 | Acc: 98.86% (44485/45000)
+Validation | Loss: 0.194 | Acc: 94.44% (4722/5000)
+
+Training completed in 9060.93 seconds
+Best validation accuracy: 0.9452 at epoch 199
+Training history saved to /home/tf2387/7123pj_zzp/md/training_history.csv
