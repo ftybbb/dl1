@@ -1,0 +1,15 @@
+{"time":"2025-03-12T15:14:30.782003224-04:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/scratch/rg4827/hw/dl1/wandb/run-20250312_151430-aj24zxsu/logs/debug-core.log"}
+{"time":"2025-03-12T15:14:30.916183205-04:00","level":"INFO","msg":"created new stream","id":"aj24zxsu"}
+{"time":"2025-03-12T15:14:30.916233057-04:00","level":"INFO","msg":"stream: started","id":"aj24zxsu"}
+{"time":"2025-03-12T15:14:30.916257678-04:00","level":"INFO","msg":"writer: Do: started","stream_id":"aj24zxsu"}
+{"time":"2025-03-12T15:14:30.916291769-04:00","level":"INFO","msg":"sender: started","stream_id":"aj24zxsu"}
+{"time":"2025-03-12T15:14:30.916284939-04:00","level":"INFO","msg":"handler: started","stream_id":"aj24zxsu"}
+{"time":"2025-03-12T15:14:30.930912292-04:00","level":"ERROR","msg":"sender: upsertRun:","error":"failed to upsert bucket: api: failed sending: POST https://api.wandb.ai/graphql giving up after 1 attempt(s): Post \"https://api.wandb.ai/graphql\": tls: failed to verify certificate: x509: certificate signed by unknown authority"}
+{"time":"2025-03-12T15:14:31.933113891-04:00","level":"INFO","msg":"stream: closing","id":"aj24zxsu"}
+{"time":"2025-03-12T15:14:31.933246546-04:00","level":"ERROR","msg":"sender: upsertConfig: RunRecord is nil"}
+{"time":"2025-03-12T15:14:31.991899862-04:00","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: api: failed sending: POST https://api.wandb.ai/graphql giving up after 1 attempt(s): Post \"https://api.wandb.ai/graphql\": tls: failed to verify certificate: x509: certificate signed by unknown authority"}
+{"time":"2025-03-12T15:14:31.992239426-04:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-12T15:14:31.992275447-04:00","level":"INFO","msg":"handler: closed","stream_id":"aj24zxsu"}
+{"time":"2025-03-12T15:14:31.992292577-04:00","level":"INFO","msg":"writer: Close: closed","stream_id":"aj24zxsu"}
+{"time":"2025-03-12T15:14:31.992296708-04:00","level":"INFO","msg":"sender: closed","stream_id":"aj24zxsu"}
+{"time":"2025-03-12T15:14:31.992446103-04:00","level":"INFO","msg":"stream: closed","id":"aj24zxsu"}

@@ -1,9 +1,11 @@
 dataset/
 output/
+outputs/
 *.pth
 *.png
 *.jpg
 *.jpeg
 *.gif
 *.bmp
+wandb/
 __pycache__/

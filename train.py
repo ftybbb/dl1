@@ -6,18 +6,22 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.optim.lr_scheduler import CosineAnnealingLR, OneCycleLR, StepLR
+from torch.optim.lr_scheduler import CosineAnnealingLR, OneCycleLR, StepLR, LambdaLR, SequentialLR, CosineAnnealingWarmRestarts
 from torchsummary import summary
 import torchvision
 from data_setup import unpickle
 import matplotlib.pyplot as plt
 
+from torch_ema import ExponentialMovingAverage
+
 
 from data_setup import setup_data, setup_data_test, setup_data_test_cifar
 from model import resnet_cifar
-from model_improved import improved_resnet_cifar
+from model_improved_v2 import improved_resnet_cifar
 
-def train_epoch(model, train_loader, criterion, optimizer, device):
+# import wandb
+
+def train_epoch(model, train_loader, criterion, optimizer, device, ema=None):
     """Train for one epoch"""
     model.train()
     running_loss = 0.0
@@ -37,6 +41,8 @@ def train_epoch(model, train_loader, criterion, optimizer, device):
         # Backward pass and optimize
         loss.backward()
         optimizer.step()
+        if ema is not None:
+            ema.update()
         
         # Statistics
         running_loss += loss.item()
@@ -117,10 +123,9 @@ def main():
     parser.add_argument('--weight-decay', type=float, default=5e-4, help='weight decay')
     parser.add_argument('--device', default='cuda', help='device to use')
     parser.add_argument('--task', default='train', choices=['train', 'test'],)
-    parser.add_argument('--activation', default='mish', choices=['relu', 'mish', 'gelu'],)
+    parser.add_argument('--activation', default='mish', type=str)
     parser.add_argument('--dropout', action='store_true', help='apply dropout')
     parser.add_argument('--test-data', default='', help='test data file')
-
     
     args = parser.parse_args()
     
@@ -147,7 +152,7 @@ def main():
     print(summary(model, (3, 32, 32)))
     
     # Loss function and optimizer
-    criterion = nn.CrossEntropyLoss()
+    criterion = nn.CrossEntropyLoss(label_smoothing=0.1) # add label smoothing
     
     if args.optimizer == 'sgd':
         optimizer = optim.SGD(model.parameters(), lr=args.lr, 
@@ -158,7 +163,16 @@ def main():
     
     # Learning rate scheduler
     if args.scheduler == 'cosine':
-        scheduler = CosineAnnealingLR(optimizer, T_max=args.epochs)
+        warmup_epochs = 5
+        restart_epochs = 100
+        warmup_scheduler = LambdaLR(optimizer, lr_lambda=lambda epoch: (epoch+1) / warmup_epochs)
+        # cos_scheduler = CosineAnnealingLR(optimizer, T_max=args.epochs - warmup_epochs)
+        cos_scheduler = CosineAnnealingWarmRestarts(optimizer, T_0=restart_epochs, T_mult=2)
+        scheduler = SequentialLR(optimizer, [
+            warmup_scheduler,
+            cos_scheduler
+        ], milestones=[warmup_epochs])
+        
     elif args.scheduler == 'onecycle':
         scheduler = OneCycleLR(optimizer, max_lr=args.lr, 
                                epochs=args.epochs, steps_per_epoch=len(train_loader))
@@ -169,26 +183,49 @@ def main():
     
     # Training loop
     best_acc = 0.0
+    best_ema_acc = 90.0
     best_epoch = 0
     train_losses, train_accs = [], []
     val_losses, val_accs = [], []
-    
+    ema_val_losses, ema_val_accs = [], []
     print(f"Starting training for {args.epochs} epochs...")
     start_time = time.time()
     
+    
+    
     if args.task == 'train':
+        run_name = os.path.basename(args.output_dir)
+        # wandb.init(project='deep-learning-spring-2025-project-1', name=run_name, config=args)
+        ema_start_epoch = int(args.epochs * 0.1)
+        ema = ExponentialMovingAverage(model.parameters(), decay=0.99)
         for epoch in range(args.epochs):
             print(f"\nEpoch {epoch+1}/{args.epochs}")
             
             # Train
-            train_loss, train_acc = train_epoch(model, train_loader, criterion, optimizer, device)
+            if epoch < ema_start_epoch:
+                train_loss, train_acc = train_epoch(model, train_loader, criterion, optimizer, device)
+            else:
+                train_loss, train_acc = train_epoch(model, train_loader, criterion, optimizer, device, ema)
             train_losses.append(train_loss)
             train_accs.append(train_acc)
             
             # Validate
+            print(f"Validating at epoch {epoch+1}...")
             val_loss, val_acc = validate(model, val_loader, criterion, device)
             val_losses.append(val_loss)
             val_accs.append(val_acc)
+            print(f"EMA validation")
+            with ema.average_parameters():
+                ema_val_loss, ema_val_acc = validate(model, val_loader, criterion, device)
+            ema_val_losses.append(ema_val_loss)
+            ema_val_accs.append(ema_val_acc)
+            
+            # wandb.log({
+            #     'train_loss': train_loss,
+            #     'train_acc': train_acc,
+            #     'val_loss': val_loss,
+            #     'val_acc': val_acc
+            # })
             
             # Update learning rate
             if scheduler is not None:
@@ -207,6 +244,18 @@ def main():
                     'optimizer_state_dict': optimizer.state_dict(),
                     'accuracy': val_acc,
                 }, os.path.join(args.output_dir, 'best_model.pth'))
+            # Save best ema model
+            if ema_val_acc > best_ema_acc:
+                print(f"New best ema model with accuracy: {ema_val_acc:.4f}")
+                best_ema_acc = ema_val_acc
+                best_ema_epoch = epoch
+                with ema.average_parameters():
+                    torch.save({
+                        'epoch': epoch, 
+                        'model_state_dict': model.state_dict(),
+                        'optimizer_state_dict': optimizer.state_dict(),
+                        'accuracy': ema_val_acc,
+                    }, os.path.join(args.output_dir, 'best_ema_model.pth'))
         
         training_time = time.time() - start_time
         print(f"\nTraining completed in {training_time:.2f} seconds")
@@ -218,29 +267,20 @@ def main():
 
     if args.task == 'test':
         model.eval()
-        test_loader, test_labels = setup_data_test_cifar(args.test_data, batch_size=args.batch_size)
+        test_loader, test_labels = setup_data_test(args.test_data, batch_size=args.batch_size)
         ids, predictions = generate_predictions(model, test_loader, device)
         d = unpickle(args.test_data)
-        # print(d.keys())
-        # dd = d[b'data']
-        # img = dd[5]
-        # print(img.shape)
-        # # Save the first image and its prediction
-
-        # img_path = os.path.join(args.output_dir, 'sample_image.png')
-        # plt.imsave(img_path, img)
-        # print(f"Sample image saved to {img_path}")
-        # print(f"Prediction for the sample image: {predictions[5]}")
-        # Write predictions to CSV
+        
         output_file = os.path.join(args.output_dir, 'test_predictions.csv')
         df = pd.DataFrame({'ID': ids, 'Labels': predictions})
         df.to_csv(output_file, index=False)
-        print(f"Test predictions saved to {output_file}")
-        print(ids, predictions)
-        predictions = np.array(predictions)
-        test_labels = np.array(test_labels)
-        print((predictions-test_labels)/test_labels.shape[0])
-        assert 1==2
+        # print(f"Test predictions saved to {output_file}")
+        # print(ids, predictions)
+        # predictions = np.array(predictions)
+        # test_labels = np.array(test_labels)
+        # print(np.sum(predictions == test_labels) / len(test_labels))
+        # assert 1==2
+        return
     
     # Generate predictions on test set
     if test_loader:
@@ -268,4 +308,5 @@ def main():
 
 
 if __name__ == '__main__':
+    
     main()
