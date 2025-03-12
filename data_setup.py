@@ -12,24 +12,27 @@ def unpickle(file):
         dict = pickle.load(fo, encoding='bytes')
     return dict
 
-class Cutout:
-    def __init__(self, size=16):  # size: 被遮挡区域的大小
-        self.size = size
+class RandomCutout:
+    def __init__(self, min_size=16, max_size=32): 
+        self.min_size = min_size
+        self.max_size = max_size
 
     def __call__(self, img):
-        h, w = img.shape[1:3]  # 获取图像尺寸
+        h, w = img.shape[1:3]
+        size = np.random.randint(self.min_size, self.max_size+1)
+        
         mask = np.ones((h, w), np.float32)
         y = np.random.randint(h)
         x = np.random.randint(w)
 
-        y1 = np.clip(y - self.size // 2, 0, h)
-        y2 = np.clip(y + self.size // 2, 0, h)
-        x1 = np.clip(x - self.size // 2, 0, w)
-        x2 = np.clip(x + self.size // 2, 0, w)
+        y1 = np.clip(y - size // 2, 0, h)
+        y2 = np.clip(y + size // 2, 0, h)
+        x1 = np.clip(x - size // 2, 0, w)
+        x2 = np.clip(x + size // 2, 0, w)
 
         mask[y1:y2, x1:x2] = 0.
         mask = torch.from_numpy(mask).expand_as(img)
-        img *= mask  # 应用 mask
+        img *= mask
         return img
 
 def setup_data(data_dir, batch_size=128, val_split=0.1):
@@ -49,11 +52,12 @@ def setup_data(data_dir, batch_size=128, val_split=0.1):
     train_transform = transforms.Compose([
         transforms.ToPILImage(),
         transforms.RandomCrop(32, padding=4),
-        transforms.RandomHorizontalFlip(),
-        # transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),
+        transforms.RandomHorizontalFlip(),  
+        transforms.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.3),
+        transforms.RandomRotation(15),
         AutoAugment(AutoAugmentPolicy.CIFAR10),
         transforms.ToTensor(),
-        Cutout(16),
+        RandomCutout(8, 16),
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
     ])
     
