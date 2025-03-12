@@ -1,0 +1,9 @@
+dataset/
+output/
+*.pth
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+__pycache__/

@@ -6,7 +6,7 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.optim.lr_scheduler import CosineAnnealingLR, OneCycleLR
+from torch.optim.lr_scheduler import CosineAnnealingLR, OneCycleLR, StepLR
 from torchsummary import summary
 import torchvision
 from data_setup import unpickle
@@ -112,7 +112,7 @@ def main():
                         help='model size')
     parser.add_argument('--optimizer', default='sgd', choices=['sgd', 'adam'],
                         help='optimizer')
-    parser.add_argument('--scheduler', default='cosine', choices=['cosine', 'onecycle', 'none'],
+    parser.add_argument('--scheduler', default='cosine', choices=['cosine', 'onecycle', 'step'],
                         help='learning rate scheduler')
     parser.add_argument('--weight-decay', type=float, default=5e-4, help='weight decay')
     parser.add_argument('--device', default='cuda', help='device to use')
@@ -162,6 +162,8 @@ def main():
     elif args.scheduler == 'onecycle':
         scheduler = OneCycleLR(optimizer, max_lr=args.lr, 
                                epochs=args.epochs, steps_per_epoch=len(train_loader))
+    elif args.scheduler == 'step':
+        scheduler = StepLR(optimizer, step_size=30, gamma=0.1)
     else:
         scheduler = None
     
@@ -235,7 +237,8 @@ def main():
         df.to_csv(output_file, index=False)
         print(f"Test predictions saved to {output_file}")
         print(ids, predictions)
-        predictions = np.
+        predictions = np.array(predictions)
+        test_labels = np.array(test_labels)
         print((predictions-test_labels)/test_labels.shape[0])
         assert 1==2
     
