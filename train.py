@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 from data_setup import setup_data, setup_data_test, setup_data_test_cifar
 from model import resnet_cifar
-from model_improved import improved_resnet_cifar
+from model_improved_v2 import improved_resnet_cifar
 
 def train_epoch(model, train_loader, criterion, optimizer, device):
     """Train for one epoch"""
@@ -117,7 +117,7 @@ def main():
     parser.add_argument('--weight-decay', type=float, default=5e-4, help='weight decay')
     parser.add_argument('--device', default='cuda', help='device to use')
     parser.add_argument('--task', default='train', choices=['train', 'test'],)
-    parser.add_argument('--activation', default='mish', choices=['relu', 'mish', 'gelu'],)
+    parser.add_argument('--activation', default='mish', type=str)
     parser.add_argument('--dropout', action='store_true', help='apply dropout')
     parser.add_argument('--test-data', default='', help='test data file')
 
@@ -235,8 +235,9 @@ def main():
         df.to_csv(output_file, index=False)
         print(f"Test predictions saved to {output_file}")
         print(ids, predictions)
-        predictions = np.
-        print((predictions-test_labels)/test_labels.shape[0])
+        predictions = np.array(predictions)
+        test_labels = np.array(test_labels)
+        print(np.sum(predictions == test_labels) / len(test_labels))
         assert 1==2
     
     # Generate predictions on test set
