@@ -1,0 +1,9 @@
+Total parameters: 4,992,586
+
+Parameter distribution by layer:
+conv1: 1,728 (0.03%)
+bn1: 128 (0.00%)
+layer1: 295,936 (5.93%)
+layer2: 1,411,840 (28.28%)
+layer3: 3,280,384 (65.71%)
+fc: 2,570 (0.05%)

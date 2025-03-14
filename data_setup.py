@@ -34,20 +34,8 @@ class RandomCutout:
         mask = torch.from_numpy(mask).expand_as(img)
         img *= mask
         return img
-
-def setup_data(data_dir, batch_size=128, val_split=0.1):
-    """
-    Load and prepare CIFAR-10 data
-    Args:
-        data_dir: Directory where CIFAR-10 data is located
-        batch_size: Batch size for dataloaders
-        val_split: Proportion of training data to use for validation
-    Returns:
-        train_loader, val_loader, test_loader, classes
-    """
-    # Create data directory if it doesn't exist
-    os.makedirs(data_dir, exist_ok=True)
     
+def get_transforms():
     # Training data preprocessing with augmentation
     train_transform = transforms.Compose([
         transforms.ToPILImage(),
@@ -67,6 +55,24 @@ def setup_data(data_dir, batch_size=128, val_split=0.1):
         transforms.ToTensor(),
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
     ])
+    
+    return train_transform, test_transform
+    
+    
+def setup_data(data_dir, batch_size=128, val_split=0.1, return_dataset=False):
+    """
+    Load and prepare CIFAR-10 data
+    Args:
+        data_dir: Directory where CIFAR-10 data is located
+        batch_size: Batch size for dataloaders
+        val_split: Proportion of training data to use for validation
+    Returns:
+        train_loader, val_loader, test_loader, classes
+    """
+    # Create data directory if it doesn't exist
+    os.makedirs(data_dir, exist_ok=True)
+    
+    train_transform, test_transform = get_transforms()
     
     # Load training data
     x_train = []
@@ -150,7 +156,10 @@ def setup_data(data_dir, batch_size=128, val_split=0.1):
         print("Warning: Custom test directory not found. Creating dummy test loader.")
         test_loader = None
     
-    return train_loader, val_loader, test_loader, classes
+    if return_dataset:
+        return train_loader, val_loader, test_loader, classes, train_dataset, val_dataset
+    else:
+        return train_loader, val_loader, test_loader, classes
 
 
 def setup_data_test(data_dir, batch_size=128, val_split=0.1):

@@ -9,3 +9,5 @@ outputs/
 *.bmp
 wandb/
 __pycache__/
+.DS_Store
+deep-learning-spring-2025-project-1/
