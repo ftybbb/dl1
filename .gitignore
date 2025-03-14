@@ -2,7 +2,6 @@ dataset/
 output/
 outputs/
 *.pth
-*.png
 *.jpg
 *.jpeg
 *.gif

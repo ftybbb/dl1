@@ -101,10 +101,11 @@ def plot_class_accuracy(cm_norm, class_names):
     plt.close()
 
 def plot_misclassification_examples(model, val_loader, dataset, device, class_names, max_examples=100):
-    """Plot all misclassified images in a single figure using original images"""
+    """Plot all misclassified images in a single figure showing both original and normalized versions"""
     misclassified_indices = []
     misclassified_labels = []
     misclassified_preds = []
+    misclassified_images = []  # Store the normalized images that the model actually sees
     
     # Track the indices of images in the validation dataset
     current_idx = 0
@@ -127,6 +128,7 @@ def plot_misclassification_examples(model, val_loader, dataset, device, class_na
                 misclassified_indices.extend(misclassified_batch_indices.tolist())
                 misclassified_labels.append(labels[incorrect_mask].cpu())
                 misclassified_preds.append(preds[incorrect_mask].cpu())
+                misclassified_images.append(images[incorrect_mask].cpu())
                 
             current_idx += batch_size
             
@@ -134,57 +136,92 @@ def plot_misclassification_examples(model, val_loader, dataset, device, class_na
             if len(misclassified_indices) >= max_examples:
                 break
                 
-    # Concatenate the label and prediction tensors
+    # Concatenate the tensors
     if misclassified_labels:
         misclassified_labels = torch.cat(misclassified_labels)
         misclassified_preds = torch.cat(misclassified_preds)
+        misclassified_images = torch.cat(misclassified_images)
         
         # Limit to max_examples
         n = min(max_examples, len(misclassified_indices))
         misclassified_indices = misclassified_indices[:n]
         misclassified_labels = misclassified_labels[:n]
         misclassified_preds = misclassified_preds[:n]
+        misclassified_images = misclassified_images[:n]
         
-        # Set up the grid dimensions
+        # De-normalize the images for display
+        mean = torch.tensor([0.4914, 0.4822, 0.4465]).view(3, 1, 1)
+        std = torch.tensor([0.2023, 0.1994, 0.2010]).view(3, 1, 1)
+        
+        # Set up the grid dimensions for original images
         grid_size = math.ceil(math.sqrt(n))
-        fig, axes = plt.subplots(grid_size, grid_size, figsize=(grid_size*3, grid_size*3))
+        fig_orig, axes_orig = plt.subplots(grid_size, grid_size, figsize=(grid_size*3, grid_size*3))
+        
+        # Set up grid dimensions for normalized images
+        fig_norm, axes_norm = plt.subplots(grid_size, grid_size, figsize=(grid_size*3, grid_size*3))
         
         # Flatten axes for easier indexing if more than one row/column
         if grid_size > 1:
-            axes = axes.flatten()
+            axes_orig = axes_orig.flatten()
+            axes_norm = axes_norm.flatten()
             
         for i in range(n):
-            ax = axes[i] if grid_size > 1 else axes
+            # Original image figure
+            ax_orig = axes_orig[i] if grid_size > 1 else axes_orig
             
             # Get the original image from the dataset
             original_img, _ = dataset[misclassified_indices[i]]
             
-            # Convert PIL image to numpy array if needed
+            # Convert image to display format
             if hasattr(original_img, 'permute'):  # If it's already a tensor
-                img = original_img.permute(1, 2, 0).numpy()  # CHW -> HWC
+                img_orig = original_img.permute(1, 2, 0).numpy()  # CHW -> HWC
                 # If normalized, denormalize it
-                if img.max() <= 1.0:  # Check if already in [0,1] range
+                if img_orig.max() <= 1.0:  # Check if already in [0,1] range
                     pass  # Already in good range
                 else:
-                    img = img / 255.0  # Normalize to [0,1]
+                    img_orig = img_orig / 255.0  # Normalize to [0,1]
             else:  # If it's a PIL image
-                img = np.array(original_img) / 255.0  # Convert to numpy and normalize
+                img_orig = np.array(original_img) / 255.0  # Convert to numpy and normalize
+            
+            # Normalized image figure
+            ax_norm = axes_norm[i] if grid_size > 1 else axes_norm
+            
+            # Get the normalized image
+            img_norm = misclassified_images[i].clone()
+            img_norm = img_norm * std + mean  # De-normalize for display
+            img_norm = img_norm.permute(1, 2, 0).numpy()  # CHW -> HWC
+            img_norm = np.clip(img_norm, 0, 1)  # Clip values to valid range
             
             true_label = misclassified_labels[i].item()
             pred_label = misclassified_preds[i].item()
             
-            ax.imshow(img)
-            ax.set_title(f'True: {class_names[true_label]}\nPred: {class_names[pred_label]}')
-            ax.axis('off')
+            # Display original image
+            ax_orig.imshow(img_orig)
+            ax_orig.set_title(f'True: {class_names[true_label]}')
+            ax_orig.axis('off')
+            
+            # Display normalized image
+            ax_norm.imshow(img_norm)
+            ax_norm.set_title(f'Pred: {class_names[pred_label]}')
+            ax_norm.axis('off')
             
         # Turn off axes for unused subplots
         for i in range(n, grid_size * grid_size):
             if grid_size > 1:
-                axes[i].axis('off')
-                
-        plt.tight_layout()
-        plt.savefig(os.path.join(OUTPUT_DIR, 'all_original_misclassified_examples.png'))
-        plt.close()
+                axes_orig[i].axis('off')
+                axes_norm[i].axis('off')
+        
+        # Save original images figure
+        fig_orig.suptitle('Original Images (Before Normalization)', fontsize=16)
+        fig_orig.tight_layout(rect=[0, 0, 1, 0.97])  # Adjust for suptitle
+        fig_orig.savefig(os.path.join(OUTPUT_DIR, 'misclassified_original_images.png'))
+        plt.close(fig_orig)
+        
+        # Save normalized images figure
+        fig_norm.suptitle('Normalized Images (What the Model Sees)', fontsize=16)
+        fig_norm.tight_layout(rect=[0, 0, 1, 0.97])  # Adjust for suptitle
+        fig_norm.savefig(os.path.join(OUTPUT_DIR, 'misclassified_normalized_images.png'))
+        plt.close(fig_norm)
         
         # Create a report about these misclassifications
         misclass_counts = {}
@@ -346,20 +383,20 @@ def main():
     # Get predictions
     all_preds, all_targets, all_probs = get_predictions(model, val_loader, device)
     
-    cm, cm_norm = plot_confusion_matrix(all_targets, all_preds, class_names)
-    plot_class_accuracy(cm_norm, class_names)
-    plot_misclassification_examples(model, val_loader, val_dataset, device, class_names)
-    plot_confidence_distribution(all_probs, all_preds, all_targets, class_names)
-    plot_augmentation_effects(train_dataset, 5, 4)
+    # cm, cm_norm = plot_confusion_matrix(all_targets, all_preds, class_names)
+    # plot_class_accuracy(cm_norm, class_names)
+    plot_misclassification_examples(model, val_loader, val_dataset, device, class_names, 9)
+    # plot_confidence_distribution(all_probs, all_preds, all_targets, class_names)
+    # plot_augmentation_effects(train_dataset, 5, 4)
     
-    report = classification_report(all_targets, all_preds, target_names=class_names)
-    print("Classification Report:")
-    print(report)
+    # report = classification_report(all_targets, all_preds, target_names=class_names)
+    # print("Classification Report:")
+    # print(report)
     
-    with open(os.path.join(OUTPUT_DIR,'classification_report.txt'), 'w') as f:
-        f.write(report)
+    # with open(os.path.join(OUTPUT_DIR,'classification_report.txt'), 'w') as f:
+    #     f.write(report)
     
-    print("Visualization complete! Check the current directory for output images.")
+    # print("Visualization complete! Check the current directory for output images.")
 
 if __name__ == "__main__":
     main()
